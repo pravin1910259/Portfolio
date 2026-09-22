@@ -16,6 +16,54 @@ const THEMES = [
     },
   },
   {
+    id: "sample-a2",
+    name: "SAMPLE A2 — BLUEPRINT WHITE",
+    tagline: "Light · pale blue paper · engineering blue",
+    desc: "A cooler take on A: pale blueprint-white paper, deep navy ink, and classic engineering blue for both the grid and the accent marks — the closest to a real blueprint, but light.",
+    c: {
+      bg: "#EDF2F8",
+      surface: "#F7FAFD",
+      ink: "#0E1A2B",
+      sub: "#4A5A6E",
+      accent: "#1D4ED8",
+      accent2: "#1D4ED8",
+      line: "rgba(14,26,43,0.14)",
+      grid: "rgba(29,78,216,0.14)",
+    },
+  },
+  {
+    id: "sample-a3",
+    name: "SAMPLE A3 — PAPER & PENCIL",
+    tagline: "Light · pure white · graphite + red marks",
+    desc: "The most minimal of the set: near-white paper, soft graphite type, barely-there gray grid, and red dimension marks like a red-pen markup on a drawing.",
+    c: {
+      bg: "#FAFAF7",
+      surface: "#FFFFFF",
+      ink: "#1B1B1B",
+      sub: "#6B6B6B",
+      accent: "#1B1B1B",
+      accent2: "#C92A2A",
+      line: "rgba(27,27,27,0.12)",
+      grid: "rgba(27,27,27,0.05)",
+    },
+  },
+  {
+    id: "sample-a4",
+    name: "SAMPLE A4 — MANILA SHOP",
+    tagline: "Light · warm manila · safety orange",
+    desc: "A warmer, workshop-flavoured take: manila-envelope paper, dark brown ink, kraft-toned grid, and safety-orange accents — like a job packet on a machinist's bench.",
+    c: {
+      bg: "#F0E8D8",
+      surface: "#F8F3E8",
+      ink: "#241B10",
+      sub: "#6E5F4C",
+      accent: "#241B10",
+      accent2: "#D9480F",
+      line: "rgba(36,27,16,0.16)",
+      grid: "rgba(120,85,40,0.12)",
+    },
+  },
+  {
     id: "sample-b",
     name: "SAMPLE B — MACHINIST",
     tagline: "Light · brushed aluminum · safety orange",
@@ -180,9 +228,9 @@ export default function Samples() {
             Pick a minimalist direction
           </h1>
           <p className="mt-3 text-slate-400 max-w-2xl text-sm leading-relaxed">
-            Three sample themes, each still rooted in mechanical / manufacturing engineering. Tell me
-            which one to apply across the whole site — your current dark blueprint theme stays
-            untouched until you choose.
+            Sample A and three variations in the same light drafting-paper family (A2, A3, A4),
+            followed by the two earlier alternates. Tell me which one to apply across the whole
+            site — your current dark blueprint theme stays untouched until you choose.
           </p>
         </div>
         <div className="space-y-14">
@@ -204,7 +252,7 @@ export default function Samples() {
           ))}
         </div>
         <p className="mt-14 font-mono text-[11px] tracking-[0.25em] text-slate-500 text-center">
-          REPLY IN CHAT WITH “A”, “B”, OR “C” — OR ASK FOR A VARIATION
+          REPLY IN CHAT WITH “A”, “A2”, “A3”, “A4”, “B”, OR “C” — OR ASK FOR A VARIATION
         </p>
       </div>
     </div>
