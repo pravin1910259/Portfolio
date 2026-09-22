@@ -153,13 +153,13 @@ export default function Hero({ onNavigate }) {
 
           <h1 className="mt-6 font-syne font-extrabold tracking-tight leading-[0.95]">
             <MaskedLine delay={0.4} className="pr-3">
-              <span className="text-5xl sm:text-6xl lg:text-7xl text-slate-50">DESIGN.</span>
+              <span className="text-4xl sm:text-6xl lg:text-7xl text-slate-50">DESIGN.</span>
             </MaskedLine>
             <MaskedLine delay={0.55} className="pr-3">
-              <span className="text-5xl sm:text-6xl lg:text-7xl text-stroke-cyan">SIMULATE.</span>
+              <span className="text-4xl sm:text-6xl lg:text-7xl text-stroke-cyan">SIMULATE.</span>
             </MaskedLine>
             <MaskedLine delay={0.7} className="pr-3">
-              <span className="text-5xl sm:text-6xl lg:text-7xl text-slate-50">
+              <span className="text-4xl sm:text-6xl lg:text-7xl text-slate-50">
                 BUILD<span className="text-ember">.</span>
               </span>
             </MaskedLine>
@@ -220,13 +220,35 @@ export default function Hero({ onNavigate }) {
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.6, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-5"
+          className="lg:col-span-5 relative pt-12 pl-6 sm:pl-10"
         >
-          <div className="corner-ticks border border-line bg-panel/60 blueprint-grid-fine aspect-square max-h-[560px] w-full relative">
+          <div className="absolute top-0 left-0 z-10 w-40 h-40 sm:w-52 sm:h-52 border border-line bg-panel blueprint-grid-fine shadow-xl">
             <GearCanvas />
-            <div className="absolute bottom-3 right-4 flex items-center gap-2 font-mono text-[10px] tracking-widest text-slate-500">
-              <MousePointer2 size={11} className="text-cyanic" />
-              INTERACTIVE — MOVE CURSOR
+            <div className="absolute bottom-2 right-2 flex items-center gap-1.5 font-mono text-[8px] tracking-widest text-slate-500">
+              <MousePointer2 size={10} className="text-cyanic" />
+              MOVE CURSOR
+            </div>
+          </div>
+          <div
+            data-testid="hero-portrait-card"
+            className="corner-ticks relative border border-line bg-panel/60 w-full max-w-md mx-auto lg:ml-auto aspect-[4/5] overflow-hidden"
+          >
+            <img
+              data-testid="hero-portrait-image"
+              src="/pravin-portrait.jpg"
+              alt="Pravin Salla — Mechanical Engineer"
+              className="w-full h-full object-cover object-top"
+            />
+            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent px-5 pb-4 pt-16 flex items-end justify-between">
+              <div>
+                <div className="font-syne font-bold text-white text-lg leading-tight">Pravin Salla</div>
+                <div className="font-mono text-[9px] tracking-[0.25em] text-white/70 mt-1">
+                  MECHANICAL ENGINEER — DAVIS, CA
+                </div>
+              </div>
+              <span className="font-mono text-[9px] tracking-[0.2em] text-white/60 border border-white/30 px-2 py-1">
+                IMG.00
+              </span>
             </div>
           </div>
         </motion.div>

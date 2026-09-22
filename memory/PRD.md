@@ -33,6 +33,7 @@
 - Removed "OPEN TO FULL-TIME ROLES" hero tagline and nav "OPEN TO ROLES" indicator (user request)
 - Hidden /samples page still exists with theme mockups (A, A2, A3, A4, B, C) for future theme switches
 - Wind tunnel project now uses the user's real photos: full-assembly dark-lab shot as cover + 9-photo gallery with lightbox (prev/next, captions, ESC/arrows) — images optimized to ~100-250KB and hosted at /projects/windtunnel/
+- Hero now features the user's real portrait (/pravin-portrait.jpg, 162KB) in a framed card with name caption, with the interactive blueprint gear canvas overlapping the top-left corner; headline sized down on mobile to prevent clipping
 
 ## Backlog / Next Tasks
 - P0: User to send additional projects + project files/images to add (user said they have more)
