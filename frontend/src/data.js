@@ -84,13 +84,31 @@ export const PROJECTS = [
     title: "Subsonic Wind Tunnel — Design, CFD & Fabrication",
     category: "THERMAL-FLUIDS / CFD",
     period: "JAN 2024 — APR 2024",
-    metrics: ["9.4 m/s test-section velocity", "0.42% turbulence intensity", "~836K-node mesh"],
+    metrics: ["9.4 m/s test-section velocity", "0.42% turbulence intensity", "Contraction ratio 8.29"],
     description:
-      "Co-designed and fabricated a low-speed suction-type wind tunnel from first principles — contraction cone, honeycomb settling chamber, acrylic test section, and diffuser — in welded steel and acrylic. Validated in ANSYS Fluent (k-ω) and confirmed via smoke visualization and anemometer testing on 3D-printed models.",
+      "Designed and fabricated an open-circuit, suction-type wind tunnel from first principles — 8.29-ratio contraction cone, hexagonal honeycomb settling chamber, 250×250×400 mm transparent acrylic test section, and diffuser — in SolidWorks, welded steel, and acrylic. Validated in ANSYS Fluent (k-ω, ~836K-node mesh), achieving 9.4 m/s test-section velocity at turbulence intensity as low as 0.42%, confirmed via smoke visualization and anemometer testing on 3D-printed airfoil and vehicle models.",
     image:
       "https://images.pexels.com/photos/22491107/pexels-photo-22491107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     tags: ["SolidWorks", "ANSYS Fluent", "Welding & Fabrication", "Smoke Visualization"],
+    links: [{ label: "FULL REPORT (DOCX)", url: "/Project_Wind_Tunnel_Report.docx" }],
     span: "wide",
+  },
+  {
+    id: "project-card-fault-diagnosis",
+    title: "Fault Diagnosis of Unbalance Mass in Rotating Machinery",
+    category: "PUBLISHED RESEARCH — SAGE 2025",
+    period: "SEP 2023 — DEC 2023",
+    metrics: ["Noise & Vibration Worldwide, 2025", "FE within ~10% of test", "500–1500 RPM, single & multi-plane"],
+    description:
+      "Co-authored peer-reviewed study (Desai, Salla, et al.) on unbalance fault diagnosis using a Machinery Fault Simulator — FFT-based vibration analysis quantifying the effects of unbalance mass magnitude (1.4–4.96 g), angular position, and rotational speed in single- and multi-plane configurations. SolidWorks rotor models and ANSYS modal analysis validated natural frequencies against experiment with deviations generally below 10%.",
+    image:
+      "https://images.unsplash.com/photo-1678225867994-e7a5b071ebfd?crop=entropy&cs=srgb&fm=jpg&q=85&w=940",
+    tags: ["FFT Analysis", "ANSYS Modal", "SolidWorks", "T-VibLab", "Predictive Maintenance"],
+    links: [
+      { label: "READ PUBLICATION", url: "https://doi.org/10.1177/09574565251394417" },
+      { label: "PDF", url: "/Publication_Fault_Diagnosis_SAGE.pdf" },
+    ],
+    span: "tall",
   },
   {
     id: "project-card-hahn-grinder",
@@ -103,20 +121,22 @@ export const PROJECTS = [
     image:
       "https://images.pexels.com/photos/4116228/pexels-photo-4116228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     tags: ["MATLAB", "NI DAQ", "Load Cell", "Signal Processing"],
+    links: [],
     span: "tall",
   },
   {
-    id: "project-card-fault-diagnosis",
-    title: "Rotating Machinery Fault Diagnosis & Vibration Analysis",
-    category: "DYNAMICS / PUBLISHED RESEARCH",
-    period: "SEP 2023 — DEC 2023",
-    metrics: ["Published — SAGE", "FFT-based analysis", "FE within 10% of test"],
+    id: "project-card-vehicle-aero",
+    title: "Effect of Accessories on Vehicle Aerodynamics — CFD Study",
+    category: "AUTOMOTIVE / CFD",
+    period: "B.TECH MINI PROJECT",
+    metrics: ["Cd 0.3441 → 0.2872 (−16.5%)", "1.1M-element mesh", "150 km/h inlet"],
     description:
-      "Conducted fault-diagnosis testing on a Machinery Fault Simulator (1.4–4.53 g unbalances, 500–1500 RPM, single- and multi-plane) with FFT-based vibration analysis quantifying effects of unbalance mass, speed, and angular separation. SolidWorks rotor models and ANSYS FE/modal analysis validated natural frequencies within 10% of experiment — co-authored the peer-reviewed article in Noise & Vibration Worldwide (SAGE).",
-    image:
-      "https://images.unsplash.com/photo-1678225867994-e7a5b071ebfd?crop=entropy&cs=srgb&fm=jpg&q=85&w=940",
-    tags: ["FFT Analysis", "ANSYS Modal", "SolidWorks", "SAGE Publication"],
-    span: "tall",
+      "Modelled a Koenigsegg Jesko Absolut in SolidWorks and ran ANSYS Fluent CFD (k-ε, 1,098,393 elements) across spoiler, wing, diffuser, and fin configurations at 150 km/h. The spoiler + diffuser combination cut drag coefficient 16.53% below baseline while diffusers reduced drag in every tested case; wings traded +27.8% drag for significant downforce (Cl −0.115 with diffuser). Findings drawn from pressure contours and velocity streamline analysis.",
+    image: null,
+    schematic: "VEHICLE AERO — CFD ENCLOSURE 12000×4000×8000 MM",
+    tags: ["SolidWorks", "ANSYS Fluent", "k-ε Turbulence", "Aero Optimization"],
+    links: [{ label: "FULL REPORT (PDF)", url: "/Project_Vehicle_Aerodynamics_Report.pdf" }],
+    span: "wide",
   },
 ];
 

@@ -49,13 +49,6 @@ export default function Navbar({ onNavigate }) {
         </nav>
 
         <div className="hidden lg:flex items-center gap-5">
-          <span
-            data-testid="nav-status-indicator"
-            className="flex items-center gap-2 font-mono text-[10px] tracking-widest text-slate-400"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-dot" />
-            OPEN TO ROLES
-          </span>
           <a
             data-testid="nav-cta-resume"
             href={PROFILE.resumeUrl}

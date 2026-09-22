@@ -1,5 +1,6 @@
 import { useEffect, useRef, useCallback } from "react";
 import Lenis from "lenis";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/portfolio/Navbar";
 import Hero from "@/components/portfolio/Hero";
 import Marquee from "@/components/portfolio/Marquee";
@@ -9,9 +10,10 @@ import Skills from "@/components/portfolio/Skills";
 import Education from "@/components/portfolio/Education";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
+import Samples from "@/components/portfolio/Samples";
 import { Toaster } from "@/components/ui/sonner";
 
-export default function App() {
+function MainPage() {
   const lenisRef = useRef(null);
 
   useEffect(() => {
@@ -62,7 +64,18 @@ export default function App() {
         </main>
         <Footer onNavigate={scrollTo} />
       </div>
-      <Toaster theme="dark" position="bottom-right" />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/samples" element={<Samples />} />
+      </Routes>
+      <Toaster theme="dark" position="bottom-right" />
+    </BrowserRouter>
   );
 }

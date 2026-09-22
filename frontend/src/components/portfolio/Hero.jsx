@@ -145,18 +145,6 @@ export default function Hero({ onNavigate }) {
     >
       <div className="mx-auto max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         <div className="lg:col-span-7">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.15, duration: 0.8 }}
-            className="flex items-center gap-3 mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot" />
-            <span className="font-mono text-[11px] sm:text-xs tracking-[0.3em] text-slate-400">
-              {PROFILE.availability}
-            </span>
-          </motion.div>
-
           <MaskedLine delay={0.25}>
             <span className="font-mono text-xs sm:text-sm tracking-[0.35em] text-cyanic">
               {PROFILE.affiliation.toUpperCase()}
