@@ -6,27 +6,27 @@
 
 @layer base {
     :root {
-        --background: 222 33% 4%;
-        --foreground: 210 40% 98%;
-        --card: 220 30% 8%;
-        --card-foreground: 210 40% 98%;
-        --popover: 220 30% 8%;
-        --popover-foreground: 210 40% 98%;
-        --primary: 187 100% 50%;
-        --primary-foreground: 222 47% 5%;
-        --secondary: 217 25% 12%;
-        --secondary-foreground: 210 40% 98%;
-        --muted: 217 25% 12%;
-        --muted-foreground: 215 20% 65%;
-        --accent: 217 25% 14%;
-        --accent-foreground: 210 40% 98%;
+        --background: 40 26% 93%;
+        --foreground: 217 30% 9%;
+        --card: 45 33% 97%;
+        --card-foreground: 217 30% 9%;
+        --popover: 45 33% 97%;
+        --popover-foreground: 217 30% 9%;
+        --primary: 19 84% 48%;
+        --primary-foreground: 40 30% 95%;
+        --secondary: 40 18% 90%;
+        --secondary-foreground: 217 30% 9%;
+        --muted: 40 15% 90%;
+        --muted-foreground: 217 15% 38%;
+        --accent: 40 20% 92%;
+        --accent-foreground: 217 30% 9%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-        --border: 217 25% 16%;
-        --input: 217 25% 18%;
-        --ring: 187 100% 50%;
-        --chart-1: 187 100% 50%;
-        --chart-2: 16 100% 50%;
+        --border: 40 14% 82%;
+        --input: 40 14% 78%;
+        --ring: 19 84% 48%;
+        --chart-1: 19 84% 48%;
+        --chart-2: 221 83% 53%;
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
         --chart-5: 160 60% 45%;
@@ -48,42 +48,42 @@
         -moz-osx-font-smoothing: grayscale;
     }
     ::selection {
-        background: rgba(0, 240, 255, 0.25);
-        color: #F8FAFC;
+        background: rgba(232, 89, 12, 0.22);
+        color: #10151D;
     }
     ::-webkit-scrollbar {
         width: 10px;
     }
     ::-webkit-scrollbar-track {
-        background: #07090E;
+        background: #F2EFE7;
     }
     ::-webkit-scrollbar-thumb {
-        background: #1E293B;
-        border: 2px solid #07090E;
+        background: #D9D3C3;
+        border: 2px solid #F2EFE7;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: #00F0FF;
+        background: #E8590C;
     }
 }
 
 @layer utilities {
     .blueprint-grid {
         background-image:
-            linear-gradient(rgba(0, 240, 255, 0.035) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 240, 255, 0.035) 1px, transparent 1px);
+            linear-gradient(rgba(29, 78, 216, 0.055) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(29, 78, 216, 0.055) 1px, transparent 1px);
         background-size: 56px 56px;
     }
     .blueprint-grid-fine {
         background-image:
-            linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            linear-gradient(rgba(29, 78, 216, 0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(29, 78, 216, 0.07) 1px, transparent 1px);
         background-size: 28px 28px;
     }
     .text-glow-cyan {
-        text-shadow: 0 0 24px rgba(0, 240, 255, 0.45);
+        text-shadow: 0 0 24px rgba(232, 89, 12, 0.35);
     }
     .text-stroke-cyan {
-        -webkit-text-stroke: 1.5px rgba(0, 240, 255, 0.75);
+        -webkit-text-stroke: 1.5px rgba(232, 89, 12, 0.8);
         color: transparent;
     }
     .corner-ticks {
@@ -95,7 +95,7 @@
         position: absolute;
         width: 14px;
         height: 14px;
-        border-color: #00F0FF;
+        border-color: #E8590C;
         border-style: solid;
         z-index: 10;
         pointer-events: none;

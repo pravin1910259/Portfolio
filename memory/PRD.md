@@ -20,14 +20,18 @@
 - Working contact form emailing prsalla19@gmail.com (Resend, managed)
 - Contact details: prsalla19@gmail.com, +1 (925) 209-8261, Davis CA, linkedin.com/in/pravin-salla-312609264
 
-## Implemented (2026-07-22)
+## Implemented (2026-07-22, updated session 2)
 - Kinetic hero with masked line-by-line reveal (DESIGN. / SIMULATE. / BUILD.), animated interactive wireframe gear canvas with cursor parallax, metrics bar
 - Slow editorial skills marquee; numbered manifesto chapter headings
 - Experience timeline (GSR @ AHMCT/Caltrans, GTA EME 50, Design Intern @ Ayka)
-- Projects bento grid (Subsonic Wind Tunnel, Hahn Grinder friction study, SAGE-published fault diagnosis) with metrics/tags
+- Projects grid with 4 real projects + 1 blank reserved slot: Subsonic Wind Tunnel (full report DOCX downloadable), SAGE 2025 publication (DOI link + PDF), Hahn Grinder friction study, Vehicle Aerodynamics CFD study (full report PDF, schematic placeholder image — user to send real render)
+- Project source files hosted in frontend/public: Project_Wind_Tunnel_Report.docx, Publication_Fault_Diagnosis_SAGE.pdf, Project_Vehicle_Aerodynamics_Report.pdf
 - Skills matrix (6 resume categories), Education cards (UC Davis MS 3.7, Somaiya BTech 3.6)
 - Contact form → MongoDB + email notification to owner (verified email_sent:true), toast feedback, validation, rate limiting
 - Resume PDF download, mobile menu, footer
+- THEME: "Drafting Paper" (Sample A) applied site-wide — light warm paper #F2EFE7, ink text, blueprint-blue grid hairlines, orange #E8590C accents; dark theme removed from UI (token remap in tailwind.config.js + index.css)
+- Removed "OPEN TO FULL-TIME ROLES" hero tagline and nav "OPEN TO ROLES" indicator (user request)
+- Hidden /samples page still exists with theme mockups (A, A2, A3, A4, B, C) for future theme switches
 
 ## Backlog / Next Tasks
 - P0: User to send additional projects + project files/images to add (user said they have more)

@@ -77,7 +77,7 @@ function GearCanvas() {
       const cy = h / 2 + py;
       const R = Math.min(w, h) * 0.3;
 
-      ctx.strokeStyle = "rgba(0,240,255,0.25)";
+      ctx.strokeStyle = "rgba(29,78,216,0.3)";
       ctx.lineWidth = 1;
       ctx.setLineDash([4, 6]);
       ctx.beginPath();
@@ -85,7 +85,7 @@ function GearCanvas() {
       ctx.stroke();
       ctx.setLineDash([]);
 
-      ctx.strokeStyle = "rgba(0,240,255,0.18)";
+      ctx.strokeStyle = "rgba(29,78,216,0.22)";
       ctx.beginPath();
       ctx.moveTo(cx - R * 1.7, cy);
       ctx.lineTo(cx + R * 1.7, cy);
@@ -97,23 +97,23 @@ function GearCanvas() {
         const a = (i / 24) * Math.PI * 2 + t * 0.4;
         const r1 = R * 1.52;
         const r2 = R * (i % 6 === 0 ? 1.64 : 1.58);
-        ctx.strokeStyle = "rgba(0,240,255,0.35)";
+        ctx.strokeStyle = "rgba(29,78,216,0.4)";
         ctx.beginPath();
         ctx.moveTo(cx + Math.cos(a) * r1, cy + Math.sin(a) * r1);
         ctx.lineTo(cx + Math.cos(a) * r2, cy + Math.sin(a) * r2);
         ctx.stroke();
       }
 
-      gear(cx, cy, R, 18, t, "#00F0FF", 0.9);
-      gear(cx + R * 1.28, cy - R * 0.9, R * 0.42, 10, -t * 1.8 + 0.3, "#FF5500", 0.75);
-      gear(cx - R * 1.2, cy + R * 1.05, R * 0.34, 9, -t * 2.2, "#00F0FF", 0.5);
+      gear(cx, cy, R, 18, t, "#1D4ED8", 0.85);
+      gear(cx + R * 1.28, cy - R * 0.9, R * 0.42, 10, -t * 1.8 + 0.3, "#E8590C", 0.8);
+      gear(cx - R * 1.2, cy + R * 1.05, R * 0.34, 9, -t * 2.2, "#1D4ED8", 0.5);
 
       ctx.font = "10px 'JetBrains Mono', monospace";
-      ctx.fillStyle = "rgba(148,163,184,0.85)";
+      ctx.fillStyle = "rgba(91,107,133,0.9)";
       ctx.fillText("Ø 120  H7/g6", cx + R * 1.15, cy + R * 1.25);
       ctx.fillText("SCALE 1:1", 14, h - 34);
       ctx.fillText(`RPM ${(t * 57.3).toFixed(1)}`, 14, h - 18);
-      ctx.fillStyle = "rgba(0,240,255,0.9)";
+      ctx.fillStyle = "rgba(232,89,12,0.9)";
       ctx.fillText("FIG 1.0 — SPUR GEAR ASSEMBLY / WIRE", 14, 22);
 
       raf = requestAnimationFrame(draw);

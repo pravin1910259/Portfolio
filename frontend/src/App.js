@@ -48,7 +48,7 @@ function MainPage() {
         className="fixed inset-0 pointer-events-none z-0"
         style={{
           background:
-            "radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.07) 0%, rgba(7, 9, 14, 0.98) 70%)",
+            "radial-gradient(circle at 50% 0%, rgba(29, 78, 216, 0.05) 0%, rgba(242, 239, 231, 0.92) 70%)",
         }}
       />
       <div className="relative z-10">
@@ -75,7 +75,7 @@ export default function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/samples" element={<Samples />} />
       </Routes>
-      <Toaster theme="dark" position="bottom-right" />
+      <Toaster theme="light" position="bottom-right" />
     </BrowserRouter>
   );
 }
