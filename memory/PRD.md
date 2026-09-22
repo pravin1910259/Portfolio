@@ -32,6 +32,7 @@
 - THEME: "Drafting Paper" (Sample A) applied site-wide — light warm paper #F2EFE7, ink text, blueprint-blue grid hairlines, orange #E8590C accents; dark theme removed from UI (token remap in tailwind.config.js + index.css)
 - Removed "OPEN TO FULL-TIME ROLES" hero tagline and nav "OPEN TO ROLES" indicator (user request)
 - Hidden /samples page still exists with theme mockups (A, A2, A3, A4, B, C) for future theme switches
+- Wind tunnel project now uses the user's real photos: full-assembly dark-lab shot as cover + 9-photo gallery with lightbox (prev/next, captions, ESC/arrows) — images optimized to ~100-250KB and hosted at /projects/windtunnel/
 
 ## Backlog / Next Tasks
 - P0: User to send additional projects + project files/images to add (user said they have more)

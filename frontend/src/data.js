@@ -87,8 +87,18 @@ export const PROJECTS = [
     metrics: ["9.4 m/s test-section velocity", "0.42% turbulence intensity", "Contraction ratio 8.29"],
     description:
       "Designed and fabricated an open-circuit, suction-type wind tunnel from first principles — 8.29-ratio contraction cone, hexagonal honeycomb settling chamber, 250×250×400 mm transparent acrylic test section, and diffuser — in SolidWorks, welded steel, and acrylic. Validated in ANSYS Fluent (k-ω, ~836K-node mesh), achieving 9.4 m/s test-section velocity at turbulence intensity as low as 0.42%, confirmed via smoke visualization and anemometer testing on 3D-printed airfoil and vehicle models.",
-    image:
-      "https://images.pexels.com/photos/22491107/pexels-photo-22491107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    image: "/projects/windtunnel/cover.jpg",
+    gallery: [
+      { src: "/projects/windtunnel/fabrication-contraction.jpg", caption: "Fabricated contraction & settling chamber — welded sheet steel" },
+      { src: "/projects/windtunnel/diffuser-section.jpg", caption: "Welded diffuser section on its stand" },
+      { src: "/projects/windtunnel/fan.jpg", caption: "Axial fan drive section" },
+      { src: "/projects/windtunnel/test-model-jet.jpg", caption: "3D-printed scale jet mounted in the acrylic test section" },
+      { src: "/projects/windtunnel/fluent-pathlines.jpg", caption: "ANSYS Fluent — pathlines colored by velocity magnitude" },
+      { src: "/projects/windtunnel/fluent-streamlines.jpg", caption: "CFD streamlines through honeycomb settling chamber & contraction" },
+      { src: "/projects/windtunnel/fluent-residuals.jpg", caption: "Solver convergence — scaled residuals (k-ω)" },
+      { src: "/projects/windtunnel/team-tunnel.jpg", caption: "Team with faculty mentor and the completed tunnel" },
+      { src: "/projects/windtunnel/team-honeycomb.jpg", caption: "Team with the honeycomb settling chamber" },
+    ],
     tags: ["SolidWorks", "ANSYS Fluent", "Welding & Fabrication", "Smoke Visualization"],
     links: [{ label: "FULL REPORT (DOCX)", url: "/Project_Wind_Tunnel_Report.docx" }],
     span: "wide",

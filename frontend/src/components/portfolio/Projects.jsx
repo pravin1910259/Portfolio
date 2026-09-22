@@ -1,7 +1,67 @@
+import { useEffect, useState } from "react";
+import { X, ChevronLeft, ChevronRight, Images } from "lucide-react";
 import { Reveal, SectionHeading } from "./shared";
 import { PROJECTS } from "@/data";
 
+function Lightbox({ project, index, onClose, onPrev, onNext }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") onPrev();
+      if (e.key === "ArrowRight") onNext();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose, onPrev, onNext]);
+
+  const item = project.gallery[index];
+  return (
+    <div
+      data-testid={`${project.id}-lightbox`}
+      className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm flex flex-col items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <button
+        data-testid={`${project.id}-lightbox-close`}
+        className="absolute top-5 right-5 text-white/80 hover:text-white"
+        onClick={onClose}
+        aria-label="Close gallery"
+      >
+        <X size={28} />
+      </button>
+      <button
+        data-testid={`${project.id}-lightbox-prev`}
+        className="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white"
+        onClick={(e) => { e.stopPropagation(); onPrev(); }}
+        aria-label="Previous photo"
+      >
+        <ChevronLeft size={36} />
+      </button>
+      <img
+        src={item.src}
+        alt={item.caption}
+        className="max-h-[78vh] max-w-full object-contain border border-white/20"
+        onClick={(e) => e.stopPropagation()}
+      />
+      <p className="mt-4 font-mono text-[11px] tracking-[0.2em] text-white/80 text-center uppercase px-4">
+        {index + 1} / {project.gallery.length} — {item.caption}
+      </p>
+      <button
+        data-testid={`${project.id}-lightbox-next`}
+        className="absolute right-3 sm:right-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white"
+        onClick={(e) => { e.stopPropagation(); onNext(); }}
+        aria-label="Next photo"
+      >
+        <ChevronRight size={36} />
+      </button>
+    </div>
+  );
+}
+
 function ProjectCard({ project, index, className }) {
+  const [lightbox, setLightbox] = useState(null);
+  const gallery = project.gallery || [];
+
   return (
     <Reveal delay={index * 0.1} className={className}>
       <article
@@ -14,7 +74,7 @@ function ProjectCard({ project, index, className }) {
               src={project.image}
               alt={project.title}
               loading="lazy"
-              className="w-full h-full object-cover saturate-[0.65] contrast-110 group-hover:saturate-100 group-hover:scale-[1.04] transition-all duration-700"
+              className="w-full h-full object-cover saturate-[0.85] contrast-105 group-hover:saturate-100 group-hover:scale-[1.04] transition-all duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-card2 via-transparent to-transparent" />
             <div className="absolute top-4 left-4 font-mono text-[10px] tracking-[0.25em] text-cyanic bg-obsidian/80 border border-cyanic/30 px-3 py-1.5">
@@ -79,7 +139,41 @@ function ProjectCard({ project, index, className }) {
               ))}
             </div>
           )}
+          {gallery.length > 0 && (
+            <div className="mt-5 pt-5 border-t border-line/60">
+              <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.25em] text-slate-500 mb-3">
+                <Images size={13} className="text-cyanic" />
+                PROJECT GALLERY — {gallery.length} PHOTOS
+              </div>
+              <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
+                {gallery.map((g, gi) => (
+                  <button
+                    key={g.src}
+                    data-testid={`${project.id}-gallery-thumb-${gi}`}
+                    onClick={() => setLightbox(gi)}
+                    className="relative aspect-square overflow-hidden border border-line hover:border-cyanic transition-colors group/thumb"
+                  >
+                    <img
+                      src={g.src}
+                      alt={g.caption}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-500"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
+        {lightbox !== null && (
+          <Lightbox
+            project={project}
+            index={lightbox}
+            onClose={() => setLightbox(null)}
+            onPrev={() => setLightbox((lightbox + gallery.length - 1) % gallery.length)}
+            onNext={() => setLightbox((lightbox + 1) % gallery.length)}
+          />
+        )}
       </article>
     </Reveal>
   );
