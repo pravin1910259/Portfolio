@@ -11,7 +11,7 @@ import Skills from "@/components/portfolio/Skills";
 import Education from "@/components/portfolio/Education";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
-import Samples from "@/components/portfolio/Samples";
+import Samples from "@/components/portfolio/SamplesV2";
 import DetailPage from "@/components/portfolio/Detail";
 import { Toaster } from "@/components/ui/sonner";
 

@@ -1,275 +1,198 @@
 {
-  "project_overview": {
-    "title": "Pravin Salla - Mechanical Engineering Master's Portfolio",
-    "target_user": "Recruiters, Hiring Managers, Technical Directors, and Engineering Leads in Automotive, Aerospace, Robotics, and Hardware Engineering",
-    "core_goal": "Present Pravin Salla as a premier Mechanical Engineering Master's student with high-impact research, CAD/FEA simulation expertise, hands-on prototyping, and industry experience.",
-    "app_type": "portfolio",
-    "theme_mode": "dark"
+  "project_meta": {
+    "title": "Pravin Salla - Mechanical Engineering Master's Student Portfolio Concepts",
+    "owner": "Pravin Salla",
+    "role": "Mechanical Engineering Graduate Student & Engineer",
+    "key_sections": [
+      "Hero",
+      "Concept Selector Mockups",
+      "About Bio",
+      "Education",
+      "Experience Timeline",
+      "Projects Showcase",
+      "Skills Matrix",
+      "Contact & Resume Download"
+    ]
   },
-  "brand_identity": {
-    "name": "Pravin Salla",
-    "title": "Mechanical Engineer | MS Candidate @ UC Davis",
-    "tagline": "Architecting High-Performance Thermal & Mechanical Systems through Precision FEA, CAD, and Prototyping",
-    "archetype": "THE PERFORMANCE PRO & INDUSTRIAL TECH",
-    "vibe": "Sleek, dark blueprint aesthetic, technical precision, machined metal textures, laser-focused data visualization."
+  "persona_and_concept": {
+    "core_identity": "Ultra-minimalist engineering portfolio platform featuring 4 distinct choosable design concept mockups for Pravin Salla, a Mechanical Engineering Master's student. Each template embodies extreme restraint, generous whitespace, crisp typography, and subtle technical marks without dark neon gradients or heavy blueprint paper clutter.",
+    "theme_rules": [
+      "No heavy gradients or neon dark mode",
+      "No repeated drafting paper background from previous version",
+      "Maximum 1 primary accent color per concept",
+      "Restrained hairline borders and clean alignment rules",
+      "High contrast text legibility (WCAG AA / APCA compliant)",
+      "Interactive concept switcher to test all 4 templates live"
+    ]
   },
-  "color_system": {
-    "background_primary": "#07090E",
-    "background_secondary": "#0D111A",
-    "surface_card": "#121824",
-    "surface_card_hover": "#1A2332",
-    "border_subtle": "#1E293B",
-    "border_accent": "#00F0FF",
-    "border_accent_orange": "#FF5500",
-    "text_primary": "#F8FAFC",
-    "text_secondary": "#94A3B8",
-    "text_muted": "#64748B",
-    "accent_cyan": "#00F0FF",
-    "accent_cyan_glow": "rgba(0, 240, 255, 0.15)",
-    "accent_orange": "#FF5500",
-    "accent_emerald": "#10B981",
-    "gradients": {
-      "cyan_to_blue": "linear-gradient(135deg, #00F0FF 0%, #3B82F6 100%)",
-      "orange_to_amber": "linear-gradient(135deg, #FF5500 0%, #F59E0B 100%)",
-      "dark_blueprint": "radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.08) 0%, rgba(7, 9, 14, 0.98) 70%)"
-    }
-  },
-  "typography": {
-    "fonts": {
-      "heading": "Syne, Outfit, sans-serif",
-      "mono_specs": "JetBrains Mono, Space Mono, monospace",
-      "body": "DM Sans, Inter, sans-serif"
-    },
-    "hierarchy": {
-      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none",
-      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
-      "h3_card": "text-xl sm:text-2xl font-semibold",
-      "mono_label": "text-xs uppercase tracking-[0.25em] font-mono text-cyan-400",
-      "body_text": "text-base text-slate-300 leading-relaxed"
-    }
-  },
-  "spacing_and_layout": {
-    "spacing_philosophy": "Generous technical spacing with defined blueprint grid lines and asymmetric offset columns.",
-    "container_padding": "px-4 sm:px-8 lg:px-16 py-12 lg:py-24",
-    "grid_bento": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 lg:gap-8",
-    "section_chapter_format": "Numbered manifesto style: '01 // EXPERIENCE', '02 // PROJECTS', '03 // SKILLS', '04 // EDUCATION', '05 // CONTACT'"
-  },
-  "sections_blueprint": [
+  "templates": [
     {
-      "section_id": "navbar",
-      "description": "Sticky Glassmorphism Header with blueprint grid accent and active section indicator",
-      "components": [
-        "Brand Signature Logo: [PS] Pravin Salla",
-        "Nav Links: 01. Experience, 02. Projects, 03. Skills, 04. Education, 05. Contact",
-        "Status Pulse Indicator: 'Open to Full-Time Roles (2026)'",
-        "Primary CTA: Resume Download (PDF Trigger Modal / Direct Link)"
+      "id": "swiss-monolith",
+      "name": "01 / Swiss International Monolith",
+      "vibe": "Asymmetrical Swiss grid with bold grotesk typography, high-contrast stark white background, sharp 1px grid lines, and an International Klein Blue accent. Inspired by Joseph Müller-Brockmann and industrial graphic design.",
+      "colors": {
+        "bg": "#FFFFFF",
+        "surface": "#F8F9FA",
+        "ink": "#09090B",
+        "muted": "#71717A",
+        "accent": "#002FA7",
+        "hairline": "#E4E4E7"
+      },
+      "fonts": {
+        "heading": "Space Grotesk, sans-serif",
+        "body": "Plus Jakarta Sans, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "type_scale": {
+        "h1": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-none",
+        "h2": "text-2xl sm:text-3xl font-semibold tracking-tight",
+        "h3": "text-xl font-medium",
+        "body": "text-base leading-relaxed text-zinc-700",
+        "label": "text-xs font-mono uppercase tracking-widest text-zinc-500"
+      },
+      "hero_layout": "Asymmetrical 12-column grid. Left 7 columns hold oversized name header, role tag, and concise thesis statement. Right 5 columns host a high-definition framed portrait with subtle coordinate crosshairs and a primary Klein Blue CTA button.",
+      "section_headings": "CAD-style two-digit index prefix (e.g. '01 // ACADEMIC BACKGROUND') with a full-width 1px hairline border.",
+      "card_border_treatment": "Sharp 0px rounded corners, 1px solid hairline border (#E4E4E7), hover shift with Klein Blue stroke accent.",
+      "signature_micro_details": [
+        "Alignment crosshair anchors (+) on corner intersections",
+        "Two-digit section code annotations (01 //, 02 //)",
+        "Strict 1px grid lines separating stats and bio blocks"
       ]
     },
     {
-      "section_id": "hero",
-      "description": "Kinetic Technical Hero with masked line text reveal, rotating interactive CAD 3D canvas / parametric engine geometry display, and quick metrics counters",
-      "elements": [
-        "Headline: Mechanical Engineer & MS Researcher @ UC Davis",
-        "Subtext: Specializing in Thermal-Fluid Simulation, Kinematic Design, FEA Structural Analysis, and Rapid Prototyping.",
-        "Interactive 3D Wireframe / Canvas: Rotating Mechanical Part (Gear/Chassis/Assembly) with interactive explode/wireframe controls",
-        "Key Metrics Bar: 4.0 Research GPA | 15+ FEA Simulations | 3 Patents/Papers | 100+ CAD Assemblies",
-        "CTAs: 'Explore Projects' (Smooth Scroll) & 'Download Resume' (with format selection - Full / Technical One-Pager)"
+      "id": "editorial-archival",
+      "name": "02 / Editorial Archival Serif",
+      "vibe": "Quiet academic elegance with expressive serif headlines, spacious asymmetrical margins, warm off-white bone paper background, and a single muted Terracotta/Rust accent. Captures the feel of engineering research monographs and patent archives.",
+      "colors": {
+        "bg": "#F9F8F6",
+        "surface": "#F1EFEA",
+        "ink": "#1A1918",
+        "muted": "#6E6A66",
+        "accent": "#C85A32",
+        "hairline": "#E2DDD5"
+      },
+      "fonts": {
+        "heading": "Cormorant Garamond, serif",
+        "body": "Newsreader, serif",
+        "mono": "Space Mono, monospace"
+      },
+      "type_scale": {
+        "h1": "text-4xl sm:text-5xl lg:text-6xl font-normal italic tracking-tight leading-tight",
+        "h2": "text-2xl sm:text-3xl font-normal font-serif",
+        "h3": "text-xl font-medium font-serif",
+        "body": "text-base sm:text-lg leading-relaxed text-stone-700",
+        "label": "text-xs font-mono uppercase tracking-wider text-stone-500"
+      },
+      "hero_layout": "Centered editorial essay style with massive top whitespace. Roman numeral overline, sweeping italic serif headline, quote-style bio snippet, and a delicate underline link CTA.",
+      "section_headings": "Roman numerals (e.g. 'III. RESEARCH & EXPERIENCE') paired with italic subtext and warm stone hairline dividers.",
+      "card_border_treatment": "Soft rounded corners (2px), delicate warm stone border (#E2DDD5), subtle shadow-sm on hover with Terracotta accent details.",
+      "signature_micro_details": [
+        "Patent callout leader lines (FIG. 01, FIG. 02)",
+        "Side-margin colophon notes with publication dates",
+        "Serif initial caps and elegant italic emphasis"
       ]
     },
     {
-      "section_id": "marquee",
-      "description": "Slow Editorial Technical Ticker",
-      "content": "CAD MODELING • SOLIDWORKS • ANSYS FEA • THERMAL SYSTEM DESIGN • CFD ANALYSIS • MATLAB & SIMULINK • CNC MACHINING • RAPID PROTOTYPING • KINEMATIC SIMULATION • GD&T TOLERANCING"
-    },
-    {
-      "section_id": "experience",
-      "description": "Chapter 01: Experience Timeline with role badges, key impact metrics, and expansion cards",
-      "roles": [
-        {
-          "title": "Graduate Research Assistant - Advanced Thermal & Mechanical Systems Lab",
-          "organization": "University of California, Davis",
-          "period": "Sep 2024 - Present",
-          "location": "Davis, CA",
-          "highlights": [
-            "Engineered microchannel cold-plate heat sinks reducing peak junction temperature by 18% in high-power EV inverters.",
-            "Executed ANSYS Fluent CFD simulations validating convective heat transfer coefficients against physical test rig measurements.",
-            "Mentored 20+ undergraduate students in SolidWorks design validation and mechanical testing protocols."
-          ],
-          "tools": ["ANSYS Fluent", "SolidWorks Flow", "LabVIEW", "Thermocouple Rig"]
-        },
-        {
-          "title": "Graduate Teaching Assistant - Mechanical Design & Kinematics",
-          "organization": "University of California, Davis",
-          "period": "Jan 2025 - Present",
-          "location": "Davis, CA",
-          "highlights": [
-            "Led weekly laboratory sections for 60+ students on stress analysis, gear train design, and finite element methods.",
-            "Graded technical design reports and conducted CAD model compliance reviews adhering to ASME Y14.5 GD&T standards."
-          ],
-          "tools": ["ASME GD&T", "MATLAB", "Finite Element Analysis"]
-        },
-        {
-          "title": "Mechanical Design Engineering Intern",
-          "organization": "Precision Dynamics Inc.",
-          "period": "May 2023 - Aug 2024",
-          "location": "San Francisco Bay Area, CA",
-          "highlights": [
-            "Designed lightweight chassis bracketry for robotic arm assembly, cutting structural mass by 22% while maintaining a 2.5 safety factor.",
-            "Coordinated with CNC machine shop technicians for tight-tolerance fabrication (±0.005mm) and DFM optimizations.",
-            "Performed static and fatigue FEA in ANSYS Mechanical to prevent premature failure under cyclic loads."
-          ],
-          "tools": ["ANSYS Mechanical", "SolidWorks PDM", "CNC Milling", "DFM / DFA"]
-        }
+      "id": "technical-mono",
+      "name": "03 / Technical Mono System",
+      "vibe": "Pure engineering precision driven by monospaced typography, precise dimension coordinate labels, light cool gray backdrop, and a single high-visibility Cobalt Blue accent. Feels like an interactive technical datasheet or modern CAD workbench.",
+      "colors": {
+        "bg": "#F4F5F7",
+        "surface": "#FFFFFF",
+        "ink": "#0F172A",
+        "muted": "#64748B",
+        "accent": "#2563EB",
+        "hairline": "#CBD5E1"
+      },
+      "fonts": {
+        "heading": "JetBrains Mono, monospace",
+        "body": "Inter, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "type_scale": {
+        "h1": "text-3xl sm:text-4xl lg:text-5xl font-mono font-bold tracking-tighter leading-none",
+        "h2": "text-xl sm:text-2xl font-mono font-semibold",
+        "h3": "text-lg font-mono font-medium",
+        "body": "text-sm sm:text-base leading-relaxed text-slate-700",
+        "label": "text-xs font-mono font-semibold tracking-widest text-slate-500 uppercase"
+      },
+      "hero_layout": "Telemetry panel layout. Left column presents structured metadata tags (STATUS: ACTIVE, DEGREE: MS ME, LOCATION: GRAD LAB). Right section features bold monospaced headline, technical specs, and live coordinate indicators.",
+      "section_headings": "Terminal command format (e.g. '[SYS] --SECTION: PROJECTS_GRID --REV: 2.4') with blue status pill badge.",
+      "card_border_treatment": "Flat white surface, sharp edges, 1px slate hairline border, blue top-border highlight on hover.",
+      "signature_micro_details": [
+        "Live viewport & component dimension bounding boxes [W: 340px]",
+        "Tick-mark ruler ticks along container borders",
+        "System state indicators (STATUS: OK, TOLERANCE: ±0.01mm)"
       ]
     },
     {
-      "section_id": "projects",
-      "description": "Chapter 02: Projects Showcase Bento with metric badges, modal viewer, and CAD parameter breakdown",
-      "projects": [
-        {
-          "id": "proj-1",
-          "title": "Formula SAE Electric Vehicle Chassis & Aerodynamic Wing Optimization",
-          "category": "Automotive / Structural FEA",
-          "metrics": "22% Weight Reduction | 2.8 Safety Factor | 140 kg Downforce at 80 km/h",
-          "description": "Custom tubular spaceframe chassis design and CFD airflow analysis for Formula Student electric race vehicle.",
-          "image": "https://images.pexels.com/photos/4116228/pexels-photo-4116228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "tags": ["SolidWorks", "ANSYS Workbench", "CFD", "Carbon Fiber Composite", "Physical Fabrication"]
-        },
-        {
-          "id": "proj-2",
-          "title": "High-Efficiency Micro-Thermal Heat Exchanger for Modular Battery Packs",
-          "category": "Thermal & Fluid Systems",
-          "metrics": "18% Temp Drop | <2.5 kPa Pressure Loss | 1000W Dissipation",
-          "description": "Design and experimental validation of liquid cooling cold plates using additive manufacturing (3D metal printing).",
-          "image": "https://images.pexels.com/photos/22491107/pexels-photo-22491107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "tags": ["ANSYS Fluent", "3D Printing (Metal)", "Thermal Imaging", "MATLAB"]
-        },
-        {
-          "id": "proj-3",
-          "title": "6-DOF Autonomous Robotic Arm End-Effector Gripper Mechanism",
-          "category": "Robotics & Kinematics",
-          "metrics": "0.02 mm Repeatability | 4.5 kg Payload Capacity | 120ms Reaction",
-          "description": "Precision compliant gripper with integrated strain gauge feedback and planetary gear reduction mechanism.",
-          "image": "https://images.unsplash.com/photo-1678225867994-e7a5b071ebfd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxjYXIlMjBlbmdpbmUlMjBjaGFzc2lzJTIwcm9ib3RpY3MlMjBtZWNoYW5pY2FsJTIwZW5naW5lZXJpbmclMjBwcm9qZWN0fGVufDB8fHx8MTc5MDA0MTA0M3ww&ixlib=rb-4.1.0&q=85",
-          "tags": ["Kinematic Synthesis", "Arduino / C++", "Stepper Controls", "Rapid Prototyping"]
-        }
+      "id": "japanese-zen",
+      "name": "04 / Soft Neutral Zen Craft",
+      "vibe": "Serene, spacious, and tactile with vast vertical padding, soft warm stone surfaces, ultra-refined rounded typography, and a quiet Deep Indigo accent. Channels Scandinavian-Japanese functional minimalism.",
+      "colors": {
+        "bg": "#FAF9F6",
+        "surface": "#F3F2EE",
+        "ink": "#1C1E21",
+        "muted": "#757980",
+        "accent": "#1E3A8A",
+        "hairline": "#E5E3DC"
+      },
+      "fonts": {
+        "heading": "Outfit, sans-serif",
+        "body": "Manrope, sans-serif",
+        "mono": "IBM Plex Mono, monospace"
+      },
+      "type_scale": {
+        "h1": "text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight leading-tight",
+        "h2": "text-2xl sm:text-3xl font-light tracking-tight",
+        "h3": "text-xl font-normal",
+        "body": "text-base sm:text-lg leading-relaxed text-neutral-600 font-light",
+        "label": "text-xs font-mono tracking-widest text-neutral-400 uppercase"
+      },
+      "hero_layout": "Quiet asymmetrical split with vertical text badge on the far left, generous empty breathing room, centered quote bio, and soft pill buttons for actions.",
+      "section_headings": "Subtle dot indicator with clean lowercase title and wide tracking (e.g. '• selected work').",
+      "card_border_treatment": "Borderless smooth cards on surface color (#F3F2EE), 8px border radius, subtle hover lift without heavy shadows.",
+      "signature_micro_details": [
+        "Vertical text accent badge ('PRAVIN SALLA — 機械工学')",
+        "Generous 3x spacing gaps between content sections",
+        "Minimalist dot progress indicator"
       ]
-    },
-    {
-      "section_id": "skills",
-      "description": "Chapter 03: Categorized Engineering Skills Grid with proficiency meters and tool icons",
-      "categories": [
-        {
-          "name": "CAD & 3D Modeling",
-          "skills": ["SolidWorks (Advanced)", "Autodesk Fusion 360", "CATIA V5", "PTC Creo", "GD&T (ASME Y14.5)"]
-        },
-        {
-          "name": "Simulation & FEA / CFD",
-          "skills": ["ANSYS Mechanical", "ANSYS Fluent (CFD)", "COMSOL Multiphysics", "Abaqus FEA", "SolidWorks Simulation"]
-        },
-        {
-          "name": "Computation & Hardware",
-          "skills": ["MATLAB / Simulink", "Python (NumPy/SciPy)", "LabVIEW", "Arduino & Microcontrollers", "C++"]
-        },
-        {
-          "name": "Manufacturing & Fabrication",
-          "skills": ["3D Printing (FDM/SLA/SLS)", "CNC Milling & Lathe", "Laser Cutting", "Sheet Metal Design", "DFM / DFA"]
-        }
-      ]
-    },
-    {
-      "section_id": "education",
-      "description": "Chapter 04: Academic Credentials Cards",
-      "degrees": [
-        {
-          "degree": "Master of Science (M.S.) in Mechanical Engineering",
-          "institution": "University of California, Davis",
-          "period": "2024 - 2026 (Expected)",
-          "gpa": "4.0 / 4.0",
-          "focus": "Thermal-Fluid Sciences, Advanced Dynamics, and Finite Element Analysis",
-          "coursework": ["Advanced Heat Transfer", "Computational Fluid Dynamics", "Continuum Mechanics", "Robotic Kinematics & Control"]
-        },
-        {
-          "degree": "Bachelor of Technology (B.Tech) in Mechanical Engineering",
-          "institution": "K. J. Somaiya College of Engineering",
-          "period": "2020 - 2024",
-          "gpa": "3.88 / 4.0",
-          "focus": "Design Optimization & Automotive Systems",
-          "coursework": ["Machine Design", "Thermodynamics", "Kinematics of Machinery", "Manufacturing Processes"]
-        }
-      ]
-    },
-    {
-      "section_id": "contact",
-      "description": "Chapter 05: Interactive Working Contact Form with toast feedback, live validation, and contact info cards",
-      "form_fields": [
-        "Full Name (text)",
-        "Email Address (email)",
-        "Inquiry Type (Select: Job Opportunity, Research Collaboration, Consulting, General)",
-        "Subject (text)",
-        "Message (textarea)"
-      ],
-      "direct_contacts": {
-        "email": "psalla@ucdavis.edu",
-        "linkedin": "https://linkedin.com/in/pravinsalla",
-        "github": "https://github.com/pravinsalla",
-        "location": "Davis, California (Open to Relocation Nationwide)"
-      }
     }
   ],
   "image_urls": {
-    "profile_headshot": "https://images.pexels.com/photos/9242284/pexels-photo-9242284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "workspace_engineering": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwyfHxlbmdpbmVlcmluZyUyMHN0dWRlbnQlMjBzdHVkZW50JTIwZW5naW5lZXIlMjBoZWFkc2hvdCUyMHBvcnRyYWl0JTIwd29ya3NwYWNlfGVufDB8fHx8MTc5MDA0MTA0M3ww&ixlib=rb-4.1.0&q=85",
-    "3d_printer_blueprint": "https://images.pexels.com/photos/22491107/pexels-photo-22491107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "robotics_project": "https://images.unsplash.com/photo-1678225867994-e7a5b071ebfd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxjYXIlMjBlbmdpbmUlMjBjaGFzc2lzJTIwcm9ib3RpY3MlMjBtZWNoYW5pY2FsJTIwZW5naW5lZXJpbmclMjBwcm9qZWN0fGVufDB8fHx8MTc5MDA0MTA0M3ww&ixlib=rb-4.1.0&q=85",
-    "engine_workshop": "https://images.pexels.com/photos/4116228/pexels-photo-4116228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-  },
-  "data_testid_strategy": {
-    "nav_links": [
-      "nav-link-home",
-      "nav-link-experience",
-      "nav-link-projects",
-      "nav-link-skills",
-      "nav-link-education",
-      "nav-link-contact",
-      "nav-cta-resume"
-    ],
-    "hero_buttons": [
-      "hero-btn-explore-projects",
-      "hero-btn-download-resume"
-    ],
-    "experience_cards": [
-      "experience-card-ucdavis-research",
-      "experience-card-ucdavis-ta",
-      "experience-card-internship"
-    ],
-    "project_cards": [
-      "project-card-formula-sae",
-      "project-card-heat-exchanger",
-      "project-card-robotic-gripper"
-    ],
-    "contact_form": [
-      "contact-form-name-input",
-      "contact-form-email-input",
-      "contact-form-type-select",
-      "contact-form-subject-input",
-      "contact-form-message-input",
-      "contact-form-submit-button"
+    "portrait": "https://images.unsplash.com/photo-1581090465237-2215893ba918?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHw0fHxtZWNoYW5pY2FsJTIwZW5naW5lZXJpbmclMjBzdHVkZW50JTIwcG9ydHJhaXQlMjBncmFkdWF0ZSUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3OTAxNDU0NTJ8MA&ixlib=rb-4.1.0&q=85",
+    "projects": [
+      {
+        "id": "project-1",
+        "title": "6-DOF Robotic Arm Gripper",
+        "url": "https://images.unsplash.com/photo-1655393001768-d946c97d6fd1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwxfHxtZWNoYW5pY2FsJTIwZW5naW5lZXJpbmclMjAzZCUyMGNhZCUyMHByb3RvdHlwZSUyMHJvYm90aWNzJTIwbWFudWZhY3R1cmluZyUyMGxhYnxlbnwwfHx8fDE3OTAxNDU0NTJ8MA&ixlib=rb-4.1.0&q=85",
+        "tags": ["SolidWorks", "FEA Analysis", "Robotics", "3D Printing"]
+      },
+      {
+        "id": "project-2",
+        "title": "Thermal FEA of Turbine Blades",
+        "url": "https://images.unsplash.com/photo-1586868538513-51335a0c5337?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHw0fHxtZWNoYW5pY2FsJTIwZW5naW5lZXJpbmclMjAzZCUyMGNhZCUyMHByb3RvdHlwZSUyMHJvYm90aWNzJTIwbWFudWZhY3R1cmluZyUyMGxhYnxlbnwwfHx8fDE3OTAxNDU0NTJ8MA&ixlib=rb-4.1.0&q=85",
+        "tags": ["ANSYS FEA", "Thermal Dynamics", "Turbomachinery"]
+      },
+      {
+        "id": "project-3",
+        "title": "Autonomous Mobile Robot Chassis",
+        "url": "https://images.pexels.com/photos/22491107/pexels-photo-22491107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "tags": ["Kinematics", "SolidWorks", "Precision Assembly"]
+      },
+      {
+        "id": "project-4",
+        "title": "CNC Tolerancing & GD&T Optimization",
+        "url": "https://images.pexels.com/photos/31336881/pexels-photo-31336881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "tags": ["GD&T", "CNC Machining", "Quality Control"]
+      }
     ]
   },
   "instructions_to_main_agent": [
-    "Build the Pravin Salla Mechanical Engineering Master's Portfolio with dark blueprint aesthetic using React, Tailwind CSS, Lucide React icons, and Framer Motion.",
-    "Implement the signature line-by-line text reveal animation and 3D wireframe interactive gear/assembly canvas in the Hero section.",
-    "Ensure smooth scrolling between sections (#experience, #projects, #skills, #education, #contact).",
-    "Include a dynamic Resume Download modal offering PDF preview/download.",
-    "Ensure all form inputs use Shadcn UI components customized with cyan/blueprint accents and Sonner toast notification on submission.",
-    "Every interactive button, input, and card MUST include data-testid as specified."
-  ],
-  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
-    "Do NOT use pure #000000 background; use layered deep space blues/obsidians like #07090E and #0D111A.",
-    "Include subtle blueprint grid overlays using background SVG gradients or CSS patterns.",
-    "Avoid generic sans fonts for headings. Use Syne or Outfit paired with JetBrains Mono for technical metrics.",
-    "Ensure high APCA contrast ratios for all body text over dark cards.",
-    "All interactive elements MUST have data-testid attributes."
+    "Implement an interactive Concept Selector bar at the top of the app allowing users to switch dynamically between the 4 Template Concepts ('Swiss Monolith', 'Editorial Archival', 'Technical Mono', 'Soft Zen Craft').",
+    "When a template is selected, update the color variables, font styles, micro-annotations, border radiuses, and layout accents across all sections in real-time.",
+    "Ensure all 7 required sections are rich with content: Home/Hero, About, Education, Experience Timeline, Projects Grid, Skills Matrix, Contact & Resume Modal.",
+    "Maintain strict data-testid attributes on interactive elements for reliable end-to-end testing.",
+    "Include a functional Resume Download modal/button action that generates/views Pravin's structured resume."
   ]
 }
