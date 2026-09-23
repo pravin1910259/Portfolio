@@ -147,19 +147,6 @@ export default function Projects() {
           <ProjectCard project={PROJECTS[1]} index={1} />
           <ProjectCard project={PROJECTS[2]} index={2} />
           <ProjectCard project={PROJECTS[3]} index={3} className="lg:col-span-2" />
-          <Reveal delay={0.15} className="lg:col-span-2">
-            <div
-              data-testid="project-card-placeholder"
-              className="border border-dashed border-line bg-transparent px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-            >
-              <span className="font-mono text-[11px] tracking-[0.25em] text-slate-500">
-                NEXT PROJECT — SLOT RESERVED
-              </span>
-              <span className="font-mono text-[10px] tracking-[0.2em] text-slate-600">
-                SEND PRAVIN THE DETAILS & FILES TO PUBLISH IT HERE
-              </span>
-            </div>
-          </Reveal>
         </div>
         <Reveal delay={0.2}>
           <p className="mt-10 font-mono text-xs tracking-[0.25em] text-slate-500 text-center">
