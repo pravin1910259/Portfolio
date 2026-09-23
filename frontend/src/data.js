@@ -203,7 +203,7 @@ export const PROJECTS = [
     metrics: ["Cd 0.3441 → 0.2872 (−16.5%)", "1.1M-element mesh", "150 km/h inlet"],
     description:
       "Modelled a Koenigsegg Jesko Absolut in SolidWorks and ran ANSYS Fluent CFD (k-ε, 1,098,393 elements) across spoiler, wing, diffuser, and fin configurations at 150 km/h. The spoiler + diffuser combination cut drag coefficient 16.53% below baseline while diffusers reduced drag in every tested case; wings traded +27.8% drag for significant downforce (Cl −0.115 with diffuser). Findings drawn from pressure contours and velocity streamline analysis.",
-    image: "/projects/vehicle-aero/17_velocity_contour_e_fins.jpg",
+    image: "/projects/vehicle-aero/13_cfd_mesh.jpg",
     gallery: [
       { src: "/projects/vehicle-aero/01_blueprint_dimensions.jpg", caption: "Body modelled from blueprints — 4320 × 1990 × 1090 mm" },
       { src: "/projects/vehicle-aero/02_baseline_cad_iso_side.jpg", caption: "Baseline body — SolidWorks model" },
@@ -221,6 +221,7 @@ export const PROJECTS = [
       { src: "/projects/vehicle-aero/14_streamlines_cases_a-d.jpg", caption: "Streamlines — baseline, spoiler, wing, diffuser" },
       { src: "/projects/vehicle-aero/15_streamlines_cases_e-h.jpg", caption: "Streamlines — fins and combinations" },
       { src: "/projects/vehicle-aero/16_velocity_contours_a-d.jpg", caption: "Velocity contours — baseline, spoiler, wing, diffuser" },
+      { src: "/projects/vehicle-aero/17_velocity_contour_e_fins.jpg", caption: "Velocity contour — fins" },
       { src: "/projects/vehicle-aero/18_velocity_contours_f-h.jpg", caption: "Velocity contours — spoiler/wing/fins + diffuser" },
       { src: "/projects/vehicle-aero/19_chart_drag_coefficient.jpg", caption: "Drag coefficient by configuration" },
       { src: "/projects/vehicle-aero/20_chart_lift_coefficient.jpg", caption: "Lift coefficient by configuration" },
