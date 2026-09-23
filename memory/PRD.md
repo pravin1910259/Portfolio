@@ -36,6 +36,7 @@
 - Hero now features the user's real portrait (/pravin-portrait.jpg, 162KB) in a framed card with name caption, with the interactive blueprint gear canvas overlapping the top-left corner; headline sized down on mobile to prevent clipping
 - Reference-site-inspired restructure (devmahajan.com style, keeping the light theme): new "01 About Me" section with user's own bio + Quick Facts sidebar; section/nav order now About → Education → Experience → Projects → Skills → Contact (chapters renumbered 01–06)
 - READ MORE detail pages for every project (/projects/:slug) and every role (/experience/:slug): overview, tools, key numbers, document links, photo gallery with lightbox, and dashed "SPACE RESERVED" blocks awaiting the user's detailed write-ups
+- Wind tunnel detail page now carries the user's full design write-up (Approach / Key Design Decisions / Validating with CFD / Build / Lessons) with styled orange lead-ins — reports are treated as private source material; report download links removed from all cards and detail pages (SAGE DOI link kept); team+honeycomb photo removed from gallery per user request (8 photos remain)
 
 ## Backlog / Next Tasks
 - P0: User to send additional projects + project files/images to add (user said they have more)

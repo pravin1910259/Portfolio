@@ -107,18 +107,54 @@ export default function DetailPage({ type }) {
                 )}
               </section>
 
-              <ReservedBlock
-                icon={PenLine}
-                title={isProject ? "FULL DESIGN WRITE-UP — SPACE RESERVED" : "ROLE IN DETAIL — SPACE RESERVED"}
-                note="PRAVIN IS ADDING THE DETAILED STORY HERE: APPROACH, DECISIONS, AND LESSONS"
-                testid="detail-reserved-writeup"
-              />
-              <ReservedBlock
-                icon={Database}
-                title={isProject ? "DATA, DRAWINGS & RESULTS — SPACE RESERVED" : "OUTCOMES & IMPACT — SPACE RESERVED"}
-                note="TEST DATA, CAD DRAWINGS, AND ADDITIONAL MATERIAL WILL BE PUBLISHED HERE"
-                testid="detail-reserved-data"
-              />
+              {item.writeup ? (
+                item.writeup.map((sec) => (
+                  <section
+                    key={sec.heading}
+                    data-testid={`detail-writeup-${sec.heading.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                  >
+                    <h2 className="font-mono text-[11px] tracking-[0.3em] text-cyanic mb-5">
+                      {sec.heading.toUpperCase()}
+                    </h2>
+                    <div className="space-y-4">
+                      {sec.paragraphs?.map((p, i) => (
+                        <p key={i} className="text-base text-slate-400 leading-relaxed">{p}</p>
+                      ))}
+                      {sec.items?.map((it, i) => (
+                        <p key={i} className="text-base text-slate-400 leading-relaxed">
+                          <span className="text-ember font-medium">{it.lead}</span>{" "}
+                          {it.text}
+                        </p>
+                      ))}
+                      {sec.bullets && (
+                        <ul className="space-y-2.5">
+                          {sec.bullets.map((b, i) => (
+                            <li key={i} className="flex gap-3 text-base text-slate-400 leading-relaxed">
+                              <span className="text-cyanic font-mono mt-0.5 shrink-0">▸</span>
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </section>
+                ))
+              ) : (
+                <>
+                  <ReservedBlock
+                    icon={PenLine}
+                    title={isProject ? "FULL DESIGN WRITE-UP — SPACE RESERVED" : "ROLE IN DETAIL — SPACE RESERVED"}
+                    note="PRAVIN IS ADDING THE DETAILED STORY HERE: APPROACH, DECISIONS, AND LESSONS"
+                    testid="detail-reserved-writeup"
+                  />
+                  <ReservedBlock
+                    icon={Database}
+                    title={isProject ? "DATA, DRAWINGS & RESULTS — SPACE RESERVED" : "OUTCOMES & IMPACT — SPACE RESERVED"}
+                    note="TEST DATA, CAD DRAWINGS, AND ADDITIONAL MATERIAL WILL BE PUBLISHED HERE"
+                    testid="detail-reserved-data"
+                  />
+                </>
+              )}
             </div>
 
             <aside className="lg:col-span-4 space-y-8">

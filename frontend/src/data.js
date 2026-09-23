@@ -115,10 +115,51 @@ export const PROJECTS = [
       { src: "/projects/windtunnel/fluent-streamlines.jpg", caption: "CFD streamlines through honeycomb settling chamber & contraction" },
       { src: "/projects/windtunnel/fluent-residuals.jpg", caption: "Solver convergence — scaled residuals (k-ω)" },
       { src: "/projects/windtunnel/team-tunnel.jpg", caption: "Team with faculty mentor and the completed tunnel" },
-      { src: "/projects/windtunnel/team-honeycomb.jpg", caption: "Team with the honeycomb settling chamber" },
     ],
     tags: ["SolidWorks", "ANSYS Fluent", "Welding & Fabrication", "Smoke Visualization"],
-    links: [{ label: "FULL REPORT (DOCX)", url: "/Project_Wind_Tunnel_Report.docx" }],
+    writeup: [
+      {
+        heading: "Approach",
+        paragraphs: [
+          "The goal was a working low-speed wind tunnel for flow visualization on small scale models: an aerofoil, a car, and an aircraft. We worked in four stages. First we reviewed the classic design literature (Barlow, Rae & Pope; Mehta & Bradshaw; Bell & Mehta) to pull out the rules of thumb for each component. Then we modeled every section in SolidWorks, checked the assembled geometry with CFD in ANSYS Fluent, and built the tunnel for ₹17,550 (about $210).",
+        ],
+      },
+      {
+        heading: "Key Design Decisions",
+        items: [
+          { lead: "Open-circuit, suction type.", text: "A closed-circuit tunnel was too big and too expensive for our space and budget. A blower-type tunnel pushes the fan's turbulence straight into the test section, which is only acceptable for rough demonstrations. Putting the fan at the downstream end to pull air through gave cleaner flow, used less power, and made the tunnel quieter and less prone to vibration." },
+          { lead: "Contraction ratio of 8.29.", text: "The inlet is 720 × 720 mm and the test section is 250 × 250 mm. Screen losses fall as 1/c², so a larger ratio is better, but the size, cost, and risk of flow separation rise with it. Small tunnels usually land between 6 and 9, and we sized ours inside that range. A hexagonal honeycomb in the settling chamber straightens the incoming air and removes swirl — we chose the hexagonal shape because it has the lowest pressure drop." },
+          { lead: "Test section: 400 mm long, clear acrylic.", text: "Its length is 1.6 times its hydraulic diameter, inside the recommended range of 0.5 to 3. The model must block less than 10% of the cross-section. We used 6 mm acrylic so the flow could be watched directly, and added a hinged, laser-cut access door so models are quick to swap." },
+          { lead: "Two-piece diffuser with an area ratio of 2.68.", text: "The diffuser widens from 250 mm to 410 mm, inside the 2–5 guideline. This slows the jet before it leaves the tunnel, and splitting it into two pieces made fabrication and assembly easier." },
+        ],
+      },
+      {
+        heading: "Validating with CFD",
+        paragraphs: [
+          "I meshed the full tunnel at a 10 mm element size, which a mesh-convergence check supported and which kept us under the student license's limit of 1 million nodes. I used the k-ω model because it handles near-wall behavior and adverse pressure gradients well in internal flows. Fluent wouldn't let us set the fan's suction at the true outlet, so I treated the diffuser end as the inlet and gave it a negative velocity, running four cases from 1.8 to 3.0 m/s based on the fan manufacturer's specs.",
+          "Across those cases, peak test-section velocity went from 5.6 to 9.4 m/s. Minimum turbulence intensity stayed below 1% but rose with speed, from 0.42% to 0.86%. Pathlines showed smooth, attached flow through the test section.",
+        ],
+      },
+      {
+        heading: "Build",
+        bullets: [
+          "Contraction and diffuser: 1.5 mm mild steel sheet, cut on a hydraulic press, welded, and sealed with silicone to stop air leaks.",
+          "Fan: a 380 mm Crompton industrial exhaust fan with a speed regulator.",
+          "Models: 3D-printed.",
+          "Measurement: an anemometer for airspeed, and incense-stick smoke with LED lighting to show the flow.",
+        ],
+      },
+      {
+        heading: "Lessons",
+        items: [
+          { lead: "Plan the instrumentation from the start.", text: "We aimed to measure lift and drag, but without load cells we were limited to smoke visualization and airspeed readings. Next time I'd design the force balance and sensor mounts into the test section from the beginning." },
+          { lead: "Alignment is harder than it looks.", text: "Joining five separately built sections on one straight axis was the hardest part of the build. Flanges or locating features designed into the CAD would have saved time." },
+          { lead: "Treat CFD as a design check, not a result.", text: "The simulations confirmed the geometry made sense, but they were never compared against measured velocities in the tunnel. Validating one case with the anemometer would have made the results much stronger." },
+          { lead: "Constraints set the design.", text: "The student mesh limit, a ₹17.5k budget, and parts available off the shelf decided about as much as the textbook guidelines did. Learning to design within those limits was the most useful skill I took from this project." },
+        ],
+      },
+    ],
+    links: [],
     span: "wide",
   },
   {
@@ -135,7 +176,6 @@ export const PROJECTS = [
     tags: ["FFT Analysis", "ANSYS Modal", "SolidWorks", "T-VibLab", "Predictive Maintenance"],
     links: [
       { label: "READ PUBLICATION", url: "https://doi.org/10.1177/09574565251394417" },
-      { label: "PDF", url: "/Publication_Fault_Diagnosis_SAGE.pdf" },
     ],
     span: "tall",
   },
@@ -166,7 +206,7 @@ export const PROJECTS = [
     image: null,
     schematic: "VEHICLE AERO — CFD ENCLOSURE 12000×4000×8000 MM",
     tags: ["SolidWorks", "ANSYS Fluent", "k-ε Turbulence", "Aero Optimization"],
-    links: [{ label: "FULL REPORT (PDF)", url: "/Project_Vehicle_Aerodynamics_Report.pdf" }],
+    links: [],
     span: "wide",
   },
 ];
