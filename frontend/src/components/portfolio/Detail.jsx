@@ -116,6 +116,35 @@ export default function DetailPage({ type }) {
                       {sec.heading.toUpperCase()}
                     </h2>
                     <div className="space-y-4">
+                      {sec.table && (
+                        <div className="overflow-x-auto border border-line" data-testid="detail-results-table">
+                          <table className="w-full text-sm">
+                            <thead>
+                              <tr className="bg-panel">
+                                {sec.table.headers.map((h) => (
+                                  <th key={h} className="font-mono text-[10px] tracking-[0.2em] text-slate-500 text-left px-4 py-3 border-b border-line uppercase">
+                                    {h}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {sec.table.rows.map((row, ri) => (
+                                <tr key={ri} className="border-b border-line/30 last:border-0 hover:bg-panel/60 transition-colors">
+                                  {row.map((cell, ci) => (
+                                    <td
+                                      key={ci}
+                                      className={`px-4 py-3 ${ci === 0 ? "text-slate-100 font-medium" : "font-mono text-slate-400"} ${cell.startsWith("−") || cell.startsWith("-1") ? "text-cyanic" : ""} ${cell.startsWith("+") ? "text-red-600" : ""}`}
+                                    >
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
                       {sec.paragraphs?.map((p, i) => (
                         <p key={i} className="text-base text-slate-400 leading-relaxed">{p}</p>
                       ))}
