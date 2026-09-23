@@ -7,25 +7,25 @@
 
 @layer base {
     :root {
-        --background: 40 26% 93%;
-        --foreground: 217 30% 9%;
-        --card: 45 33% 97%;
-        --card-foreground: 217 30% 9%;
-        --popover: 45 33% 97%;
-        --popover-foreground: 217 30% 9%;
-        --primary: 19 84% 48%;
-        --primary-foreground: 40 30% 95%;
-        --secondary: 40 18% 90%;
-        --secondary-foreground: 217 30% 9%;
-        --muted: 40 15% 90%;
-        --muted-foreground: 217 15% 38%;
-        --accent: 40 20% 92%;
-        --accent-foreground: 217 30% 9%;
+        --background: 0 0% 100%;
+        --foreground: 0 0% 4%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 4%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 4%;
+        --primary: 225 100% 33%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 0 0% 96%;
+        --secondary-foreground: 0 0% 4%;
+        --muted: 0 0% 96%;
+        --muted-foreground: 220 9% 40%;
+        --accent: 0 0% 95%;
+        --accent-foreground: 0 0% 4%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-        --border: 40 14% 82%;
-        --input: 40 14% 78%;
-        --ring: 19 84% 48%;
+        --border: 0 0% 88%;
+        --input: 0 0% 80%;
+        --ring: 225 100% 33%;
         --chart-1: 19 84% 48%;
         --chart-2: 221 83% 53%;
         --chart-3: 197 37% 24%;
@@ -49,21 +49,21 @@
         -moz-osx-font-smoothing: grayscale;
     }
     ::selection {
-        background: rgba(232, 89, 12, 0.22);
-        color: #10151D;
+        background: rgba(0, 47, 167, 0.18);
+        color: #0A0A0A;
     }
     ::-webkit-scrollbar {
         width: 10px;
     }
     ::-webkit-scrollbar-track {
-        background: #F2EFE7;
+        background: #FFFFFF;
     }
     ::-webkit-scrollbar-thumb {
-        background: #D9D3C3;
-        border: 2px solid #F2EFE7;
+        background: #D4D4D8;
+        border: 2px solid #FFFFFF;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: #E8590C;
+        background: #002FA7;
     }
 }
 
@@ -96,7 +96,7 @@
         position: absolute;
         width: 14px;
         height: 14px;
-        border-color: #E8590C;
+        border-color: #002FA7;
         border-style: solid;
         z-index: 10;
         pointer-events: none;

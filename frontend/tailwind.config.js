@@ -9,18 +9,18 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        syne: ['Syne', 'sans-serif'],
-        dmsans: ['"DM Sans"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        syne: ['Archivo', 'sans-serif'],
+        dmsans: ['Archivo', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
       },
       colors: {
-        obsidian: '#F2EFE7',
-        panel: '#ECE8DC',
-        card2: '#FBFAF6',
-        cardhover: '#FFFFFF',
-        line: '#D9D3C3',
-        cyanic: '#E8590C',
-        ember: '#C2410C',
+        obsidian: '#FFFFFF',
+        panel: '#FAFAFA',
+        card2: '#FFFFFF',
+        cardhover: '#F4F4F5',
+        line: '#0A0A0A',
+        cyanic: '#002FA7',
+        ember: '#002FA7',
         slate: {
           50: '#10151D',
           100: '#1C2534',

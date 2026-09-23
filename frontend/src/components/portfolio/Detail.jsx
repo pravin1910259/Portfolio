@@ -43,7 +43,6 @@ export default function DetailPage({ type }) {
 
   return (
     <div className="min-h-screen bg-obsidian text-slate-100 font-dmsans antialiased">
-      <div className="fixed inset-0 blueprint-grid pointer-events-none z-0" />
       <div className="relative z-10">
         <header className="border-b border-line/70 bg-obsidian/80 backdrop-blur-xl sticky top-0 z-40">
           <div className="mx-auto max-w-5xl px-4 sm:px-8 h-16 flex items-center justify-between">

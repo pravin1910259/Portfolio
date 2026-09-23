@@ -2,7 +2,7 @@ import { useEffect, useRef, useCallback } from "react";
 import Lenis from "lenis";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/portfolio/Navbar";
-import Hero from "@/components/portfolio/Hero";
+import Hero from "@/components/portfolio/HeroNew";
 import Marquee from "@/components/portfolio/Marquee";
 import About from "@/components/portfolio/About";
 import Experience from "@/components/portfolio/Experience";
@@ -45,14 +45,6 @@ function MainPage() {
 
   return (
     <div className="min-h-screen bg-obsidian text-slate-100 font-dmsans antialiased overflow-x-clip">
-      <div className="fixed inset-0 blueprint-grid pointer-events-none z-0" />
-      <div
-        className="fixed inset-0 pointer-events-none z-0"
-        style={{
-          background:
-            "radial-gradient(circle at 50% 0%, rgba(29, 78, 216, 0.05) 0%, rgba(242, 239, 231, 0.92) 70%)",
-        }}
-      />
       <div className="relative z-10">
         <Navbar onNavigate={scrollTo} />
         <main>

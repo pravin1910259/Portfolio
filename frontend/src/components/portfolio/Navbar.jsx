@@ -27,11 +27,10 @@ export default function Navbar({ onNavigate }) {
         <button
           data-testid="nav-link-home"
           onClick={() => go("#home")}
-          className="flex items-baseline gap-2 group"
+          className="flex items-baseline gap-1 group"
         >
-          <span className="font-mono text-cyanic text-sm tracking-widest">[PS]</span>
-          <span className="font-syne font-bold text-slate-50 group-hover:text-cyanic transition-colors">
-            Pravin Salla
+          <span className="font-syne font-black text-lg tracking-tight text-slate-50 group-hover:text-cyanic transition-colors">
+            SALLA<span className="text-cyanic">®</span>
           </span>
         </button>
 
@@ -54,7 +53,7 @@ export default function Navbar({ onNavigate }) {
             data-testid="nav-cta-resume"
             href={PROFILE.resumeUrl}
             download="Pravin_Salla_Resume.pdf"
-            className="flex items-center gap-2 border border-cyanic/50 text-cyanic font-mono text-xs tracking-widest px-4 py-2 hover:bg-cyanic hover:text-obsidian transition-colors"
+            className="flex items-center gap-2 bg-slate-50 text-white font-mono text-xs tracking-widest px-4 py-2.5 hover:bg-cyanic transition-colors"
           >
             <FileDown size={14} />
             RESUME

@@ -23,7 +23,7 @@ export default function Experience() {
                 <span
                   className={`absolute -left-[7px] top-2 w-3.5 h-3.5 rotate-45 border-2 ${
                     role.current
-                      ? "bg-cyanic border-cyanic shadow-[0_0_16px_rgba(232,89,12,0.45)]"
+                      ? "bg-cyanic border-cyanic shadow-[0_0_16px_rgba(0,47,167,0.35)]"
                       : "bg-obsidian border-slate-600 group-hover:border-cyanic"
                   } transition-colors`}
                 />

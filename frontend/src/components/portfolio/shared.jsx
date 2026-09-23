@@ -19,12 +19,12 @@ export const SectionHeading = ({ index, title, blurb, testid }) => (
     <div data-testid={testid} className="mb-14 lg:mb-20">
       <div className="flex items-center gap-4 mb-5">
         <span className="font-mono text-xs tracking-[0.3em] text-cyanic">{index}</span>
-        <span className="h-px flex-1 max-w-24 bg-cyanic/40" />
+        <span className="h-px flex-1 max-w-24 bg-line" />
         <span className="font-mono text-xs tracking-[0.3em] text-slate-500 uppercase">
           {title.split(" ")[0]}
         </span>
       </div>
-      <h2 className="font-syne text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-50">
+      <h2 className="font-syne text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-slate-50">
         {title}
       </h2>
       {blurb && (

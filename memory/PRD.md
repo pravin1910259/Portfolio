@@ -37,6 +37,7 @@
 - Reference-site-inspired restructure (devmahajan.com style, keeping the light theme): new "01 About Me" section with user's own bio + Quick Facts sidebar; section/nav order now About → Education → Experience → Projects → Skills → Contact (chapters renumbered 01–06)
 - READ MORE detail pages for every project (/projects/:slug) and every role (/experience/:slug): overview, tools, key numbers, document links, photo gallery with lightbox, and dashed "SPACE RESERVED" blocks awaiting the user's detailed write-ups
 - Wind tunnel detail page now carries the user's full design write-up (Approach / Key Design Decisions / Validating with CFD / Build / Lessons) with styled orange lead-ins — reports are treated as private source material; report download links removed from all cards and detail pages (SAGE DOI link kept); team+honeycomb photo removed from gallery per user request (8 photos remain)
+- FULL REDESIGN (session 3): "MONOLITH — Swiss Grid" theme applied site-wide — stark white, Archivo black type, single Klein-blue #002FA7 accent, hard 1px black rules; hero rebuilt as giant masked PRAVIN SALLA. with portrait + blue offset block (gear canvas retired); fonts: Archivo (display+body) + IBM Plex Mono; nav brand SALLA®; /samples page now shows round-2 templates T1–T4 (SamplesV2.jsx)
 
 ## Backlog / Next Tasks
 - P0: User to send additional projects + project files/images to add (user said they have more)
