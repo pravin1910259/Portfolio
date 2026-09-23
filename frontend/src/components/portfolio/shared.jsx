@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export const Reveal = ({ children, delay = 0, y = 32, className = "" }) => (
   <motion.div
@@ -44,3 +46,58 @@ export const MaskedLine = ({ children, delay = 0, className = "" }) => (
     </motion.span>
   </span>
 );
+
+export function Lightbox({ items, index, onClose, onPrev, onNext, testid }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") onPrev();
+      if (e.key === "ArrowRight") onNext();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose, onPrev, onNext]);
+
+  const item = items[index];
+  return (
+    <div
+      data-testid={`${testid}-lightbox`}
+      className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm flex flex-col items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <button
+        data-testid={`${testid}-lightbox-close`}
+        className="absolute top-5 right-5 text-white/80 hover:text-white"
+        onClick={onClose}
+        aria-label="Close gallery"
+      >
+        <X size={28} />
+      </button>
+      <button
+        data-testid={`${testid}-lightbox-prev`}
+        className="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white"
+        onClick={(e) => { e.stopPropagation(); onPrev(); }}
+        aria-label="Previous photo"
+      >
+        <ChevronLeft size={36} />
+      </button>
+      <img
+        src={item.src}
+        alt={item.caption}
+        className="max-h-[78vh] max-w-full object-contain border border-white/20"
+        onClick={(e) => e.stopPropagation()}
+      />
+      <p className="mt-4 font-mono text-[11px] tracking-[0.2em] text-white/80 text-center uppercase px-4">
+        {index + 1} / {items.length} — {item.caption}
+      </p>
+      <button
+        data-testid={`${testid}-lightbox-next`}
+        className="absolute right-3 sm:right-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white"
+        onClick={(e) => { e.stopPropagation(); onNext(); }}
+        aria-label="Next photo"
+      >
+        <ChevronRight size={36} />
+      </button>
+    </div>
+  );
+}

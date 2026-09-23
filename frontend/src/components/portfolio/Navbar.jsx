@@ -3,11 +3,12 @@ import { Menu, X, FileDown } from "lucide-react";
 import { PROFILE } from "@/data";
 
 const LINKS = [
-  { hash: "#experience", label: "Experience", num: "01", testid: "nav-link-experience" },
-  { hash: "#projects", label: "Projects", num: "02", testid: "nav-link-projects" },
-  { hash: "#skills", label: "Skills", num: "03", testid: "nav-link-skills" },
-  { hash: "#education", label: "Education", num: "04", testid: "nav-link-education" },
-  { hash: "#contact", label: "Contact", num: "05", testid: "nav-link-contact" },
+  { hash: "#about", label: "About", num: "01", testid: "nav-link-about" },
+  { hash: "#education", label: "Education", num: "02", testid: "nav-link-education" },
+  { hash: "#experience", label: "Experience", num: "03", testid: "nav-link-experience" },
+  { hash: "#projects", label: "Projects", num: "04", testid: "nav-link-projects" },
+  { hash: "#skills", label: "Skills", num: "05", testid: "nav-link-skills" },
+  { hash: "#contact", label: "Contact", num: "06", testid: "nav-link-contact" },
 ];
 
 export default function Navbar({ onNavigate }) {

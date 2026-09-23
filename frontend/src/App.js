@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/portfolio/Navbar";
 import Hero from "@/components/portfolio/Hero";
 import Marquee from "@/components/portfolio/Marquee";
+import About from "@/components/portfolio/About";
 import Experience from "@/components/portfolio/Experience";
 import Projects from "@/components/portfolio/Projects";
 import Skills from "@/components/portfolio/Skills";
@@ -11,6 +12,7 @@ import Education from "@/components/portfolio/Education";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
 import Samples from "@/components/portfolio/Samples";
+import DetailPage from "@/components/portfolio/Detail";
 import { Toaster } from "@/components/ui/sonner";
 
 function MainPage() {
@@ -56,10 +58,11 @@ function MainPage() {
         <main>
           <Hero onNavigate={scrollTo} />
           <Marquee />
+          <About />
+          <Education />
           <Experience />
           <Projects />
           <Skills />
-          <Education />
           <Contact />
         </main>
         <Footer onNavigate={scrollTo} />
@@ -73,6 +76,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/projects/:slug" element={<DetailPage type="project" />} />
+        <Route path="/experience/:slug" element={<DetailPage type="experience" />} />
         <Route path="/samples" element={<Samples />} />
       </Routes>
       <Toaster theme="light" position="bottom-right" />

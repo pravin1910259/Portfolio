@@ -6,7 +6,7 @@ export default function Skills() {
     <section id="skills" data-testid="skills-section" className="px-4 sm:px-8 lg:px-12 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          index="03 //"
+          index="05 //"
           title="Engineering Toolkit"
           blurb="The full stack of a mechanical engineer — from parametric CAD and multiphysics simulation to the machine shop."
           testid="skills-heading"

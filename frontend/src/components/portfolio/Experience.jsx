@@ -1,4 +1,5 @@
-import { MapPin } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Reveal, SectionHeading } from "./shared";
 import { EXPERIENCE } from "@/data";
 
@@ -7,7 +8,7 @@ export default function Experience() {
     <section id="experience" data-testid="experience-section" className="px-4 sm:px-8 lg:px-12 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          index="01 //"
+          index="03 //"
           title="Experience"
           blurb="Applied research with Caltrans, manufacturing instruction at UC Davis, and product design in industry."
           testid="experience-heading"
@@ -64,6 +65,14 @@ export default function Experience() {
                       </span>
                     ))}
                   </div>
+                  <Link
+                    data-testid={`${role.id}-read-more`}
+                    to={`/experience/${role.slug}`}
+                    className="inline-flex items-center gap-2 mt-6 font-mono text-[10px] tracking-[0.2em] text-slate-200 border border-line px-3.5 py-2 hover:border-cyanic hover:text-cyanic transition-colors"
+                  >
+                    READ MORE
+                    <ArrowRight size={12} />
+                  </Link>
                 </div>
               </article>
             </Reveal>

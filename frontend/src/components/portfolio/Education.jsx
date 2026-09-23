@@ -7,7 +7,7 @@ export default function Education() {
     <section id="education" data-testid="education-section" className="px-4 sm:px-8 lg:px-12 py-24 lg:py-32 bg-panel/40 border-y border-line/50">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          index="04 //"
+          index="02 //"
           title="Education"
           testid="education-heading"
         />

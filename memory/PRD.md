@@ -34,6 +34,8 @@
 - Hidden /samples page still exists with theme mockups (A, A2, A3, A4, B, C) for future theme switches
 - Wind tunnel project now uses the user's real photos: full-assembly dark-lab shot as cover + 9-photo gallery with lightbox (prev/next, captions, ESC/arrows) — images optimized to ~100-250KB and hosted at /projects/windtunnel/
 - Hero now features the user's real portrait (/pravin-portrait.jpg, 162KB) in a framed card with name caption, with the interactive blueprint gear canvas overlapping the top-left corner; headline sized down on mobile to prevent clipping
+- Reference-site-inspired restructure (devmahajan.com style, keeping the light theme): new "01 About Me" section with user's own bio + Quick Facts sidebar; section/nav order now About → Education → Experience → Projects → Skills → Contact (chapters renumbered 01–06)
+- READ MORE detail pages for every project (/projects/:slug) and every role (/experience/:slug): overview, tools, key numbers, document links, photo gallery with lightbox, and dashed "SPACE RESERVED" blocks awaiting the user's detailed write-ups
 
 ## Backlog / Next Tasks
 - P0: User to send additional projects + project files/images to add (user said they have more)

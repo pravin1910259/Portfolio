@@ -1,62 +1,8 @@
-import { useEffect, useState } from "react";
-import { X, ChevronLeft, ChevronRight, Images } from "lucide-react";
-import { Reveal, SectionHeading } from "./shared";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Images, ArrowRight } from "lucide-react";
+import { Reveal, SectionHeading, Lightbox } from "./shared";
 import { PROJECTS } from "@/data";
-
-function Lightbox({ project, index, onClose, onPrev, onNext }) {
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "ArrowLeft") onPrev();
-      if (e.key === "ArrowRight") onNext();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onClose, onPrev, onNext]);
-
-  const item = project.gallery[index];
-  return (
-    <div
-      data-testid={`${project.id}-lightbox`}
-      className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm flex flex-col items-center justify-center p-4"
-      onClick={onClose}
-    >
-      <button
-        data-testid={`${project.id}-lightbox-close`}
-        className="absolute top-5 right-5 text-white/80 hover:text-white"
-        onClick={onClose}
-        aria-label="Close gallery"
-      >
-        <X size={28} />
-      </button>
-      <button
-        data-testid={`${project.id}-lightbox-prev`}
-        className="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white"
-        onClick={(e) => { e.stopPropagation(); onPrev(); }}
-        aria-label="Previous photo"
-      >
-        <ChevronLeft size={36} />
-      </button>
-      <img
-        src={item.src}
-        alt={item.caption}
-        className="max-h-[78vh] max-w-full object-contain border border-white/20"
-        onClick={(e) => e.stopPropagation()}
-      />
-      <p className="mt-4 font-mono text-[11px] tracking-[0.2em] text-white/80 text-center uppercase px-4">
-        {index + 1} / {project.gallery.length} — {item.caption}
-      </p>
-      <button
-        data-testid={`${project.id}-lightbox-next`}
-        className="absolute right-3 sm:right-8 top-1/2 -translate-y-1/2 text-white/80 hover:text-white"
-        onClick={(e) => { e.stopPropagation(); onNext(); }}
-        aria-label="Next photo"
-      >
-        <ChevronRight size={36} />
-      </button>
-    </div>
-  );
-}
 
 function ProjectCard({ project, index, className }) {
   const [lightbox, setLightbox] = useState(null);
@@ -123,22 +69,28 @@ function ProjectCard({ project, index, className }) {
               </span>
             ))}
           </div>
-          {project.links && project.links.length > 0 && (
-            <div className="mt-5 pt-5 border-t border-line/60 flex flex-wrap gap-3">
-              {project.links.map((link) => (
-                <a
-                  key={link.url}
-                  data-testid={`${project.id}-link-${link.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                  href={link.url}
-                  target={link.url.startsWith("http") ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  className="font-mono text-[10px] tracking-[0.2em] text-cyanic border border-cyanic/40 px-3.5 py-2 hover:bg-cyanic hover:text-obsidian transition-colors"
-                >
-                  {link.label} ↗
-                </a>
-              ))}
-            </div>
-          )}
+          <div className="mt-5 pt-5 border-t border-line/60 flex flex-wrap gap-3">
+            <Link
+              data-testid={`${project.id}-read-more`}
+              to={`/projects/${project.slug}`}
+              className="flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] text-slate-200 border border-line px-3.5 py-2 hover:border-cyanic hover:text-cyanic transition-colors"
+            >
+              READ MORE
+              <ArrowRight size={12} />
+            </Link>
+            {project.links && project.links.map((link) => (
+              <a
+                key={link.url}
+                data-testid={`${project.id}-link-${link.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                href={link.url}
+                target={link.url.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                className="font-mono text-[10px] tracking-[0.2em] text-cyanic border border-cyanic/40 px-3.5 py-2 hover:bg-cyanic hover:text-obsidian transition-colors"
+              >
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
           {gallery.length > 0 && (
             <div className="mt-5 pt-5 border-t border-line/60">
               <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.25em] text-slate-500 mb-3">
@@ -167,8 +119,9 @@ function ProjectCard({ project, index, className }) {
         </div>
         {lightbox !== null && (
           <Lightbox
-            project={project}
+            items={gallery}
             index={lightbox}
+            testid={project.id}
             onClose={() => setLightbox(null)}
             onPrev={() => setLightbox((lightbox + gallery.length - 1) % gallery.length)}
             onNext={() => setLightbox((lightbox + 1) % gallery.length)}
@@ -184,7 +137,7 @@ export default function Projects() {
     <section id="projects" data-testid="projects-section" className="px-4 sm:px-8 lg:px-12 py-24 lg:py-32 bg-panel/40 border-y border-line/50">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          index="02 //"
+          index="04 //"
           title="Selected Projects"
           blurb="First-principles engineering: a wind tunnel built from scratch, instrumented tribology, and peer-reviewed vibration research."
           testid="projects-heading"

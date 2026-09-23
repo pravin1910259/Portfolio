@@ -51,7 +51,7 @@ export default function Contact() {
     <section id="contact" data-testid="contact-section" className="px-4 sm:px-8 lg:px-12 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          index="05 //"
+          index="06 //"
           title="Get In Touch"
           blurb="Open to full-time mechanical engineering roles from December 2026. Every message lands directly in my inbox."
           testid="contact-heading"

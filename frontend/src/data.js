@@ -19,6 +19,20 @@ export const PROFILE = {
   ],
 };
 
+export const ABOUT = {
+  paragraphs: [
+    "Hi, I am Pravin Salla — a Mechanical Engineer with a hands-on approach to design, testing, and problem solving, drawn to projects where an idea has to survive contact with real hardware and real data.",
+    "I'm currently completing my M.S. in Mechanical & Aerospace Engineering at UC Davis, where my work centers on applied research: taking a system from a CAD model through instrumentation, testing, and analysis to a conclusion backed by data rather than assumption. My background spans a mix of research and industry-style engineering — from friction and wear testing on custom rigs, to rapid prototyping and molding tooling for consumer products, to training students on CNC machining and the full CAD-to-CAM workflow. That range has given me a practical feel for what it takes to move a design from concept to something that actually gets built.",
+    "I work comfortably across CAD tools like SolidWorks, Fusion 360, CATIA, and Onshape, alongside ANSYS (Mechanical, Fluent, and Additive) and MATLAB (Simulink, Simscape) — and I like bringing a structured, data-driven approach to problems that mix mechanical design with manufacturability and real-world use.",
+  ],
+  facts: [
+    { label: "LOCATION", value: "Davis, CA — open to relocation" },
+    { label: "EDUCATION", value: "M.S. Mechanical & Aerospace Engineering, UC Davis (Dec 2026)" },
+    { label: "FOCUS", value: "Design → Instrument → Test → Data-backed conclusions" },
+    { label: "CORE TOOLS", value: "SolidWorks · Fusion 360 · CATIA · Onshape · ANSYS · MATLAB" },
+  ],
+};
+
 export const MARQUEE_ITEMS = [
   "SOLIDWORKS",
   "ANSYS FEA / CFD",
@@ -35,6 +49,7 @@ export const MARQUEE_ITEMS = [
 export const EXPERIENCE = [
   {
     id: "experience-card-researcher",
+    slug: "gsr-ahmct-caltrans",
     title: "Graduate Student Researcher",
     organization: "UC Davis — AHMCT Research Center (with Caltrans)",
     period: "APR 2026 — PRESENT",
@@ -50,6 +65,7 @@ export const EXPERIENCE = [
   },
   {
     id: "experience-card-ta",
+    slug: "gta-eme50-manufacturing",
     title: "Graduate Teaching Assistant — EME 50: Manufacturing Processes",
     organization: "University of California, Davis",
     period: "AUG 2025 — MAR 2026",
@@ -64,6 +80,7 @@ export const EXPERIENCE = [
   },
   {
     id: "experience-card-intern",
+    slug: "design-intern-ayka",
     title: "Design Intern",
     organization: "Ayka Control Systems",
     period: "JUN 2023 — SEP 2023",
@@ -81,6 +98,7 @@ export const EXPERIENCE = [
 export const PROJECTS = [
   {
     id: "project-card-wind-tunnel",
+    slug: "subsonic-wind-tunnel",
     title: "Subsonic Wind Tunnel — Design, CFD & Fabrication",
     category: "THERMAL-FLUIDS / CFD",
     period: "JAN 2024 — APR 2024",
@@ -105,6 +123,7 @@ export const PROJECTS = [
   },
   {
     id: "project-card-fault-diagnosis",
+    slug: "rotating-machinery-fault-diagnosis",
     title: "Fault Diagnosis of Unbalance Mass in Rotating Machinery",
     category: "PUBLISHED RESEARCH — SAGE 2025",
     period: "SEP 2023 — DEC 2023",
@@ -122,6 +141,7 @@ export const PROJECTS = [
   },
   {
     id: "project-card-hahn-grinder",
+    slug: "hahn-grinder-friction",
     title: "Hahn Grinder Friction Characterization & Data Analysis",
     category: "EXPERIMENTAL / TRIBOLOGY",
     period: "JAN 2025 — JUN 2025",
@@ -136,6 +156,7 @@ export const PROJECTS = [
   },
   {
     id: "project-card-vehicle-aero",
+    slug: "vehicle-aerodynamics-cfd",
     title: "Effect of Accessories on Vehicle Aerodynamics — CFD Study",
     category: "AUTOMOTIVE / CFD",
     period: "B.TECH MINI PROJECT",
