@@ -17,23 +17,23 @@ export default function Hero({ onNavigate }) {
           </span>
         </MaskedLine>
 
-        <h1 className="mt-8 font-syne font-black uppercase leading-[0.85] tracking-tighter">
-          <MaskedLine delay={0.35} className="pr-4">
-            <span className="text-6xl sm:text-8xl lg:text-9xl text-slate-50">Pravin</span>
-          </MaskedLine>
-          <MaskedLine delay={0.5} className="pr-4">
-            <span className="text-6xl sm:text-8xl lg:text-9xl text-slate-50">
-              Salla<span className="text-cyanic">.</span>
-            </span>
-          </MaskedLine>
-        </h1>
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-x-10 items-start">
+          <h1 className="lg:col-span-7 font-syne font-black uppercase leading-[0.85] tracking-tighter">
+            <MaskedLine delay={0.35} className="pr-4">
+              <span className="text-6xl sm:text-8xl lg:text-9xl text-slate-50">Pravin</span>
+            </MaskedLine>
+            <MaskedLine delay={0.5} className="pr-4">
+              <span className="text-6xl sm:text-8xl lg:text-9xl text-slate-50">
+                Salla<span className="text-cyanic">.</span>
+              </span>
+            </MaskedLine>
+          </h1>
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7"
+            className="mt-12 lg:col-span-7 lg:row-start-2"
           >
             <p className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl">
               <span className="text-slate-50 font-semibold">Design. Simulate. Build.</span>{" "}
@@ -64,7 +64,7 @@ export default function Hero({ onNavigate }) {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.7, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 flex lg:justify-end"
+            className="mt-10 lg:mt-0 lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:row-span-2 lg:self-center flex lg:justify-end"
           >
             <div className="relative">
               <div className="absolute -top-3 -left-3 w-20 h-20 sm:w-24 sm:h-24 bg-cyanic" />
