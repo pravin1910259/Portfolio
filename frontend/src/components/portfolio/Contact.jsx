@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Linkedin, Loader2, Send } from "lucide-react";
 import { Reveal, SectionHeading } from "./shared";
@@ -14,8 +13,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const CONTACT_ROWS = [
   { icon: Mail, label: "EMAIL", value: PROFILE.email, href: `mailto:${PROFILE.email}`, testid: "contact-info-email" },
@@ -36,12 +33,20 @@ export default function Contact() {
     e.preventDefault();
     setSending(true);
     try {
-      await axios.post(`${API}/contact`, form);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          website: e.currentTarget.elements.website.value,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Could not send your message.");
       toast.success("Message sent - Pravin will get back to you soon.");
       setForm(EMPTY);
     } catch (err) {
-      const detail = err?.response?.data?.detail;
-      toast.error(typeof detail === "string" ? detail : "Could not send your message. Please email me directly.");
+      toast.error(err.message || "Could not send your message. Please email me directly.");
     } finally {
       setSending(false);
     }
@@ -95,6 +100,10 @@ export default function Contact() {
               onSubmit={submit}
               className="corner-ticks border border-line/80 bg-card2/70 p-6 lg:p-9 space-y-6"
             >
+              <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
+                <Label htmlFor="cf-website">Leave this field empty</Label>
+                <Input id="cf-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="cf-name" className="font-mono text-[10px] tracking-[0.25em] text-slate-400">
