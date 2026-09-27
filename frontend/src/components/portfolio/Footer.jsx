@@ -10,7 +10,7 @@ export default function Footer({ onNavigate }) {
           <span className="font-syne font-bold text-slate-50">Pravin Salla</span>
         </div>
         <p className="font-mono text-[11px] tracking-[0.2em] text-slate-500 text-center">
-          © 2026 PRAVIN SALLA — DESIGNED & ENGINEERED IN DAVIS, CA
+          © 2026 PRAVIN SALLA - DESIGNED & ENGINEERED IN DAVIS, CA
         </p>
         <button
           data-testid="footer-back-to-top"

@@ -1,7 +1,7 @@
 const THEMES = [
   {
     id: "sample-a",
-    name: "SAMPLE A — DRAFTING PAPER",
+    name: "SAMPLE A - DRAFTING PAPER",
     tagline: "Light · blueprint hairlines · dimension orange",
     desc: "Feels like a fresh engineering drawing: warm drafting-paper background, ink-navy type, faint blue grid hairlines, and orange dimension marks. Minimal, bright, very readable for recruiters.",
     c: {
@@ -17,9 +17,9 @@ const THEMES = [
   },
   {
     id: "sample-a2",
-    name: "SAMPLE A2 — BLUEPRINT WHITE",
+    name: "SAMPLE A2 - BLUEPRINT WHITE",
     tagline: "Light · pale blue paper · engineering blue",
-    desc: "A cooler take on A: pale blueprint-white paper, deep navy ink, and classic engineering blue for both the grid and the accent marks — the closest to a real blueprint, but light.",
+    desc: "A cooler take on A: pale blueprint-white paper, deep navy ink, and classic engineering blue for both the grid and the accent marks - the closest to a real blueprint, but light.",
     c: {
       bg: "#EDF2F8",
       surface: "#F7FAFD",
@@ -33,7 +33,7 @@ const THEMES = [
   },
   {
     id: "sample-a3",
-    name: "SAMPLE A3 — PAPER & PENCIL",
+    name: "SAMPLE A3 - PAPER & PENCIL",
     tagline: "Light · pure white · graphite + red marks",
     desc: "The most minimal of the set: near-white paper, soft graphite type, barely-there gray grid, and red dimension marks like a red-pen markup on a drawing.",
     c: {
@@ -49,9 +49,9 @@ const THEMES = [
   },
   {
     id: "sample-a4",
-    name: "SAMPLE A4 — MANILA SHOP",
+    name: "SAMPLE A4 - MANILA SHOP",
     tagline: "Light · warm manila · safety orange",
-    desc: "A warmer, workshop-flavoured take: manila-envelope paper, dark brown ink, kraft-toned grid, and safety-orange accents — like a job packet on a machinist's bench.",
+    desc: "A warmer, workshop-flavoured take: manila-envelope paper, dark brown ink, kraft-toned grid, and safety-orange accents - like a job packet on a machinist's bench.",
     c: {
       bg: "#F0E8D8",
       surface: "#F8F3E8",
@@ -65,7 +65,7 @@ const THEMES = [
   },
   {
     id: "sample-b",
-    name: "SAMPLE B — MACHINIST",
+    name: "SAMPLE B - MACHINIST",
     tagline: "Light · brushed aluminum · safety orange",
     desc: "Machine-shop minimal: brushed-aluminum gray, black machined type, hairline steel dividers, and safety-orange accents like markings on shop equipment.",
     c: {
@@ -81,7 +81,7 @@ const THEMES = [
   },
   {
     id: "sample-c",
-    name: "SAMPLE C — GRAPHITE MONO",
+    name: "SAMPLE C - GRAPHITE MONO",
     tagline: "Dark · flat graphite · single amber accent",
     desc: "Keeps a dark canvas but strips away the grid and glow: flat graphite, white typography, hairline rules, one amber accent. The most minimal and typography-driven option.",
     c: {
@@ -137,7 +137,7 @@ function MockHero({ c }) {
       }}
     >
       <div className="font-mono text-[9px] tracking-[0.3em] mb-5" style={{ color: c.accent2 }}>
-        MS CANDIDATE — MECHANICAL & AEROSPACE ENGINEERING, UC DAVIS
+        MS CANDIDATE - MECHANICAL & AEROSPACE ENGINEERING, UC DAVIS
       </div>
       <div className="font-syne font-extrabold leading-[0.95] tracking-tight">
         <div className="text-4xl sm:text-5xl" style={{ color: c.ink }}>
@@ -154,7 +154,7 @@ function MockHero({ c }) {
         </div>
       </div>
       <p className="mt-5 max-w-md text-sm leading-relaxed" style={{ color: c.sub }}>
-        I design, simulate, and build mechanical systems end-to-end — from FEA-validated CAD models
+        I design, simulate, and build mechanical systems end-to-end - from FEA-validated CAD models
         to instrumented test rigs on the shop floor.
       </p>
       <div className="mt-6 flex gap-3">
@@ -204,7 +204,7 @@ function MockCard({ c }) {
       <div className="border p-5 flex items-center justify-between" style={{ borderColor: c.line, background: c.surface }}>
         <div>
           <div className="font-syne font-semibold" style={{ color: c.ink }}>
-            Subsonic Wind Tunnel — Design, CFD & Fabrication
+            Subsonic Wind Tunnel - Design, CFD & Fabrication
           </div>
           <div className="font-mono text-[9px] tracking-widest mt-1.5" style={{ color: c.accent2 }}>
             9.4 M/S · 0.42% TURBULENCE INTENSITY
@@ -223,14 +223,14 @@ export default function Samples() {
     <div className="min-h-screen bg-neutral-950 font-dmsans text-slate-200">
       <div className="mx-auto max-w-6xl px-4 sm:px-8 py-12">
         <div className="mb-12">
-          <div className="font-mono text-xs tracking-[0.3em] text-amber-500 mb-3">THEME PREVIEW — NOT LIVE</div>
+          <div className="font-mono text-xs tracking-[0.3em] text-amber-500 mb-3">THEME PREVIEW - NOT LIVE</div>
           <h1 className="font-syne text-3xl sm:text-4xl font-bold text-white">
             Pick a minimalist direction
           </h1>
           <p className="mt-3 text-slate-400 max-w-2xl text-sm leading-relaxed">
             Sample A and three variations in the same light drafting-paper family (A2, A3, A4),
             followed by the two earlier alternates. Tell me which one to apply across the whole
-            site — your current dark blueprint theme stays untouched until you choose.
+            site - your current dark blueprint theme stays untouched until you choose.
           </p>
         </div>
         <div className="space-y-14">
@@ -252,7 +252,7 @@ export default function Samples() {
           ))}
         </div>
         <p className="mt-14 font-mono text-[11px] tracking-[0.25em] text-slate-500 text-center">
-          REPLY IN CHAT WITH “A”, “A2”, “A3”, “A4”, “B”, OR “C” — OR ASK FOR A VARIATION
+          REPLY IN CHAT WITH “A”, “A2”, “A3”, “A4”, “B”, OR “C” - OR ASK FOR A VARIATION
         </p>
       </div>
     </div>

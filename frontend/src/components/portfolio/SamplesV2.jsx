@@ -1,7 +1,7 @@
 const PORTRAIT = "/pravin-portrait.jpg";
 const NAV = ["ABOUT", "EDUCATION", "EXPERIENCE", "PROJECTS", "CONTACT"];
 
-/* ---------------- TEMPLATE 1 — MONOLITH (Swiss) ---------------- */
+/* ---------------- TEMPLATE 1 - MONOLITH (Swiss) ---------------- */
 function Monolith() {
   const blue = "#002FA7";
   return (
@@ -17,7 +17,7 @@ function Monolith() {
       </div>
       <div className="px-8 pt-14 pb-10" style={{ borderBottom: "1px solid #0A0A0A" }}>
         <div className="text-[10px] font-medium tracking-[0.3em] mb-6" style={{ color: blue }}>
-          PORTFOLIO — MECHANICAL ENGINEER — 2026
+          PORTFOLIO - MECHANICAL ENGINEER - 2026
         </div>
         <h1 className="font-black uppercase leading-[0.85] tracking-tighter" style={{ fontSize: "clamp(48px, 8vw, 120px)" }}>
           Pravin<br />Salla<span style={{ color: blue }}>.</span>
@@ -25,7 +25,7 @@ function Monolith() {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-12 gap-6 items-end">
           <p className="sm:col-span-5 text-sm leading-relaxed" style={{ color: "#4B5563" }}>
             Design. Simulate. Build. Mechanical systems taken from CAD model to instrumented,
-            data-backed hardware — UC Davis M.S. candidate.
+            data-backed hardware - UC Davis M.S. candidate.
           </p>
           <div className="sm:col-span-7 flex justify-start sm:justify-end">
             <div className="relative">
@@ -43,14 +43,14 @@ function Monolith() {
         ))}
       </div>
       <div className="px-8 py-6 flex items-center justify-between" style={{ borderBottom: "1px solid #E5E7EB" }}>
-        <span className="text-sm font-bold">Subsonic Wind Tunnel — Design, CFD & Fabrication</span>
+        <span className="text-sm font-bold">Subsonic Wind Tunnel - Design, CFD & Fabrication</span>
         <span className="text-[10px] tracking-[0.2em]" style={{ color: blue }}>READ MORE →</span>
       </div>
     </div>
   );
 }
 
-/* ---------------- TEMPLATE 2 — ARCHIVE (Editorial Serif) ---------------- */
+/* ---------------- TEMPLATE 2 - ARCHIVE (Editorial Serif) ---------------- */
 function Archive() {
   const terra = "#B4532A";
   return (
@@ -70,7 +70,7 @@ function Archive() {
         </h1>
         <div className="flex items-center justify-center gap-4 mt-8">
           <span className="h-px w-16" style={{ background: "#1C1917" }} />
-          <span className="text-xs italic" style={{ color: "#78716C" }}>Mechanical Engineer — UC Davis</span>
+          <span className="text-xs italic" style={{ color: "#78716C" }}>Mechanical Engineer - UC Davis</span>
           <span className="h-px w-16" style={{ background: "#1C1917" }} />
         </div>
         <div className="mt-12 flex justify-center">
@@ -78,7 +78,7 @@ function Archive() {
             <img src={PORTRAIT} alt="Pravin Salla" className="w-44 h-56 object-cover object-top" style={{ border: "1px solid #1C1917", padding: "6px", background: "#F7F4EE" }} />
             <div className="absolute -right-28 top-6 hidden sm:flex items-center gap-2">
               <span className="h-px w-14" style={{ background: terra }} />
-              <span className="text-[9px] tracking-[0.2em] whitespace-nowrap" style={{ fontFamily: "'IBM Plex Mono', monospace", color: terra }}>FIG. 01 — THE ENGINEER</span>
+              <span className="text-[9px] tracking-[0.2em] whitespace-nowrap" style={{ fontFamily: "'IBM Plex Mono', monospace", color: terra }}>FIG. 01 - THE ENGINEER</span>
             </div>
           </div>
         </div>
@@ -94,7 +94,7 @@ function Archive() {
   );
 }
 
-/* ---------------- TEMPLATE 3 — SCHEMATIC (Technical Mono) ---------------- */
+/* ---------------- TEMPLATE 3 - SCHEMATIC (Technical Mono) ---------------- */
 function Schematic() {
   const cobalt = "#1D4ED8";
   const mono = "'IBM Plex Mono', monospace";
@@ -144,7 +144,7 @@ function Schematic() {
   );
 }
 
-/* ---------------- TEMPLATE 4 — ZEN (Soft Neutral) ---------------- */
+/* ---------------- TEMPLATE 4 - ZEN (Soft Neutral) ---------------- */
 function Zen() {
   const indigo = "#3730A3";
   return (
@@ -160,7 +160,7 @@ function Zen() {
           className="absolute right-6 top-16 text-[9px] tracking-[0.5em] hidden sm:block"
           style={{ writingMode: "vertical-rl", color: "#A8A29E", fontFamily: "'IBM Plex Mono', monospace" }}
         >
-          MECHANICAL ENGINEER — EST. 2024
+          MECHANICAL ENGINEER - EST. 2024
         </span>
         <div className="flex items-center gap-2 mb-8">
           <span className="w-1.5 h-1.5 rounded-full" style={{ background: indigo }} />
@@ -170,7 +170,7 @@ function Zen() {
           Pravin Salla
         </h1>
         <p className="mt-8 max-w-md text-sm leading-loose" style={{ color: "#78716C" }}>
-          I design, simulate, and build mechanical systems — quietly rigorous,
+          I design, simulate, and build mechanical systems - quietly rigorous,
           from first sketch to instrumented test.
         </p>
         <div className="mt-12 flex items-center gap-8">
@@ -196,28 +196,28 @@ const TEMPLATES = [
   {
     id: "template-monolith",
     num: "T1",
-    name: "MONOLITH — Swiss Grid",
+    name: "MONOLITH - Swiss Grid",
     vibe: "Stark white, huge black type, one Klein-blue accent, hard 1px rules. Bold but brutally simple.",
     component: Monolith,
   },
   {
     id: "template-archive",
     num: "T2",
-    name: "ARCHIVE — Editorial Serif",
+    name: "ARCHIVE - Editorial Serif",
     vibe: "Bone-paper, elegant serif, patent-style FIG. annotations. Reads like a quiet engineering journal.",
     component: Archive,
   },
   {
     id: "template-schematic",
     num: "T3",
-    name: "SCHEMATIC — Technical Mono",
+    name: "SCHEMATIC - Technical Mono",
     vibe: "All-monospace 'engineer's terminal' on cool gray, bounding-box dimension marks, cobalt accent.",
     component: Schematic,
   },
   {
     id: "template-zen",
     num: "T4",
-    name: "ZEN — Soft Neutral",
+    name: "ZEN - Soft Neutral",
     vibe: "Warm stone, featherweight type, vast whitespace, a single indigo dot. The quietest option.",
     component: Zen,
   },
@@ -228,10 +228,10 @@ export default function SamplesV2() {
     <div className="min-h-screen bg-neutral-950 font-dmsans text-slate-200">
       <div className="mx-auto max-w-6xl px-4 sm:px-8 py-12">
         <div className="mb-12">
-          <div className="font-mono text-xs tracking-[0.3em] text-amber-500 mb-3">ROUND 2 — ULTRA-MINIMAL TEMPLATES</div>
+          <div className="font-mono text-xs tracking-[0.3em] text-amber-500 mb-3">ROUND 2 - ULTRA-MINIMAL TEMPLATES</div>
           <h1 className="font-syne text-3xl sm:text-4xl font-bold text-white">Four fresh directions</h1>
           <p className="mt-3 text-slate-400 max-w-2xl text-sm leading-relaxed">
-            Each is a full redesign from scratch — typography-led, one accent color, maximum
+            Each is a full redesign from scratch - typography-led, one accent color, maximum
             whitespace. Your live site stays untouched until you pick one. All will carry your
             real content, photos, galleries, and detail pages.
           </p>
@@ -254,7 +254,7 @@ export default function SamplesV2() {
           })}
         </div>
         <p className="mt-14 font-mono text-[11px] tracking-[0.25em] text-slate-500 text-center">
-          REPLY IN CHAT WITH “T1”, “T2”, “T3”, OR “T4” — OR ASK FOR A VARIATION OR MIX
+          REPLY IN CHAT WITH “T1”, “T2”, “T3”, OR “T4” - OR ASK FOR A VARIATION OR MIX
         </p>
       </div>
     </div>

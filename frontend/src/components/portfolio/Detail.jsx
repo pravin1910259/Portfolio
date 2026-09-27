@@ -171,13 +171,13 @@ export default function DetailPage({ type }) {
                 <>
                   <ReservedBlock
                     icon={PenLine}
-                    title={isProject ? "FULL DESIGN WRITE-UP — SPACE RESERVED" : "ROLE IN DETAIL — SPACE RESERVED"}
+                    title={isProject ? "FULL DESIGN WRITE-UP - SPACE RESERVED" : "ROLE IN DETAIL - SPACE RESERVED"}
                     note="PRAVIN IS ADDING THE DETAILED STORY HERE: APPROACH, DECISIONS, AND LESSONS"
                     testid="detail-reserved-writeup"
                   />
                   <ReservedBlock
                     icon={Database}
-                    title={isProject ? "DATA, DRAWINGS & RESULTS — SPACE RESERVED" : "OUTCOMES & IMPACT — SPACE RESERVED"}
+                    title={isProject ? "DATA, DRAWINGS & RESULTS - SPACE RESERVED" : "OUTCOMES & IMPACT - SPACE RESERVED"}
                     note="TEST DATA, CAD DRAWINGS, AND ADDITIONAL MATERIAL WILL BE PUBLISHED HERE"
                     testid="detail-reserved-data"
                   />
@@ -235,7 +235,7 @@ export default function DetailPage({ type }) {
           {gallery.length > 0 && (
             <section className="mt-16" data-testid="detail-gallery">
               <h2 className="font-mono text-[11px] tracking-[0.3em] text-cyanic mb-6">
-                PHOTO GALLERY — {gallery.length} PHOTOS
+                PHOTO GALLERY - {gallery.length} PHOTOS
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {gallery.map((g, gi) => (

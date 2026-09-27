@@ -114,7 +114,7 @@ function GearCanvas() {
       ctx.fillText("SCALE 1:1", 14, h - 34);
       ctx.fillText(`RPM ${(t * 57.3).toFixed(1)}`, 14, h - 18);
       ctx.fillStyle = "rgba(232,89,12,0.9)";
-      ctx.fillText("FIG 1.0 — SPUR GEAR ASSEMBLY / WIRE", 14, 22);
+      ctx.fillText("FIG 1.0 - SPUR GEAR ASSEMBLY / WIRE", 14, 22);
 
       raf = requestAnimationFrame(draw);
     };
@@ -171,7 +171,7 @@ export default function Hero({ onNavigate }) {
             transition={{ delay: 0.95, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="mt-8 max-w-xl text-base sm:text-lg text-slate-400 leading-relaxed"
           >
-            <span className="text-slate-100 font-medium">{PROFILE.name}</span> — {PROFILE.intro}
+            <span className="text-slate-100 font-medium">{PROFILE.name}</span> - {PROFILE.intro}
           </motion.p>
 
           <motion.div
@@ -236,14 +236,14 @@ export default function Hero({ onNavigate }) {
             <img
               data-testid="hero-portrait-image"
               src="/pravin-portrait.jpg"
-              alt="Pravin Salla — Mechanical Engineer"
+              alt="Pravin Salla - Mechanical Engineer"
               className="w-full h-full object-cover object-top"
             />
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent px-5 pb-4 pt-16 flex items-end justify-between">
               <div>
                 <div className="font-syne font-bold text-white text-lg leading-tight">Pravin Salla</div>
                 <div className="font-mono text-[9px] tracking-[0.25em] text-white/70 mt-1">
-                  MECHANICAL ENGINEER — DAVIS, CA
+                  MECHANICAL ENGINEER - DAVIS, CA
                 </div>
               </div>
               <span className="font-mono text-[9px] tracking-[0.2em] text-white/60 border border-white/30 px-2 py-1">

@@ -88,7 +88,7 @@ export function Lightbox({ items, index, onClose, onPrev, onNext, testid }) {
         onClick={(e) => e.stopPropagation()}
       />
       <p className="mt-4 font-mono text-[11px] tracking-[0.2em] text-white/80 text-center uppercase px-4">
-        {index + 1} / {items.length} — {item.caption}
+        {index + 1} / {items.length} - {item.caption}
       </p>
       <button
         data-testid={`${testid}-lightbox-next`}

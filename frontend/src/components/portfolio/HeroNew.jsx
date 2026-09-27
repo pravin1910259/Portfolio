@@ -13,7 +13,7 @@ export default function Hero({ onNavigate }) {
       <div className="mx-auto max-w-7xl w-full">
         <MaskedLine delay={0.2}>
           <span className="font-mono text-[11px] sm:text-xs tracking-[0.35em] text-cyanic">
-            PORTFOLIO — MECHANICAL ENGINEER — 2026
+            PORTFOLIO - MECHANICAL ENGINEER - 2026
           </span>
         </MaskedLine>
 
@@ -71,11 +71,11 @@ export default function Hero({ onNavigate }) {
               <img
                 data-testid="hero-portrait-image"
                 src="/pravin-portrait.jpg"
-                alt="Pravin Salla — Mechanical Engineer"
+                alt="Pravin Salla - Mechanical Engineer"
                 className="relative w-52 sm:w-64 aspect-[4/5] object-cover object-top border border-line"
               />
               <div className="absolute bottom-0 right-0 font-mono text-[9px] tracking-[0.25em] text-slate-500">
-                FIG.01 — THE ENGINEER
+                FIG.01 - THE ENGINEER
               </div>
             </div>
           </motion.div>

@@ -43,7 +43,7 @@ function ProjectCard({ project, index, className }) {
               {project.schematic}
             </span>
             <span className="mt-2 font-mono text-[9px] tracking-[0.2em] text-slate-600">
-              IMAGE / CAD RENDER — TO BE ADDED
+              IMAGE / CAD RENDER - TO BE ADDED
             </span>
           </div>
         )}
@@ -95,7 +95,7 @@ function ProjectCard({ project, index, className }) {
             <div className="mt-5 pt-5 border-t border-line/60">
               <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.25em] text-slate-500 mb-3">
                 <Images size={13} className="text-cyanic" />
-                PROJECT GALLERY — {gallery.length} PHOTOS
+                PROJECT GALLERY - {gallery.length} PHOTOS
               </div>
               <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
                 {gallery.map((g, gi) => (

@@ -8,7 +8,7 @@ export default function Skills() {
         <SectionHeading
           index="05 //"
           title="Engineering Toolkit"
-          blurb="The full stack of a mechanical engineer — from parametric CAD and multiphysics simulation to the machine shop."
+          blurb="The full stack of a mechanical engineer - from parametric CAD and multiphysics simulation to the machine shop."
           testid="skills-heading"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -21,7 +21,7 @@ const CONTACT_ROWS = [
   { icon: Mail, label: "EMAIL", value: PROFILE.email, href: `mailto:${PROFILE.email}`, testid: "contact-info-email" },
   { icon: Phone, label: "PHONE", value: PROFILE.phone, href: `tel:${PROFILE.phone.replace(/[^+\d]/g, "")}`, testid: "contact-info-phone" },
   { icon: Linkedin, label: "LINKEDIN", value: "pravin-salla-312609264", href: PROFILE.linkedin, testid: "contact-info-linkedin" },
-  { icon: MapPin, label: "LOCATION", value: `${PROFILE.location} — ${PROFILE.relocation}`, href: null, testid: "contact-info-location" },
+  { icon: MapPin, label: "LOCATION", value: `${PROFILE.location} - ${PROFILE.relocation}`, href: null, testid: "contact-info-location" },
 ];
 
 const EMPTY = { name: "", email: "", inquiry_type: "Job Opportunity", subject: "", message: "" };
@@ -37,7 +37,7 @@ export default function Contact() {
     setSending(true);
     try {
       await axios.post(`${API}/contact`, form);
-      toast.success("Message sent — Pravin will get back to you soon.");
+      toast.success("Message sent - Pravin will get back to you soon.");
       setForm(EMPTY);
     } catch (err) {
       const detail = err?.response?.data?.detail;
