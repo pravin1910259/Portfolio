@@ -27,10 +27,10 @@ export default function Navbar({ onNavigate }) {
         <button
           data-testid="nav-link-home"
           onClick={() => go("#home")}
-          className="flex items-baseline gap-1 group"
+          className="group"
         >
-          <span className="font-syne font-black text-lg tracking-tight text-slate-50 group-hover:text-cyanic transition-colors">
-            SALLA<span className="text-cyanic">®</span>
+          <span className="font-syne font-black text-sm tracking-tight px-3 py-2 bg-slate-50 text-white group-hover:bg-cyanic transition-colors">
+            PS
           </span>
         </button>
 

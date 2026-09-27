@@ -40,6 +40,8 @@
 - FULL REDESIGN (session 3): "MONOLITH — Swiss Grid" theme applied site-wide — stark white, Archivo black type, single Klein-blue #002FA7 accent, hard 1px black rules; hero rebuilt as giant masked PRAVIN SALLA. with portrait + blue offset block (gear canvas retired); fonts: Archivo (display+body) + IBM Plex Mono; nav brand SALLA®; /samples page now shows round-2 templates T1–T4 (SamplesV2.jsx)
 - Vehicle aero project completed: full write-up (Approach / Key Design Decisions / Results with Cd–Cl table / Lessons), 21-image gallery + wide velocity-contour cover (/projects/vehicle-aero/, 22 images optimized to ~1.2MB total); Detail.jsx now supports writeup tables; "slot reserved" placeholder strip removed from Projects (was public-facing)
 - SITE DEPLOYED: live at https://mech-engineer-pro-3.emergent.host (50 ECU first deploy paid); user must press "Republish changes" to push preview updates live
+- Fault diagnosis detail page now carries the user's full write-up (Approach + rig bullets / Key Design Decisions / Results with measured-vs-FEM frequency table / Lessons); citation corrected to NVW 57(4–5), 2026
+- Logo: user rejected "SALLA®"; picked boxed monogram (black stamp, white PS) from 6 concepts at /brand — applied to Navbar, Footer, and Detail page headers
 
 ## Backlog / Next Tasks
 - P0: User to send additional projects + project files/images to add (user said they have more)

@@ -46,8 +46,8 @@ export default function DetailPage({ type }) {
       <div className="relative z-10">
         <header className="border-b border-line/70 bg-obsidian/80 backdrop-blur-xl sticky top-0 z-40">
           <div className="mx-auto max-w-5xl px-4 sm:px-8 h-16 flex items-center justify-between">
-            <Link to="/" className="flex items-baseline gap-2">
-              <span className="font-mono text-cyanic text-sm tracking-widest">[PS]</span>
+            <Link to="/" className="flex items-center gap-3">
+              <span className="font-syne font-black text-xs tracking-tight px-2.5 py-1.5 bg-slate-50 text-white">PS</span>
               <span className="font-syne font-bold text-slate-50">Pravin Salla</span>
             </Link>
             <Link

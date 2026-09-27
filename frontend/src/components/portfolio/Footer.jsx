@@ -5,8 +5,8 @@ export default function Footer({ onNavigate }) {
   return (
     <footer data-testid="footer" className="border-t border-line/70 bg-panel/60 px-4 sm:px-8 lg:px-12 py-10">
       <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div className="flex items-baseline gap-2">
-          <span className="font-mono text-cyanic text-sm tracking-widest">[PS]</span>
+        <div className="flex items-center gap-3">
+          <span className="font-syne font-black text-xs tracking-tight px-2.5 py-1.5 bg-slate-50 text-white">PS</span>
           <span className="font-syne font-bold text-slate-50">Pravin Salla</span>
         </div>
         <p className="font-mono text-[11px] tracking-[0.2em] text-slate-500 text-center">
