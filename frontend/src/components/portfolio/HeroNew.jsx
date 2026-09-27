@@ -66,7 +66,7 @@ export default function Hero({ onNavigate }) {
             transition={{ delay: 0.7, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 flex lg:justify-end"
           >
-            <div className="relative pb-6">
+            <div className="relative">
               <div className="absolute -top-3 -left-3 w-16 h-16 bg-cyanic" />
               <img
                 data-testid="hero-portrait-image"
@@ -74,9 +74,6 @@ export default function Hero({ onNavigate }) {
                 alt="Pravin Salla - Mechanical Engineer"
                 className="relative w-52 sm:w-64 aspect-[4/5] object-cover object-top border border-line"
               />
-              <div className="absolute bottom-0 right-0 font-mono text-[9px] tracking-[0.25em] text-slate-500">
-                FIG.01 - THE ENGINEER
-              </div>
             </div>
           </motion.div>
         </div>
