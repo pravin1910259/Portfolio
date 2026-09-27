@@ -166,14 +166,61 @@ export const PROJECTS = [
     id: "project-card-fault-diagnosis",
     slug: "rotating-machinery-fault-diagnosis",
     title: "Fault Diagnosis of Unbalance Mass in Rotating Machinery",
-    category: "PUBLISHED RESEARCH — SAGE 2025",
+    category: "PUBLISHED RESEARCH — SAGE",
     period: "SEP 2023 — DEC 2023",
-    metrics: ["Noise & Vibration Worldwide, 2025", "FE within ~10% of test", "500–1500 RPM, single & multi-plane"],
+    metrics: ["Noise & Vibration Worldwide 57(4–5), 2026", "FE within ~5% on upper modes", "500–1500 RPM, single & multi-plane"],
     description:
       "Co-authored peer-reviewed study (Desai, Salla, et al.) on unbalance fault diagnosis using a Machinery Fault Simulator — FFT-based vibration analysis quantifying the effects of unbalance mass magnitude (1.4–4.96 g), angular position, and rotational speed in single- and multi-plane configurations. SolidWorks rotor models and ANSYS modal analysis validated natural frequencies against experiment with deviations generally below 10%.",
     image:
       "https://images.unsplash.com/photo-1678225867994-e7a5b071ebfd?crop=entropy&cs=srgb&fm=jpg&q=85&w=940",
     tags: ["FFT Analysis", "ANSYS Modal", "SolidWorks", "T-VibLab", "Predictive Maintenance"],
+    writeup: [
+      {
+        heading: "Approach",
+        paragraphs: [
+          "Unbalance is the most common fault in rotating machinery, and it shows up first as vibration. I wanted to see how the size of an unbalance mass, the rotor's speed, and where the masses sit change the vibration signature. I was especially interested in cases with more than one mass, either in the same plane or split across two planes, because few earlier studies had covered them. I set up and ran all the tests on a Tiera Machinery Fault Simulator, measured the response with accelerometers, and converted it to frequency spectra with an FFT. Then I built an FE model of the rotor in SolidWorks and ANSYS and compared its predicted natural frequencies with the ones I measured. The rig:",
+        ],
+        bullets: [
+          "12 mm stainless steel shaft on two bearing blocks",
+          "Two 150 mm aluminum discs with rings of tapped holes for adding small masses",
+          "0.25 HP motor on a variable-frequency drive",
+        ],
+      },
+      {
+        heading: "Key Design Decisions",
+        items: [
+          { lead: "Controlled test matrix.", text: "Baseline first — I recorded the healthy rotor so every fault had a reference. Single masses: five masses from 1.4 g to 4.53 g, each run at 500, 1000, and 1500 rpm. Pairs of masses: two 2.68 g masses placed 0°, 60°, 90°, and 180° apart at 1500 rpm, first in one plane and then split across the two discs." },
+          { lead: "Reading both axes.", text: "I tracked axial and radial acceleration separately. Unbalance in one plane mostly causes radial vibration, while unbalance split across two planes also rocks the shaft, which shows up axially." },
+          { lead: "FE validation.", text: "The shaft, both discs, and the aluminum masses were modeled in SolidWorks, with modal analysis in ANSYS Mechanical at 800 rpm (83.8 rad/s), shaft ends simply supported and free to move axially. Materials: steel shaft (200 GPa, 7850 kg/m³) and aluminum masses (70 GPa, 2710 kg/m³). I ran the measured time signals through an FFT in MATLAB to pull out the dominant peaks for comparison with the model." },
+        ],
+      },
+      {
+        heading: "Results",
+        items: [
+          { lead: "Speed matters most.", text: "At 1500 rpm, the 4.53 g mass raised peak axial acceleration about 23× over the healthy rotor (0.0098 → 0.230 m/s²) and radial about 4×. At 500 rpm the same masses barely rose above the background vibration." },
+          { lead: "Mass position can cancel or amplify.", text: "Two equal masses 60° apart gave the highest axial response of the pair tests (0.210 m/s²). Placed 180° apart, they almost cancelled: 0.024 m/s², close to the healthy rotor." },
+          { lead: "The model matches the experiment.", text: "Across four cases, from healthy to four added masses, FE and experiment agreed within 5% on the upper two modes (about 126 Hz and 150 Hz). The first mode (about 89 Hz) differed by 8.5–11.5%." },
+        ],
+        table: {
+          headers: ["Case", "Measured (Hz)", "FEM (Hz)", "Deviation"],
+          rows: [
+            ["Healthy", "82 / 121 / 151", "89.2 / 126.3 / 150.1", "8.6% / 4.2% / 0.8%"],
+            ["1 mass", "80 / 125 / 150", "89.2 / 126.2 / 150.0", "11.5% / 1.0% / 0.0%"],
+            ["3 masses", "82 / 121 / 150", "89.1 / 126.1 / 149.9", "8.7% / 4.2% / 0.1%"],
+            ["4 masses", "82 / 121 / 151", "89.0 / 126.1 / 149.7", "8.6% / 4.2% / 0.9%"],
+          ],
+        },
+      },
+      {
+        heading: "Lessons",
+        items: [
+          { lead: "Where the masses sit matters as much as how heavy they are.", text: "The same two masses gave anything from nearly zero to the highest vibration in the pair tests, depending only on the angle between them. This is exactly why a balancing correction has to be placed at the right angle, not just sized correctly." },
+          { lead: "Unbalance changes the forced response, not the natural frequencies.", text: "A few grams on a heavy disc barely moved the mode frequencies, and the FE results stayed almost constant from case to case. The modal comparison confirms the rotor model — it does not detect the fault. That shows up in the amplitude at the running speed." },
+          { lead: "Low speeds hide faults.", text: "At 500 and 1000 rpm, some results didn't rise steadily with mass, because the signal was close to the background vibration. Unbalance force grows with the square of speed, so faults only become clear at higher speeds, and the choice of test speed matters." },
+          { lead: "What I'd do next.", text: "Run a harmonic-response analysis, driven by the unbalance force at each speed, and compare its predicted amplitudes with the measured acceleration. That would validate the fault response itself, not just the natural frequencies. After that, I'd combine several faults on the rig, such as unbalance plus misalignment." },
+        ],
+      },
+    ],
     links: [
       { label: "READ PUBLICATION", url: "https://doi.org/10.1177/09574565251394417" },
     ],

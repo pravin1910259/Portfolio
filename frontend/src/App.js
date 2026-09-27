@@ -13,6 +13,7 @@ import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
 import Samples from "@/components/portfolio/SamplesV2";
 import DetailPage from "@/components/portfolio/Detail";
+import BrandSamples from "@/components/portfolio/BrandSamples";
 import { Toaster } from "@/components/ui/sonner";
 
 function MainPage() {
@@ -71,6 +72,7 @@ export default function App() {
         <Route path="/projects/:slug" element={<DetailPage type="project" />} />
         <Route path="/experience/:slug" element={<DetailPage type="experience" />} />
         <Route path="/samples" element={<Samples />} />
+        <Route path="/brand" element={<BrandSamples />} />
       </Routes>
       <Toaster theme="light" position="bottom-right" />
     </BrowserRouter>
