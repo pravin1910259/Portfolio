@@ -1,5 +1,4 @@
-import { MapPin, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { MapPin } from "lucide-react";
 import { Reveal, SectionHeading } from "./shared";
 import { EXPERIENCE } from "@/data";
 
@@ -65,14 +64,6 @@ export default function Experience() {
                       </span>
                     ))}
                   </div>
-                  <Link
-                    data-testid={`${role.id}-read-more`}
-                    to={`/experience/${role.slug}`}
-                    className="inline-flex items-center gap-2 mt-6 font-mono text-[10px] tracking-[0.2em] text-slate-200 border border-line px-3.5 py-2 hover:border-cyanic hover:text-cyanic transition-colors"
-                  >
-                    READ MORE
-                    <ArrowRight size={12} />
-                  </Link>
                 </div>
               </article>
             </Reveal>
