@@ -67,12 +67,12 @@ export default function Hero({ onNavigate }) {
             className="lg:col-span-5 flex lg:justify-end"
           >
             <div className="relative">
-              <div className="absolute -top-3 -left-3 w-16 h-16 bg-cyanic" />
+              <div className="absolute -top-3 -left-3 w-20 h-20 sm:w-24 sm:h-24 bg-cyanic" />
               <img
                 data-testid="hero-portrait-image"
                 src="/pravin-portrait.jpg"
                 alt="Pravin Salla - Mechanical Engineer"
-                className="relative w-52 sm:w-64 aspect-[4/5] object-cover object-top border border-line"
+                className="relative w-64 sm:w-80 lg:w-96 aspect-[4/5] object-cover object-top border border-line"
               />
             </div>
           </motion.div>
