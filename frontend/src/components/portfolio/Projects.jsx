@@ -138,7 +138,7 @@ export default function Projects() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           index="04 //"
-          title="Selected Projects"
+          title="Projects"
           blurb="First-principles engineering: a wind tunnel built from scratch, instrumented tribology, and peer-reviewed vibration research."
           testid="projects-heading"
         />
