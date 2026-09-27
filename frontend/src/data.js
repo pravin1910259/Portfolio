@@ -10,7 +10,7 @@ export const PROFILE = {
   resumeUrl: "/Pravin_Salla_Resume.pdf",
   availability: "OPEN TO FULL-TIME ROLES - DEC 2026",
   intro:
-    "I design, simulate, and build mechanical systems end-to-end - from FEA-validated CAD models to instrumented test rigs on the shop floor. Currently researching heavy-equipment safety systems with Caltrans at UC Davis.",
+    "I design, simulate, and build mechanical systems end-to-end - from FEA-validated CAD models to instrumented test rigs on the shop floor. Currently researching heavy equipment safety systems for the California Department of Transportation at AHMCT, UC Davis.",
   metrics: [
     { value: "40+", label: "PRODUCT CONCEPTS PROTOTYPED" },
     { value: "150+", label: "STUDENTS TRAINED ON CNC MACHINING" },
