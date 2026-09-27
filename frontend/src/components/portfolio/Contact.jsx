@@ -22,6 +22,7 @@ const CONTACT_ROWS = [
 ];
 
 const EMPTY = { name: "", email: "", inquiry_type: "Job Opportunity", subject: "", message: "" };
+const BACKEND_API_URL = process.env.REACT_APP_BACKEND_URL?.replace(/\/+$/, "");
 
 export default function Contact() {
   const [form, setForm] = useState(EMPTY);
@@ -33,7 +34,8 @@ export default function Contact() {
     e.preventDefault();
     setSending(true);
     try {
-      const response = await fetch("/api/contact", {
+      if (!BACKEND_API_URL) throw new Error("The contact service is not configured.");
+      const response = await fetch(`${BACKEND_API_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -42,7 +44,7 @@ export default function Contact() {
         }),
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "Could not send your message.");
+      if (!response.ok) throw new Error(result.error || result.detail || "Could not send your message.");
       toast.success("Message sent - Pravin will get back to you soon.");
       setForm(EMPTY);
     } catch (err) {
