@@ -1,11 +1,9 @@
 from fastapi import FastAPI, APIRouter, HTTPException, Request
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
-from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import re
 import time
-import uuid
 import ipaddress
 import logging
 import httpx
@@ -14,17 +12,17 @@ from html import escape
 from html.parser import HTMLParser
 from urllib.parse import urlparse
 from pydantic import BaseModel, EmailStr, Field
-from datetime import datetime, timezone
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
-
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +30,8 @@ RESEND_API_URL = "https://api.resend.com/emails"
 RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
 RESEND_FROM_EMAIL = os.environ.get("RESEND_FROM_EMAIL")
 EMAIL_REPLY_TO = os.environ.get("EMAIL_REPLY_TO")
-OWNER_EMAIL = os.environ["OWNER_EMAIL"]
+EMAIL_FROM_NAME = os.environ.get("EMAIL_FROM_NAME", "Pravin Salla Portfolio")
+OWNER_EMAIL = os.environ.get("CONTACT_TO_EMAIL") or os.environ.get("OWNER_EMAIL")
 
 _SHORTENERS = ("bit.ly", "tinyurl.com", "t.co", "is.gd", "cutt.ly", "goo.gl", "rebrand.ly")
 _CRED_ASK = ("reply with your password", "reply with the code", "send your password", "cvv",
@@ -109,8 +108,8 @@ def _assert_safe_email(subject: str, html: str) -> None:
 
 async def send_email(*, to: str, subject: str, html: str, reply_to: str | None = None) -> str | None:
     _assert_safe_email(subject, html)
-    if not RESEND_API_KEY or not RESEND_FROM_EMAIL:
-        logger.error("Resend is not configured: RESEND_API_KEY and RESEND_FROM_EMAIL are required")
+    if not RESEND_API_KEY or not RESEND_FROM_EMAIL or not to:
+        logger.error("Resend is not configured: RESEND_API_KEY, RESEND_FROM_EMAIL, and CONTACT_TO_EMAIL are required")
         raise HTTPException(status_code=503, detail="Email service is not configured")
 
     payload = {"from": RESEND_FROM_EMAIL, "to": [to], "subject": subject, "html": html}
@@ -166,13 +165,6 @@ async def root():
 @api_router.post("/contact")
 async def submit_contact(input: ContactMessage, request: Request):
     _throttle(request.client.host if request.client else "unknown")
-    doc = {
-        "id": str(uuid.uuid4()),
-        **input.model_dump(),
-        "timestamp": datetime.now(timezone.utc).isoformat(),
-    }
-    await db.contact_messages.insert_one(doc)
-
     subject = f"Portfolio inquiry [{escape(input.inquiry_type)}] from {escape(input.name)}"
     html = (
         '<table role="presentation" width="100%" cellpadding="0" cellspacing="0">'
@@ -189,14 +181,8 @@ async def submit_contact(input: ContactMessage, request: Request):
         f'{escape(EMAIL_FROM_NAME)} website. We never ask for passwords or card details by email.</p>'
         '</td></tr></table>'
     )
-    email_sent = True
-    try:
-        await send_email(to=OWNER_EMAIL, subject=subject, html=html, reply_to=str(input.email))
-    except HTTPException:
-        email_sent = False
-        logger.error("Contact message stored but email notification failed")
-
-    return {"status": "success", "id": doc["id"], "email_sent": email_sent}
+    email_id = await send_email(to=OWNER_EMAIL, subject=subject, html=html, reply_to=str(input.email))
+    return {"status": "success", "id": email_id, "email_sent": True}
 
 
 app.include_router(api_router)
@@ -209,12 +195,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
 
 
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    client.close()
