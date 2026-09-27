@@ -41,6 +41,7 @@
     }
     html {
         scroll-behavior: auto;
+        font-size: 110%;
     }
     body {
         @apply bg-background text-foreground font-dmsans;

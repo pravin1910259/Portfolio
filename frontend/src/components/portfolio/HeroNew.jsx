@@ -12,7 +12,7 @@ export default function Hero({ onNavigate }) {
     >
       <div className="mx-auto max-w-7xl w-full">
         <MaskedLine delay={0.2}>
-          <span className="font-mono text-[11px] sm:text-xs tracking-[0.35em] text-cyanic">
+          <span className="font-mono text-[0.6875rem] sm:text-xs tracking-[0.35em] text-cyanic">
             PORTFOLIO - MECHANICAL ENGINEER - 2026
           </span>
         </MaskedLine>
@@ -87,7 +87,7 @@ export default function Hero({ onNavigate }) {
           {PROFILE.metrics.map((m) => (
             <div key={m.label} className="border-r border-b border-line px-5 py-5">
               <div className="font-syne text-xl sm:text-2xl font-bold text-cyanic">{m.value}</div>
-              <div className="mt-1 font-mono text-[9px] sm:text-[10px] tracking-[0.18em] text-slate-500">
+              <div className="mt-1 font-mono text-[0.5625rem] sm:text-[0.625rem] tracking-[0.18em] text-slate-500">
                 {m.label}
               </div>
             </div>

@@ -208,7 +208,7 @@ export default function Hero({ onNavigate }) {
             {PROFILE.metrics.map((m) => (
               <div key={m.label} className="bg-obsidian/90 px-4 py-5">
                 <div className="font-syne text-xl sm:text-2xl font-bold text-cyanic">{m.value}</div>
-                <div className="mt-1 font-mono text-[9px] sm:text-[10px] tracking-[0.18em] text-slate-500">
+                <div className="mt-1 font-mono text-[0.5625rem] sm:text-[0.625rem] tracking-[0.18em] text-slate-500">
                   {m.label}
                 </div>
               </div>
@@ -224,7 +224,7 @@ export default function Hero({ onNavigate }) {
         >
           <div className="absolute top-0 left-0 z-10 w-40 h-40 sm:w-52 sm:h-52 border border-line bg-panel blueprint-grid-fine shadow-xl">
             <GearCanvas />
-            <div className="absolute bottom-2 right-2 flex items-center gap-1.5 font-mono text-[8px] tracking-widest text-slate-500">
+            <div className="absolute bottom-2 right-2 flex items-center gap-1.5 font-mono text-[0.5rem] tracking-widest text-slate-500">
               <MousePointer2 size={10} className="text-cyanic" />
               MOVE CURSOR
             </div>
@@ -242,11 +242,11 @@ export default function Hero({ onNavigate }) {
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent px-5 pb-4 pt-16 flex items-end justify-between">
               <div>
                 <div className="font-syne font-bold text-white text-lg leading-tight">Pravin Salla</div>
-                <div className="font-mono text-[9px] tracking-[0.25em] text-white/70 mt-1">
+                <div className="font-mono text-[0.5625rem] tracking-[0.25em] text-white/70 mt-1">
                   MECHANICAL ENGINEER - DAVIS, CA
                 </div>
               </div>
-              <span className="font-mono text-[9px] tracking-[0.2em] text-white/60 border border-white/30 px-2 py-1">
+              <span className="font-mono text-[0.5625rem] tracking-[0.2em] text-white/60 border border-white/30 px-2 py-1">
                 IMG.00
               </span>
             </div>

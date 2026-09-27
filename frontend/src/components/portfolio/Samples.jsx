@@ -104,21 +104,21 @@ function MockNav({ c }) {
       style={{ borderColor: c.line, background: c.surface }}
     >
       <div className="flex items-baseline gap-2">
-        <span className="font-mono text-[10px] tracking-widest" style={{ color: c.accent2 }}>
+        <span className="font-mono text-[0.625rem] tracking-widest" style={{ color: c.accent2 }}>
           [PS]
         </span>
         <span className="font-syne font-bold text-sm" style={{ color: c.ink }}>
           Pravin Salla
         </span>
       </div>
-      <div className="hidden sm:flex gap-5 font-mono text-[9px] tracking-[0.2em]" style={{ color: c.sub }}>
+      <div className="hidden sm:flex gap-5 font-mono text-[0.5625rem] tracking-[0.2em]" style={{ color: c.sub }}>
         <span>01. EXPERIENCE</span>
         <span>02. PROJECTS</span>
         <span>03. SKILLS</span>
         <span>05. CONTACT</span>
       </div>
       <span
-        className="font-mono text-[9px] tracking-[0.2em] px-3 py-1.5 border"
+        className="font-mono text-[0.5625rem] tracking-[0.2em] px-3 py-1.5 border"
         style={{ color: c.accent2, borderColor: c.accent2 }}
       >
         RESUME
@@ -136,7 +136,7 @@ function MockHero({ c }) {
         backgroundColor: c.bg,
       }}
     >
-      <div className="font-mono text-[9px] tracking-[0.3em] mb-5" style={{ color: c.accent2 }}>
+      <div className="font-mono text-[0.5625rem] tracking-[0.3em] mb-5" style={{ color: c.accent2 }}>
         MS CANDIDATE - MECHANICAL & AEROSPACE ENGINEERING, UC DAVIS
       </div>
       <div className="font-syne font-extrabold leading-[0.95] tracking-tight">
@@ -159,13 +159,13 @@ function MockHero({ c }) {
       </p>
       <div className="mt-6 flex gap-3">
         <span
-          className="font-mono text-[9px] tracking-[0.2em] px-4 py-2.5"
+          className="font-mono text-[0.5625rem] tracking-[0.2em] px-4 py-2.5"
           style={{ background: c.ink, color: c.bg }}
         >
           EXPLORE PROJECTS
         </span>
         <span
-          className="font-mono text-[9px] tracking-[0.2em] px-4 py-2.5 border"
+          className="font-mono text-[0.5625rem] tracking-[0.2em] px-4 py-2.5 border"
           style={{ borderColor: c.line, color: c.sub }}
         >
           DOWNLOAD RESUME
@@ -182,7 +182,7 @@ function MockHero({ c }) {
             <div className="font-syne text-sm font-bold" style={{ color: c.accent2 }}>
               {v}
             </div>
-            <div className="font-mono text-[8px] tracking-[0.15em] mt-0.5" style={{ color: c.sub }}>
+            <div className="font-mono text-[0.5rem] tracking-[0.15em] mt-0.5" style={{ color: c.sub }}>
               {l}
             </div>
           </div>
@@ -196,7 +196,7 @@ function MockCard({ c }) {
   return (
     <div className="px-6 sm:px-10 pb-10" style={{ background: c.bg }}>
       <div className="flex items-center gap-3 mb-4">
-        <span className="font-mono text-[9px] tracking-[0.3em]" style={{ color: c.accent2 }}>
+        <span className="font-mono text-[0.5625rem] tracking-[0.3em]" style={{ color: c.accent2 }}>
           02 //
         </span>
         <span className="h-px w-16" style={{ background: c.line }} />
@@ -206,11 +206,11 @@ function MockCard({ c }) {
           <div className="font-syne font-semibold" style={{ color: c.ink }}>
             Subsonic Wind Tunnel - Design, CFD & Fabrication
           </div>
-          <div className="font-mono text-[9px] tracking-widest mt-1.5" style={{ color: c.accent2 }}>
+          <div className="font-mono text-[0.5625rem] tracking-widest mt-1.5" style={{ color: c.accent2 }}>
             9.4 M/S · 0.42% TURBULENCE INTENSITY
           </div>
         </div>
-        <span className="font-mono text-[9px] tracking-widest border px-2.5 py-1.5" style={{ color: c.sub, borderColor: c.line }}>
+        <span className="font-mono text-[0.5625rem] tracking-widest border px-2.5 py-1.5" style={{ color: c.sub, borderColor: c.line }}>
           REPORT ↗
         </span>
       </div>
@@ -238,7 +238,7 @@ export default function Samples() {
             <section key={t.id} data-testid={t.id}>
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-4">
                 <h2 className="font-syne text-xl font-bold text-white">{t.name}</h2>
-                <span className="font-mono text-[10px] tracking-[0.25em] text-slate-500">
+                <span className="font-mono text-[0.625rem] tracking-[0.25em] text-slate-500">
                   {t.tagline.toUpperCase()}
                 </span>
               </div>
@@ -251,7 +251,7 @@ export default function Samples() {
             </section>
           ))}
         </div>
-        <p className="mt-14 font-mono text-[11px] tracking-[0.25em] text-slate-500 text-center">
+        <p className="mt-14 font-mono text-[0.6875rem] tracking-[0.25em] text-slate-500 text-center">
           REPLY IN CHAT WITH “A”, “A2”, “A3”, “A4”, “B”, OR “C” - OR ASK FOR A VARIATION
         </p>
       </div>

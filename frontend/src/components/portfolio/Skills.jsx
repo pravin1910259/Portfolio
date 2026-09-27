@@ -19,7 +19,7 @@ export default function Skills() {
                 className="corner-ticks h-full border border-line/80 bg-card2/70 p-6 lg:p-7 hover:border-cyanic/40 hover:bg-cardhover/70 transition-colors duration-300"
               >
                 <div className="flex items-center gap-3 mb-5">
-                  <span className="font-mono text-[10px] tracking-[0.25em] text-cyanic">
+                  <span className="font-mono text-[0.625rem] tracking-[0.25em] text-cyanic">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="font-syne text-lg font-semibold text-slate-100">{group.name}</h3>
@@ -28,7 +28,7 @@ export default function Skills() {
                   {group.items.map((skill) => (
                     <span
                       key={skill}
-                      className="font-mono text-[11px] tracking-wider text-slate-300 bg-panel/80 border border-line px-2.5 py-1.5 hover:text-cyanic hover:border-cyanic/40 transition-colors cursor-default"
+                      className="font-mono text-[0.6875rem] tracking-wider text-slate-300 bg-panel/80 border border-line px-2.5 py-1.5 hover:text-cyanic hover:border-cyanic/40 transition-colors cursor-default"
                     >
                       {skill}
                     </span>

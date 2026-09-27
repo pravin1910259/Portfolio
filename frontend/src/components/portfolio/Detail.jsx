@@ -11,8 +11,8 @@ function ReservedBlock({ icon: Icon, title, note, testid }) {
       className="border border-dashed border-line px-6 py-10 text-center bg-panel/40"
     >
       <Icon size={20} className="mx-auto text-cyanic mb-3" strokeWidth={1.5} />
-      <div className="font-mono text-[11px] tracking-[0.25em] text-slate-400">{title}</div>
-      <div className="mt-2 font-mono text-[10px] tracking-[0.15em] text-slate-500">{note}</div>
+      <div className="font-mono text-[0.6875rem] tracking-[0.25em] text-slate-400">{title}</div>
+      <div className="mt-2 font-mono text-[0.625rem] tracking-[0.15em] text-slate-500">{note}</div>
     </div>
   );
 }
@@ -53,7 +53,7 @@ export default function DetailPage({ type }) {
             <Link
               to="/"
               data-testid="detail-back-link"
-              className="flex items-center gap-2 font-mono text-[11px] tracking-[0.25em] text-slate-400 hover:text-cyanic transition-colors"
+              className="flex items-center gap-2 font-mono text-[0.6875rem] tracking-[0.25em] text-slate-400 hover:text-cyanic transition-colors"
             >
               <ArrowLeft size={14} />
               BACK
@@ -63,7 +63,7 @@ export default function DetailPage({ type }) {
 
         <main className="mx-auto max-w-5xl px-4 sm:px-8 py-16 lg:py-24">
           <div className="mb-12">
-            <div className="font-mono text-[11px] tracking-[0.3em] text-cyanic mb-4">
+            <div className="font-mono text-[0.6875rem] tracking-[0.3em] text-cyanic mb-4">
               {isProject ? item.category : item.organization}
             </div>
             <h1 className="font-syne text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-50 leading-tight">
@@ -84,14 +84,14 @@ export default function DetailPage({ type }) {
 
           {item.image && (
             <div className="mb-12 border border-line overflow-hidden">
-              <img src={item.image} alt={item.title} className="w-full max-h-[480px] object-cover" />
+              <img src={item.image} alt={item.title} className="w-full max-h-[30rem] object-cover" />
             </div>
           )}
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
             <div className="lg:col-span-8 space-y-10">
               <section data-testid="detail-overview">
-                <h2 className="font-mono text-[11px] tracking-[0.3em] text-cyanic mb-5">OVERVIEW</h2>
+                <h2 className="font-mono text-[0.6875rem] tracking-[0.3em] text-cyanic mb-5">OVERVIEW</h2>
                 {isProject ? (
                   <p className="text-base sm:text-lg text-slate-400 leading-relaxed">{item.description}</p>
                 ) : (
@@ -112,7 +112,7 @@ export default function DetailPage({ type }) {
                     key={sec.heading}
                     data-testid={`detail-writeup-${sec.heading.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                   >
-                    <h2 className="font-mono text-[11px] tracking-[0.3em] text-cyanic mb-5">
+                    <h2 className="font-mono text-[0.6875rem] tracking-[0.3em] text-cyanic mb-5">
                       {sec.heading.toUpperCase()}
                     </h2>
                     <div className="space-y-4">
@@ -122,7 +122,7 @@ export default function DetailPage({ type }) {
                             <thead>
                               <tr className="bg-panel">
                                 {sec.table.headers.map((h) => (
-                                  <th key={h} className="font-mono text-[10px] tracking-[0.2em] text-slate-500 text-left px-4 py-3 border-b border-line uppercase">
+                                  <th key={h} className="font-mono text-[0.625rem] tracking-[0.2em] text-slate-500 text-left px-4 py-3 border-b border-line uppercase">
                                     {h}
                                   </th>
                                 ))}
@@ -188,10 +188,10 @@ export default function DetailPage({ type }) {
             <aside className="lg:col-span-4 space-y-8">
               {(item.tags || item.tools) && (
                 <div>
-                  <h2 className="font-mono text-[11px] tracking-[0.3em] text-cyanic mb-4">TOOLS & METHODS</h2>
+                  <h2 className="font-mono text-[0.6875rem] tracking-[0.3em] text-cyanic mb-4">TOOLS & METHODS</h2>
                   <div className="flex flex-wrap gap-2">
                     {(item.tags || item.tools).map((t) => (
-                      <span key={t} className="font-mono text-[10px] tracking-widest text-slate-400 border border-line px-2.5 py-1.5">
+                      <span key={t} className="font-mono text-[0.625rem] tracking-widest text-slate-400 border border-line px-2.5 py-1.5">
                         {t.toUpperCase()}
                       </span>
                     ))}
@@ -200,7 +200,7 @@ export default function DetailPage({ type }) {
               )}
               {item.metrics && (
                 <div>
-                  <h2 className="font-mono text-[11px] tracking-[0.3em] text-cyanic mb-4">KEY NUMBERS</h2>
+                  <h2 className="font-mono text-[0.6875rem] tracking-[0.3em] text-cyanic mb-4">KEY NUMBERS</h2>
                   <div className="space-y-2">
                     {item.metrics.map((m) => (
                       <div key={m} className="font-mono text-xs tracking-wider text-ember border-l-2 border-ember/50 pl-3 py-1">
@@ -212,7 +212,7 @@ export default function DetailPage({ type }) {
               )}
               {item.links && item.links.length > 0 && (
                 <div>
-                  <h2 className="font-mono text-[11px] tracking-[0.3em] text-cyanic mb-4">DOCUMENTS</h2>
+                  <h2 className="font-mono text-[0.6875rem] tracking-[0.3em] text-cyanic mb-4">DOCUMENTS</h2>
                   <div className="flex flex-col gap-3">
                     {item.links.map((link) => (
                       <a
@@ -221,7 +221,7 @@ export default function DetailPage({ type }) {
                         href={link.url}
                         target={link.url.startsWith("http") ? "_blank" : undefined}
                         rel="noopener noreferrer"
-                        className="font-mono text-[11px] tracking-[0.2em] text-cyanic border border-cyanic/40 px-4 py-3 hover:bg-cyanic hover:text-obsidian transition-colors text-center"
+                        className="font-mono text-[0.6875rem] tracking-[0.2em] text-cyanic border border-cyanic/40 px-4 py-3 hover:bg-cyanic hover:text-obsidian transition-colors text-center"
                       >
                         {link.label} ↗
                       </a>
@@ -234,7 +234,7 @@ export default function DetailPage({ type }) {
 
           {gallery.length > 0 && (
             <section className="mt-16" data-testid="detail-gallery">
-              <h2 className="font-mono text-[11px] tracking-[0.3em] text-cyanic mb-6">
+              <h2 className="font-mono text-[0.6875rem] tracking-[0.3em] text-cyanic mb-6">
                 PHOTO GALLERY - {gallery.length} PHOTOS
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -259,7 +259,7 @@ export default function DetailPage({ type }) {
         </main>
 
         <footer className="border-t border-line/70 py-8 text-center">
-          <Link to="/" className="font-mono text-[11px] tracking-[0.25em] text-slate-500 hover:text-cyanic transition-colors">
+          <Link to="/" className="font-mono text-[0.6875rem] tracking-[0.25em] text-slate-500 hover:text-cyanic transition-colors">
             ← BACK TO PORTFOLIO
           </Link>
         </footer>

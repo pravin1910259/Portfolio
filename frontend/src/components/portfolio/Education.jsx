@@ -21,7 +21,7 @@ export default function Education() {
                 <div className="flex items-start justify-between gap-4 mb-6">
                   <GraduationCap size={28} className="text-cyanic shrink-0" strokeWidth={1.5} />
                   <div className="text-right">
-                    <div className="font-mono text-[10px] tracking-[0.25em] text-slate-500">GPA</div>
+                    <div className="font-mono text-[0.625rem] tracking-[0.25em] text-slate-500">GPA</div>
                     <div className="font-syne text-2xl font-bold text-cyanic">{edu.gpa}</div>
                   </div>
                 </div>
@@ -31,14 +31,14 @@ export default function Education() {
                 <p className="mt-2 text-slate-300">{edu.institution}</p>
                 <p className="mt-2 font-mono text-xs tracking-[0.2em] text-slate-500">{edu.period}</p>
                 <div className="mt-6 pt-6 border-t border-line/70">
-                  <div className="font-mono text-[10px] tracking-[0.25em] text-slate-500 mb-3">
+                  <div className="font-mono text-[0.625rem] tracking-[0.25em] text-slate-500 mb-3">
                     RELEVANT COURSEWORK
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {edu.coursework.map((c) => (
                       <span
                         key={c}
-                        className="font-mono text-[11px] tracking-wider text-slate-400 border border-line px-2.5 py-1"
+                        className="font-mono text-[0.6875rem] tracking-wider text-slate-400 border border-line px-2.5 py-1"
                       >
                         {c}
                       </span>

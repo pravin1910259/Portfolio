@@ -71,7 +71,7 @@ export default function Contact() {
                   <>
                     <row.icon size={18} className="text-cyanic shrink-0 mt-0.5" strokeWidth={1.5} />
                     <div>
-                      <div className="font-mono text-[10px] tracking-[0.25em] text-slate-500">{row.label}</div>
+                      <div className="font-mono text-[0.625rem] tracking-[0.25em] text-slate-500">{row.label}</div>
                       <div className="mt-1 text-slate-200 text-sm sm:text-base break-all">{row.value}</div>
                     </div>
                   </>
@@ -108,7 +108,7 @@ export default function Contact() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="cf-name" className="font-mono text-[10px] tracking-[0.25em] text-slate-400">
+                  <Label htmlFor="cf-name" className="font-mono text-[0.625rem] tracking-[0.25em] text-slate-400">
                     FULL NAME *
                   </Label>
                   <Input
@@ -122,7 +122,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="cf-email" className="font-mono text-[10px] tracking-[0.25em] text-slate-400">
+                  <Label htmlFor="cf-email" className="font-mono text-[0.625rem] tracking-[0.25em] text-slate-400">
                     EMAIL *
                   </Label>
                   <Input
@@ -140,7 +140,7 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label className="font-mono text-[10px] tracking-[0.25em] text-slate-400">INQUIRY TYPE</Label>
+                  <Label className="font-mono text-[0.625rem] tracking-[0.25em] text-slate-400">INQUIRY TYPE</Label>
                   <Select
                     value={form.inquiry_type}
                     onValueChange={(v) => setForm((f) => ({ ...f, inquiry_type: v }))}
@@ -161,7 +161,7 @@ export default function Contact() {
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="cf-subject" className="font-mono text-[10px] tracking-[0.25em] text-slate-400">
+                  <Label htmlFor="cf-subject" className="font-mono text-[0.625rem] tracking-[0.25em] text-slate-400">
                     SUBJECT *
                   </Label>
                   <Input
@@ -177,7 +177,7 @@ export default function Contact() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="cf-message" className="font-mono text-[10px] tracking-[0.25em] text-slate-400">
+                <Label htmlFor="cf-message" className="font-mono text-[0.625rem] tracking-[0.25em] text-slate-400">
                   MESSAGE *
                 </Label>
                 <Textarea

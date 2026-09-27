@@ -6,11 +6,11 @@ function Frame({ id, name, note, children }) {
     <section data-testid={id} className="border border-neutral-800 bg-white">
       <div className="flex items-center justify-between px-8 h-16 border-b" style={{ borderColor: INK }}>
         {children}
-        <span className="font-mono text-[10px] tracking-[0.25em] text-neutral-400">RESUME</span>
+        <span className="font-mono text-[0.625rem] tracking-[0.25em] text-neutral-400">RESUME</span>
       </div>
       <div className="bg-neutral-950 px-8 py-4 flex flex-wrap items-baseline gap-3">
         <span className="font-syne font-bold text-white text-sm">{name}</span>
-        <span className="font-mono text-[10px] tracking-widest text-neutral-500">{note}</span>
+        <span className="font-mono text-[0.625rem] tracking-widest text-neutral-500">{note}</span>
       </div>
     </section>
   );
@@ -68,7 +68,7 @@ export default function BrandSamples() {
             </span>
           </Frame>
         </div>
-        <p className="mt-12 font-mono text-[11px] tracking-[0.25em] text-slate-500 text-center">
+        <p className="mt-12 font-mono text-[0.6875rem] tracking-[0.25em] text-slate-500 text-center">
           REPLY WITH 1–6, OR DESCRIBE A VARIATION
         </p>
       </div>

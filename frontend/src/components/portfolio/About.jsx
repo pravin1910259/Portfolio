@@ -17,10 +17,10 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.15} className="lg:col-span-4">
             <div className="corner-ticks border border-line/80 bg-card2/70 p-6 lg:p-7 space-y-6">
-              <div className="font-mono text-[10px] tracking-[0.25em] text-cyanic">QUICK FACTS</div>
+              <div className="font-mono text-[0.625rem] tracking-[0.25em] text-cyanic">QUICK FACTS</div>
               {ABOUT.facts.map((f) => (
                 <div key={f.label}>
-                  <div className="font-mono text-[10px] tracking-[0.25em] text-slate-500">{f.label}</div>
+                  <div className="font-mono text-[0.625rem] tracking-[0.25em] text-slate-500">{f.label}</div>
                   <div className="mt-1.5 text-sm text-slate-200 leading-relaxed">{f.value}</div>
                 </div>
               ))}

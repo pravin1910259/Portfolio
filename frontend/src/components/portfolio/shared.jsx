@@ -87,7 +87,7 @@ export function Lightbox({ items, index, onClose, onPrev, onNext, testid }) {
         className="max-h-[78vh] max-w-full object-contain border border-white/20"
         onClick={(e) => e.stopPropagation()}
       />
-      <p className="mt-4 font-mono text-[11px] tracking-[0.2em] text-white/80 text-center uppercase px-4">
+      <p className="mt-4 font-mono text-[0.6875rem] tracking-[0.2em] text-white/80 text-center uppercase px-4">
         {index + 1} / {items.length} - {item.caption}
       </p>
       <button

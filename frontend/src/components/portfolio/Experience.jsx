@@ -40,7 +40,7 @@ export default function Experience() {
                       <div className="font-mono text-xs tracking-[0.2em] text-slate-300 border border-line px-3 py-1.5 inline-block">
                         {role.period}
                       </div>
-                      <div className="mt-2 flex items-center justify-end gap-1.5 font-mono text-[11px] text-slate-500">
+                      <div className="mt-2 flex items-center justify-end gap-1.5 font-mono text-[0.6875rem] text-slate-500">
                         <MapPin size={11} />
                         {role.location}
                       </div>
@@ -58,7 +58,7 @@ export default function Experience() {
                     {role.tools.map((tool) => (
                       <span
                         key={tool}
-                        className="font-mono text-[10px] tracking-widest text-slate-400 border border-line px-2.5 py-1 group-hover:border-cyanic/30 transition-colors"
+                        className="font-mono text-[0.625rem] tracking-widest text-slate-400 border border-line px-2.5 py-1 group-hover:border-cyanic/30 transition-colors"
                       >
                         {tool.toUpperCase()}
                       </span>

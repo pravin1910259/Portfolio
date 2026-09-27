@@ -23,26 +23,26 @@ function ProjectCard({ project, index, className }) {
               className="w-full h-full object-cover saturate-[0.85] contrast-105 group-hover:saturate-100 group-hover:scale-[1.04] transition-all duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-card2 via-transparent to-transparent" />
-            <div className="absolute top-4 left-4 font-mono text-[10px] tracking-[0.25em] text-cyanic bg-obsidian/80 border border-cyanic/30 px-3 py-1.5">
+            <div className="absolute top-4 left-4 font-mono text-[0.625rem] tracking-[0.25em] text-cyanic bg-obsidian/80 border border-cyanic/30 px-3 py-1.5">
               {project.category}
             </div>
-            <div className="absolute top-4 right-4 font-mono text-[10px] tracking-widest text-slate-400 bg-obsidian/80 px-2.5 py-1.5">
+            <div className="absolute top-4 right-4 font-mono text-[0.625rem] tracking-widest text-slate-400 bg-obsidian/80 px-2.5 py-1.5">
               {project.period}
             </div>
           </div>
         ) : (
           <div className="relative aspect-[16/9] blueprint-grid-fine bg-panel/80 flex flex-col items-center justify-center border-b border-line/60">
-            <span className="font-mono text-[10px] tracking-[0.25em] text-cyanic bg-obsidian/80 border border-cyanic/30 px-3 py-1.5 absolute top-4 left-4">
+            <span className="font-mono text-[0.625rem] tracking-[0.25em] text-cyanic bg-obsidian/80 border border-cyanic/30 px-3 py-1.5 absolute top-4 left-4">
               {project.category}
             </span>
-            <span className="font-mono text-[10px] tracking-widest text-slate-400 bg-obsidian/80 px-2.5 py-1.5 absolute top-4 right-4">
+            <span className="font-mono text-[0.625rem] tracking-widest text-slate-400 bg-obsidian/80 px-2.5 py-1.5 absolute top-4 right-4">
               {project.period}
             </span>
             <span className="font-syne text-4xl text-cyanic/20 font-bold">Ø</span>
-            <span className="mt-3 px-6 text-center font-mono text-[10px] tracking-[0.2em] text-slate-500">
+            <span className="mt-3 px-6 text-center font-mono text-[0.625rem] tracking-[0.2em] text-slate-500">
               {project.schematic}
             </span>
-            <span className="mt-2 font-mono text-[9px] tracking-[0.2em] text-slate-600">
+            <span className="mt-2 font-mono text-[0.5625rem] tracking-[0.2em] text-slate-600">
               IMAGE / CAD RENDER - TO BE ADDED
             </span>
           </div>
@@ -53,7 +53,7 @@ function ProjectCard({ project, index, className }) {
           </h3>
           <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1.5">
             {project.metrics.map((m) => (
-              <span key={m} className="font-mono text-[11px] tracking-wider text-ember">
+              <span key={m} className="font-mono text-[0.6875rem] tracking-wider text-ember">
                 {m}
               </span>
             ))}
@@ -63,7 +63,7 @@ function ProjectCard({ project, index, className }) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="font-mono text-[10px] tracking-widest text-slate-500 border border-line px-2.5 py-1"
+                className="font-mono text-[0.625rem] tracking-widest text-slate-500 border border-line px-2.5 py-1"
               >
                 {tag.toUpperCase()}
               </span>
@@ -73,7 +73,7 @@ function ProjectCard({ project, index, className }) {
             <Link
               data-testid={`${project.id}-read-more`}
               to={`/projects/${project.slug}`}
-              className="flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] text-slate-200 border border-line px-3.5 py-2 hover:border-cyanic hover:text-cyanic transition-colors"
+              className="flex items-center gap-2 font-mono text-[0.625rem] tracking-[0.2em] text-slate-200 border border-line px-3.5 py-2 hover:border-cyanic hover:text-cyanic transition-colors"
             >
               READ MORE
               <ArrowRight size={12} />
@@ -85,7 +85,7 @@ function ProjectCard({ project, index, className }) {
                 href={link.url}
                 target={link.url.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="font-mono text-[10px] tracking-[0.2em] text-cyanic border border-cyanic/40 px-3.5 py-2 hover:bg-cyanic hover:text-obsidian transition-colors"
+                className="font-mono text-[0.625rem] tracking-[0.2em] text-cyanic border border-cyanic/40 px-3.5 py-2 hover:bg-cyanic hover:text-obsidian transition-colors"
               >
                 {link.label} ↗
               </a>
@@ -93,7 +93,7 @@ function ProjectCard({ project, index, className }) {
           </div>
           {gallery.length > 0 && (
             <div className="mt-5 pt-5 border-t border-line/60">
-              <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.25em] text-slate-500 mb-3">
+              <div className="flex items-center gap-2 font-mono text-[0.625rem] tracking-[0.25em] text-slate-500 mb-3">
                 <Images size={13} className="text-cyanic" />
                 PROJECT GALLERY - {gallery.length} PHOTOS
               </div>
