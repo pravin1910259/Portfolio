@@ -12,10 +12,10 @@ export const PROFILE = {
   intro:
     "I design, simulate, and build mechanical systems end-to-end - from FEA-validated CAD models to instrumented test rigs on the shop floor. Currently researching heavy-equipment safety systems with Caltrans at UC Davis.",
   metrics: [
-    { value: "3.7/4.0", label: "GRADUATE GPA" },
-    { value: "1", label: "PEER-REVIEWED PUBLICATION (SAGE)" },
-    { value: "40+", label: "PRODUCT CONCEPTS DELIVERED" },
-    { value: "836K", label: "NODE CFD MESH VALIDATED" },
+    { value: "40+", label: "PRODUCT CONCEPTS PROTOTYPED" },
+    { value: "150+", label: "STUDENTS TRAINED ON CNC MACHINING" },
+    { value: "AHMCT", label: "GRADUATE RESEARCHER · UC DAVIS" },
+    { value: "Published", label: "PEER-REVIEWED JOURNAL (SAGE)" },
   ],
 };
 
