@@ -12,10 +12,10 @@ export const PROFILE = {
   intro:
     "I design, simulate, and build mechanical systems end-to-end - from FEA-validated CAD models to instrumented test rigs on the shop floor. Currently researching heavy equipment safety systems for the California Department of Transportation at AHMCT, UC Davis.",
   metrics: [
-    { value: "40+", label: "PRODUCT CONCEPTS PROTOTYPED" },
-    { value: "150+", label: "STUDENTS TRAINED ON CNC MACHINING" },
     { value: "AHMCT", label: "GRADUATE RESEARCHER · UC DAVIS" },
     { value: "Published", label: "PEER-REVIEWED JOURNAL (SAGE)" },
+    { value: "40+", label: "PRODUCT CONCEPTS PROTOTYPED" },
+    { value: "150+", label: "STUDENTS TRAINED ON CNC MACHINING" },
   ],
 };
 
@@ -171,8 +171,17 @@ export const PROJECTS = [
     metrics: ["Noise & Vibration Worldwide 57(4–5), 2026", "FE within ~5% on upper modes", "500–1500 RPM, single & multi-plane"],
     description:
       "Co-authored peer-reviewed study (Desai, Salla, et al.) on unbalance fault diagnosis using a Machinery Fault Simulator - FFT-based vibration analysis quantifying the effects of unbalance mass magnitude (1.4–4.96 g), angular position, and rotational speed in single- and multi-plane configurations. SolidWorks rotor models and ANSYS modal analysis validated natural frequencies against experiment with deviations generally below 10%.",
-    image:
-      "https://images.unsplash.com/photo-1678225867994-e7a5b071ebfd?crop=entropy&cs=srgb&fm=jpg&q=85&w=940",
+    image: "/projects/fault-diagnosis/cover.jpg",
+    gallery: [
+      { src: "/projects/fault-diagnosis/01_fault_simulator.jpg", caption: "Tiera Machinery Fault Simulator - twin-disc rotor test rig" },
+      { src: "/projects/fault-diagnosis/02_mounting_unbalance_mass.jpg", caption: "Fixing an unbalance mass into the rotor disc" },
+      { src: "/projects/fault-diagnosis/03_zero_degree_reference.jpg", caption: "Rotor disc with x-y axes and the zero-degree reference position" },
+      { src: "/projects/fault-diagnosis/04_two_plane_setup.jpg", caption: "Multi-plane unbalance - masses on both discs, accelerometers on the bearing housing" },
+      { src: "/projects/fault-diagnosis/05_fft_healthy.jpg", caption: "FFT spectrum of the healthy rotor - axial vs. radial acceleration" },
+      { src: "/projects/fault-diagnosis/06_fft_two_masses_1500rpm.jpg", caption: "Two 2.6 g masses 30° apart at 1500 rpm - dominant peak at the 25 Hz running speed" },
+      { src: "/projects/fault-diagnosis/07_impact_fft_800rpm.jpg", caption: "Measured amplitude vs. frequency, healthy shaft at 800 rpm" },
+      { src: "/projects/fault-diagnosis/08_fem_mode_shapes.jpg", caption: "ANSYS modal analysis - mode shapes at 89.2, 126.3 and 150.1 Hz" },
+    ],
     tags: ["FFT Analysis", "ANSYS Modal", "SolidWorks", "T-VibLab", "Predictive Maintenance"],
     writeup: [
       {
