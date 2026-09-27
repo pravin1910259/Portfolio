@@ -28,7 +28,7 @@ export default function Hero({ onNavigate }) {
           </MaskedLine>
         </h1>
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
