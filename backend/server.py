@@ -28,9 +28,9 @@ api_router = APIRouter(prefix="/api")
 
 logger = logging.getLogger(__name__)
 
-EMAIL_BASE_URL = "https://integrations.emergentagent.com"
-EMAIL_KEY = os.environ["EMERGENT_EMAIL_KEY"]
-EMAIL_FROM_NAME = os.environ["EMAIL_FROM_NAME"]
+RESEND_API_URL = "https://api.resend.com/emails"
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
+RESEND_FROM_EMAIL = os.environ.get("RESEND_FROM_EMAIL")
 EMAIL_REPLY_TO = os.environ.get("EMAIL_REPLY_TO")
 OWNER_EMAIL = os.environ["OWNER_EMAIL"]
 
@@ -109,23 +109,30 @@ def _assert_safe_email(subject: str, html: str) -> None:
 
 async def send_email(*, to: str, subject: str, html: str, reply_to: str | None = None) -> str | None:
     _assert_safe_email(subject, html)
-    payload = {"to": [to], "subject": subject, "html": html, "from_name": EMAIL_FROM_NAME}
+    if not RESEND_API_KEY or not RESEND_FROM_EMAIL:
+        logger.error("Resend is not configured: RESEND_API_KEY and RESEND_FROM_EMAIL are required")
+        raise HTTPException(status_code=503, detail="Email service is not configured")
+
+    payload = {"from": RESEND_FROM_EMAIL, "to": [to], "subject": subject, "html": html}
     if reply_to or EMAIL_REPLY_TO:
-        payload["contact_email"] = reply_to or EMAIL_REPLY_TO
+        payload["reply_to"] = reply_to or EMAIL_REPLY_TO
     try:
         async with httpx.AsyncClient(timeout=30) as client_http:
             resp = await client_http.post(
-                f"{EMAIL_BASE_URL}/api/v1/email/send",
-                headers={"X-Email-Key": EMAIL_KEY},
+                RESEND_API_URL,
+                headers={"Authorization": f"Bearer {RESEND_API_KEY}"},
                 json=payload,
             )
         resp.raise_for_status()
         return resp.json().get("id")
     except httpx.HTTPStatusError as e:
-        logger.error(f"Email send failed: {e.response.status_code} {e.response.text}")
+        logger.error("Resend email request failed with status %s", e.response.status_code)
         raise HTTPException(status_code=502, detail="Failed to send email")
     except HTTPException:
         raise
+    except httpx.RequestError as e:
+        logger.error("Could not reach Resend: %s", str(e))
+        raise HTTPException(status_code=502, detail="Failed to send email")
     except Exception as e:
         logger.error(f"Email send error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to send email")
@@ -184,7 +191,7 @@ async def submit_contact(input: ContactMessage, request: Request):
     )
     email_sent = True
     try:
-        await send_email(to=OWNER_EMAIL, subject=subject, html=html)
+        await send_email(to=OWNER_EMAIL, subject=subject, html=html, reply_to=str(input.email))
     except HTTPException:
         email_sent = False
         logger.error("Contact message stored but email notification failed")
