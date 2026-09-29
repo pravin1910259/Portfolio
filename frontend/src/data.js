@@ -173,6 +173,7 @@ export const PROJECTS = [
       "Co-authored peer-reviewed study (Desai, Salla, et al.) on unbalance fault diagnosis using a Machinery Fault Simulator - FFT-based vibration analysis quantifying the effects of unbalance mass magnitude (1.4–4.96 g), angular position, and rotational speed in single- and multi-plane configurations. SolidWorks rotor models and ANSYS modal analysis validated natural frequencies against experiment with deviations generally below 10%.",
     image: "/projects/fault-diagnosis/cover.jpg",
     gallery: [
+      { src: "/projects/fault-diagnosis/00_control_panel.jpg", caption: "Fault simulator control panel - Schneider ATV12 VFD speed control, FWD/REV and emergency stop" },
       { src: "/projects/fault-diagnosis/03_zero_degree_reference.jpg", caption: "Rotor disc with x-y axes and the zero-degree reference position" },
       { src: "/projects/fault-diagnosis/04_two_plane_setup.jpg", caption: "Multi-plane unbalance - masses on both discs, accelerometers on the bearing housing" },
       { src: "/projects/fault-diagnosis/05_fft_healthy.jpg", caption: "FFT spectrum of the healthy rotor - axial vs. radial acceleration" },
@@ -250,9 +251,74 @@ export const PROJECTS = [
     metrics: ["8 piston-speed levels", "Lubricated vs dry", "NI DAQ pipeline"],
     description:
       "Characterized friction on a cylindrical grinder's linear axis using a reciprocating sled setup at MASTER Lab, UC Davis - integrating load cell and potentiometer signals via NI DAQ. Built MATLAB scripts converting raw voltage to physical units, segmenting strokes, and analyzing friction-velocity trends and cycle-to-cycle repeatability for servo sizing and tribological studies.",
-    image:
-      "https://images.pexels.com/photos/4116228/pexels-photo-4116228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    tags: ["MATLAB", "NI DAQ", "Load Cell", "Signal Processing"],
+    image: "/projects/friction/p01_test_rig.jpg",
+    gallery: [
+      { src: "/projects/friction/p01_test_rig.jpg", caption: "Reciprocating sled test rig on the grinder's linear axis - hydraulic cylinder drive, in-line load cell and linear potentiometer" },
+      { src: "/projects/friction/p02_arduino_calibration.jpg", caption: "First load cell calibration - Arduino and HX711 with a hanging weight set" },
+      { src: "/projects/friction/p03_daq_calibration.jpg", caption: "Dead-weight calibration through the IAA100 amplifier and NI USB DAQ" },
+      { src: "/projects/friction/01_wiring_diagram.png", caption: "Wiring - linear potentiometer and load cell (via IAA100 amplifier) into an NI USB DAQ, logged in LabVIEW" },
+      { src: "/projects/friction/p04_ni_connector_block.jpg", caption: "NI connector block - sensor signals wired into the analog inputs" },
+      { src: "/projects/friction/p05_daq_bench.jpg", caption: "Data acquisition bench - NI DAQ, load cell amplifier and bench power supplies" },
+      { src: "/projects/friction/p06_labview_live_spikes.jpg", caption: "Live LabVIEW trace - a force spike at every stroke reversal" },
+      { src: "/projects/friction/p07_labview_live_noise.jpg", caption: "Live LabVIEW trace - reversal spikes buried in a wide noise band, later traced to a DC power supply" },
+      { src: "/projects/friction/02_labview_raw_voltage.jpg", caption: "Raw load cell voltage in LabVIEW across several strokes" },
+      { src: "/projects/friction/03_labview_noisy_signal.jpg", caption: "Raw DAQ signal with heavy noise - isolated component by component while tracing the source" },
+      { src: "/projects/friction/p08_matlab_force_time.jpg", caption: "Force vs. time in MATLAB during early testing" },
+      { src: "/projects/friction/m01_matlab_single_stroke_script.png", caption: "MATLAB - scales voltages to mm (250 mm / 10 V) and N (2224 N / 10 V), then isolates one retracted-to-extended stroke" },
+      { src: "/projects/friction/m02_matlab_multi_stroke_script.png", caption: "MATLAB - detects stroke reversals with findpeaks and overlays force vs. distance for every stroke" },
+      { src: "/projects/friction/04_run1_multiple_strokes.png", caption: "Force and displacement over multiple strokes - run 1" },
+      { src: "/projects/friction/05_run2_multiple_strokes.png", caption: "Force and displacement over multiple strokes - run 2" },
+      { src: "/projects/friction/06_run3_multiple_strokes.png", caption: "Force and displacement over multiple strokes - run 3" },
+      { src: "/projects/friction/07_run4_multiple_strokes.png", caption: "Force and displacement over multiple strokes - run 4" },
+      { src: "/projects/friction/08_run5_multiple_strokes.png", caption: "Force and displacement over multiple strokes - run 5" },
+      { src: "/projects/friction/09_single_stroke_noisy.png", caption: "Single stroke segmented in MATLAB - force and distance vs. time" },
+      { src: "/projects/friction/10_single_stroke.png", caption: "Single stroke - force and distance vs. time" },
+      { src: "/projects/friction/11_single_stroke_force_distance.png", caption: "Single stroke - force vs. distance" },
+      { src: "/projects/friction/12_force_distance_multiple.png", caption: "Force vs. distance overlaid across multiple strokes" },
+    ],
+    writeup: [
+      {
+        heading: "Project Overview",
+        paragraphs: [
+          "For this project, I wanted to better understand how friction behaves in a reciprocating linear motion system and how factors such as speed and lubrication affect that behavior.",
+          "I used an instrumented Hahn Grinder as the experimental platform. The system has a hydraulically driven sled that moves back and forth along linear guideways, which gave me a physical system where I could repeatedly measure friction under different operating conditions.",
+          "My work involved setting up the instrumentation, collecting experimental data, troubleshooting the measurement system, and developing MATLAB scripts to process and analyze the results.",
+        ],
+      },
+      {
+        heading: "Experimental Setup & Data Acquisition",
+        paragraphs: [
+          "To measure what was happening during each stroke, I used a load cell to measure the resistance force acting on the moving system and a linear potentiometer to track its displacement.",
+          "I connected these sensors to NI DAQ hardware and used LabVIEW to collect the signals. I then brought the data into MATLAB, where I converted the raw voltage measurements into force and displacement. I also used the displacement and time data to calculate the actual piston velocity.",
+          "This allowed me to look at the system in several different ways, including force vs. time, force vs. displacement, repeated stroke behavior, and friction force vs. piston speed.",
+        ],
+      },
+      {
+        heading: "Experimental Investigation",
+        paragraphs: [
+          "I started by analyzing individual strokes to see how the friction force changed as the sled moved through its range of motion. From there, I developed MATLAB processing to automatically identify changes in direction and separate a continuous dataset into individual strokes. This allowed me to compare multiple cycles and look at how repeatable the friction behavior was.",
+          "I then expanded the experiments to different operating speeds. Instead of relying only on the machine's speed setting, I calculated the actual piston velocity from the measured displacement and time data and compared it with the measured friction force.",
+          "I also performed extended tests under lubricated and non-lubricated conditions to investigate how lubrication affected the magnitude and stability of friction during repeated operation.",
+        ],
+      },
+      {
+        heading: "Troubleshooting a Signal Noise Problem",
+        paragraphs: [
+          "One of the more interesting challenges I ran into was significant noise appearing in my sensor signals. I could have filtered or smoothed the data afterward in MATLAB, but I didn't want to simply make the plots look cleaner without understanding why the noise was there in the first place.",
+          "Instead, I worked through the measurement system one component at a time. I separated the potentiometer and load-cell systems, tested different NI DAQ configurations, changed the power arrangements, and removed individual components from the circuit to see how the signal responded.",
+          "Through this process of elimination, I eventually traced the interference to a DC power supply in the setup. Once I removed that supply from the measurement system, the signal quality improved significantly.",
+          "This was an important part of the project for me because it turned into a root-cause analysis problem. Rather than treating the noisy data as something that just needed to be filtered, I focused on finding and eliminating the physical source of the interference so that I could trust the measurements I was collecting.",
+        ],
+      },
+      {
+        heading: "Why This Matters",
+        paragraphs: [
+          "The goal of this work goes beyond simply measuring friction. In a machine-tool or precision-motion system, friction is an additional force that the drive system has to overcome, and that can influence motor and servo sizing, motion control, positioning behavior, energy losses, and lubrication requirements.",
+          "By experimentally measuring how friction changes with operating conditions, this project provides data that can be used to better understand the behavior of real motion systems and eventually support the development and validation of friction models for simulation and control.",
+        ],
+      },
+    ],
+    tags: ["MATLAB", "LabVIEW", "NI DAQ", "Load Cell", "Linear Potentiometer", "Signal Processing", "Instrumentation", "Hydraulics", "Tribology", "Experimental Testing", "Root-Cause Analysis", "Data Analysis"],
     links: [],
     span: "tall",
   },
