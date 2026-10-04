@@ -14,7 +14,7 @@ export const PROFILE = {
   metrics: [
     { value: "AHMCT", label: "GRADUATE RESEARCHER · UC DAVIS" },
     { value: "Published", label: "PEER-REVIEWED JOURNAL (SAGE)" },
-    { value: "40+", label: "PRODUCT CONCEPTS PROTOTYPED" },
+    { value: "40+", label: "DRAWINGS REVIEWED FOR GD&T" },
     { value: "150+", label: "STUDENTS TRAINED ON CNC MACHINING" },
   ],
 };
@@ -87,10 +87,10 @@ export const EXPERIENCE = [
     location: "Mumbai, India",
     current: false,
     highlights: [
-      "Contributed to prototyping and design iterations for an item storage and tracking system.",
+      "Contributed to prototyping and design iterations for an item storage and tracking system",
       "Reviewed lead designer's part drawings for GD&T compliance and manufacturability, reviewing 40+ drawings, flagging issues before release.",
-      "Translated client design concepts into 3D CAD models across a range of components including housings and mechanical parts, producing 3D-printed prototypes for client review and approval.",
-      "Collaborated with the electronics team to design enclosures and internal layouts for EV chargers, routing components and wiring to meet spatial and assembly requirements.",
+      "Translated client design concepts into 3D CAD models across a range of components including housings and mechanical parts, producing 3D-printed prototypes for client review and approval",
+      "Collaborated with the electronics team to design enclosures and internal layouts for EV chargers, routing components and wiring to meet spatial and assembly requirements",
     ],
     tools: ["SolidWorks", "GD&T", "DFM", "3D Printing", "Enclosure Design"],
   },
