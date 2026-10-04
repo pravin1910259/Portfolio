@@ -53,7 +53,7 @@ export const EXPERIENCE = [
     title: "Graduate Student Researcher",
     organization: "UC Davis - AHMCT Research Center (with Caltrans)",
     period: "APR 2026 - PRESENT",
-    location: "Sacramento, CA",
+    location: "Davis, California",
     current: true,
     highlights: [
       "Conduct applied research on heavy-equipment safety systems for industrial and construction applications with Caltrans.",
