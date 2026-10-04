@@ -81,7 +81,7 @@ export const EXPERIENCE = [
   {
     id: "experience-card-intern",
     slug: "design-intern-ayka",
-    title: "Design Intern",
+    title: "Design Engineering Intern",
     organization: "Ayka Control Systems",
     period: "JUN 2023 - APR 2024",
     location: "Mumbai, India",
