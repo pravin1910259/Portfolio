@@ -443,7 +443,7 @@ export const EDUCATION = [
     institution: "University of California, Davis",
     period: "SEP 2024 - DEC 2026 (EXPECTED)",
     gpa: "3.7 / 4.0",
-    coursework: ["Advanced Manufacturing", "Advanced Mechanical Design", "Mechanical Performance of Materials", "Modern Manufacturing Technology"],
+    coursework: ["Advanced Manufacturing", "Advanced Mechanical Design", "Mechanical Performance of Materials", "Modern Manufacturing Techniques"],
   },
   {
     id: "education-card-somaiya",
