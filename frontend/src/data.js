@@ -450,8 +450,8 @@ export const EDUCATION = [
     degree: "B.Tech Mechanical Engineering - Honors in Design",
     institution: "Somaiya Vidyavihar University",
     period: "SEP 2020 - JUN 2024",
-    gpa: "3.6 / 4.0",
-    coursework: ["Mechanical System Design", "Process Equipment Design", "Failure Analysis", "Automation", "Elements of Machine Design"],
+    gpa: "3.5 / 4.0",
+    coursework: ["Mechanical System Design", "Process Equipment Design", "Failure Analysis", "Automation", "Elements of Machine Design", "Strength of Materials", "Manufacturing of Composites"],
   },
 ];
 
