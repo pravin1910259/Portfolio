@@ -83,15 +83,16 @@ export const EXPERIENCE = [
     slug: "design-intern-ayka",
     title: "Design Intern",
     organization: "Ayka Control Systems",
-    period: "JUN 2023 - SEP 2023",
+    period: "JUN 2023 - APR 2024",
     location: "Mumbai, India",
     current: false,
     highlights: [
-      "Developed 40+ product concepts and prototypes in SolidWorks and rapid prototyping across consumer and industrial product lines.",
-      "Designed injection- and compression-moulding tooling and managed full design-to-manufacture documentation.",
-      "Delivered technical reports and presentations to international clients including Offgrid Europe and ClearBot.",
+      "Contributed to prototyping and design iterations for an item storage and tracking system.",
+      "Reviewed lead designer's part drawings for GD&T compliance and manufacturability, reviewing 40+ drawings, flagging issues before release.",
+      "Translated client design concepts into 3D CAD models across a range of components including housings and mechanical parts, producing 3D-printed prototypes for client review and approval.",
+      "Collaborated with the electronics team to design enclosures and internal layouts for EV chargers, routing components and wiring to meet spatial and assembly requirements.",
     ],
-    tools: ["SolidWorks", "Injection Moulding", "DFM", "Client Delivery"],
+    tools: ["SolidWorks", "GD&T", "DFM", "3D Printing", "Enclosure Design"],
   },
 ];
 
