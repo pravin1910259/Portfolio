@@ -15,14 +15,13 @@ function ProjectCard({ project, index, className }) {
         className="group relative border border-line/80 bg-card2/70 overflow-hidden h-full flex flex-col hover:border-cyanic/40 transition-colors duration-300"
       >
         {project.image ? (
-          <div className="relative overflow-hidden aspect-[16/9]">
+          <div className="relative overflow-hidden aspect-[16/9] border-b border-line">
             <img
               src={project.image}
               alt={project.title}
               loading="lazy"
               className="w-full h-full object-cover saturate-[0.85] contrast-105 group-hover:saturate-100 group-hover:scale-[1.04] transition-all duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-card2 via-transparent to-transparent" />
             <div className="absolute top-4 left-4 font-mono text-[0.625rem] tracking-[0.25em] text-cyanic bg-obsidian/80 border border-cyanic/30 px-3 py-1.5">
               {project.category}
             </div>
