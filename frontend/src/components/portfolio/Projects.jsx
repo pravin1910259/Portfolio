@@ -138,14 +138,18 @@ export default function Projects() {
         <SectionHeading
           index="04 //"
           title="Projects"
-          blurb="First-principles engineering: a wind tunnel built from scratch, instrumented tribology, and peer-reviewed vibration research."
+          blurb="First-principles engineering: a wind tunnel built from scratch, instrumented tribology, peer-reviewed vibration research, and a nonlinear FEA study of a plated femur."
           testid="projects-heading"
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          <ProjectCard project={PROJECTS[0]} index={0} className="lg:col-span-2" />
-          <ProjectCard project={PROJECTS[1]} index={1} />
-          <ProjectCard project={PROJECTS[2]} index={2} />
-          <ProjectCard project={PROJECTS[3]} index={3} className="lg:col-span-2" />
+          {PROJECTS.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+              className={project.span === "wide" ? "lg:col-span-2" : undefined}
+            />
+          ))}
         </div>
         <Reveal delay={0.2}>
           <p className="mt-10 font-mono text-xs tracking-[0.25em] text-slate-500 text-center">

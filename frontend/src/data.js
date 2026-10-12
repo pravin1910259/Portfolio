@@ -407,6 +407,98 @@ export const PROJECTS = [
     links: [],
     span: "wide",
   },
+  {
+    id: "project-card-femur-plate",
+    slug: "femur-bone-plate-fea",
+    title: "Torsional Analysis of a Fractured Femur with a Titanium Bone Plate",
+    category: "COMPUTATIONAL BIOMECHANICS / FEA",
+    period: "SUMMER 2026",
+    metrics: ["3.64 mm max deformation", "149.5 MPa peak stress", "~6.2× safety factor"],
+    description:
+      "Nonlinear static FEA of a midshaft femoral fracture fixed with a Ti-6Al-4V straight plate and six cortical screws. I imported a ten-body assembly into ANSYS Workbench 2026 R1, bonded every interface, and ramped torsion from 0 to 45 N·m about the shaft. The plate stayed elastic - peak stress 149.5 MPa against a 930 MPa yield - while the 5.6× stiffness gap between titanium and cortical bone showed up as stress shielding at the fracture.",
+    image: "/projects/femur-plate/01_assembly.jpg",
+    gallery: [
+      { src: "/projects/femur-plate/01_assembly.jpg", caption: "Imported assembly - fractured femur, straight titanium plate, and six cortical screws" },
+      { src: "/projects/femur-plate/02_cortical_bone.jpg", caption: "Outer +Z cortical bone, assigned Cortical Bone" },
+      { src: "/projects/femur-plate/03_trabecular_bone.jpg", caption: "Inner +Z trabecular core isolated in ANSYS Mechanical" },
+      { src: "/projects/femur-plate/04_titanium_plate.jpg", caption: "Straight fixation plate, assigned Titanium Alloy" },
+      { src: "/projects/femur-plate/05_material_cortical.jpg", caption: "Cortical bone - E = 17,000 MPa, ν = 0.45, ρ = 1,800 kg/m³" },
+      { src: "/projects/femur-plate/06_material_titanium.jpg", caption: "Ti-6Al-4V - E = 96,000 MPa, ν = 0.36, ρ = 4,620 kg/m³, yield 930 MPa" },
+      { src: "/projects/femur-plate/07_material_trabecular.jpg", caption: "Trabecular bone - E = 1,000 MPa, ν = 0.49, ρ = 250 kg/m³" },
+      { src: "/projects/femur-plate/08_fixed_support.jpg", caption: "Fixed support on 27 faces of the proximal femoral head" },
+      { src: "/projects/femur-plate/09_moment_initial.jpg", caption: "Torsional moment on 49 distal condyle faces, starting at 0 N·m" },
+      { src: "/projects/femur-plate/10_moment_ramp.jpg", caption: "Z-moment ramped 0 → 15 → 30 → 45 N·m over three load steps" },
+      { src: "/projects/femur-plate/11_force_convergence.jpg", caption: "Force convergence - 18 Newton-Raphson iterations across three load steps" },
+    ],
+    tags: ["ANSYS Mechanical", "Nonlinear FEA", "Ti-6Al-4V", "Bonded Contact", "Biomechanics"],
+    writeup: [
+      {
+        heading: "Approach",
+        paragraphs: [
+          "A midshaft transverse femur fracture is fixed in surgery with a titanium plate so the bone can heal, but the plate has to carry bending, compression, and torsion from walking and stair climbing. I ran a nonlinear static structural analysis of a simplified, anatomically representative femur-plate construct in ANSYS Workbench 2026 R1, following the torsion case in Biomechanics Modeling & Simulations Made Easy (Vol. 1, Case 137) and checking material numbers against published femoral mechanics.",
+          "The questions were whether the Ti-6Al-4V plate stays elastic under a physiological torque of 45 N·m, how stress and deformation split between cortical bone, trabecular bone, plate, and screws, and how large the safety margin is relative to titanium yield.",
+        ],
+      },
+      {
+        heading: "Geometry",
+        paragraphs: [
+          "The CAD came from GrabCAD (FEMUR_broach_screws1_v3) and went into Workbench as a SAT solid. Ten bodies, three groups: two cortical halves as the dense outer shell, two trabecular halves as the softer core, one straight plate (the ASTM F382 straight-plate type, chosen because it follows the shaft and is the usual diaphyseal fixation), and six cortical screws. The fracture is a transverse gap at midshaft. The plate bridges it, three screws proximal and three distal.",
+        ],
+      },
+      {
+        heading: "Materials",
+        paragraphs: [
+          "Bone is anisotropic and viscoelastic in the body. For a first-pass quasi-static check I used three linear isotropic materials. The cortical modulus of 17,000 MPa sits close to the femoral midshaft value of about 18,600 MPa reported by Peng et al. The stiffness mismatch with Ti-6Al-4V is about 5.6×, which is what drives the stress shielding in the discussion below. Trabecular bone's Poisson's ratio of 0.49 is the near-incompressible response of fluid-filled porous bone.",
+        ],
+        table: {
+          headers: ["Material", "Young's modulus", "Poisson's ratio", "Density", "Tensile yield"],
+          rows: [
+            ["Cortical bone", "17,000 MPa", "0.45", "1,800 kg/m³", "-"],
+            ["Trabecular bone", "1,000 MPa", "0.49", "250 kg/m³", "-"],
+            ["Ti-6Al-4V (plate & screws)", "96,000 MPa", "0.36", "4,620 kg/m³", "930 MPa"],
+          ],
+        },
+      },
+      {
+        heading: "Contacts, Mesh, and Loading",
+        items: [
+          { lead: "Bonded contacts.", text: "All ten interfaces were bonded, so nothing slides or separates. That fits a plate seated on cortex under screw compression, threads fully engaged in bone, and a fracture bridged by the plate. The contact tool later reported Sticking on every pair, so the mesh was not introducing a false gap." },
+          { lead: "Mesh.", text: "Patch-independent meshing with body sizing, because the screw-bone and plate-bone junctions are small and easy to fail with a conforming mesh. 33,047 nodes and 17,328 higher-order tetrahedra (SOLID187). Three pre-solution warnings were non-fatal." },
+          { lead: "Boundary conditions.", text: "A fixed support on 27 faces of the femoral head stands in for the hip joint. A moment on 49 faces of the distal condyles twists the shaft about Z, ramped 0 to 15 to 30 to 45 N·m over three load steps. 45 N·m is in the range of diaphyseal torsion during gait and stair descent; Bergmann et al. measured hip contact forces from about 2.5× body weight in walking to about 2.8× on stairs." },
+          { lead: "Solver.", text: "Large deflection on, so stiffness updates as the bone winds. Newton-Raphson with a direct sparse solver, results written at the end of each load step." },
+        ],
+      },
+      {
+        heading: "Results",
+        table: {
+          headers: ["Result", "Value", "Where"],
+          rows: [
+            ["Max total deformation", "3.64 mm", "Distal condyles"],
+            ["Min deformation", "0 mm", "Fixed femoral head"],
+            ["Peak von Mises stress", "149.5 MPa", "Screw holes at plate midspan"],
+            ["Safety factor vs. Ti yield", "~6.2×", "930 / 149.5 MPa, still elastic"],
+            ["Peak elastic strain", "9.24e-3", "Cortical bone at the fracture"],
+            ["Peak screw strain", "5.02e-4", "Screws only, well below Ti yield strain"],
+            ["Solver", "18 iterations", "Converged on all three load steps"],
+          ],
+        },
+        paragraphs: [
+          "Deformation is a clean torsion field: zero at the fixed head, 3.64 mm at the condyles, with a step across the fracture gap. The plate carries the torque across that gap. Stress peaks at the screw holes nearest the fracture, which is the expected stress-riser pattern, then falls off quickly into the cortex. Trabecular bone stays lightly stressed because it is so much softer. At 149.5 MPa against a 930 MPa yield, the titanium is not close to yielding.",
+          "The bone is the tighter constraint. Peak elastic strain in the cortex at the fracture margins is 0.00924, under a rough yield strain of about 0.015, so the bone is still elastic but working harder than the plate. Screw strain is an order of magnitude below the yield strain of Ti-6Al-4V. The screws are transferring shear, not approaching failure.",
+        ],
+      },
+      {
+        heading: "Lessons",
+        items: [
+          { lead: "The plate is safe. The mismatch is the real issue.", text: "A factor of about 6.2 on titanium yield says the hardware survives 45 N·m. Because the plate is 5.6× stiffer than cortical bone, it takes a disproportionate share of the load. That stress shielding protects the fracture while it heals and, over time, can starve the cortex of the load it needs (Wolff's law). It is the main reason people look at lower-modulus plates, such as PEEK composites." },
+          { lead: "What this model leaves out.", text: "Bone is not isotropic, the fracture gap has no callus, the load is static rather than cyclic, and muscle forces are missing. I also did not run a mesh-convergence study, so the stress peaks at the screw holes are the least certain number in the table." },
+          { lead: "What I would run next.", text: "Fatigue at the peak screw hole with titanium S-N data, a combined compression-bending-torsion case from measured hip forces, and a topology optimization of the plate to cut stiffness without giving up the safety factor. That last one was the original aim of the broader summer project." },
+        ],
+      },
+    ],
+    links: [],
+    span: "wide",
+  },
 ];
 
 export const SKILL_GROUPS = [
