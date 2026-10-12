@@ -142,7 +142,6 @@ export default function Projects() {
         <SectionHeading
           index="04 //"
           title="Projects"
-          blurb="First-principles engineering: a wind tunnel built from scratch, instrumented tribology, peer-reviewed vibration research, and a nonlinear FEA study of a plated femur."
           testid="projects-heading"
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
