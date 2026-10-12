@@ -25,18 +25,22 @@ function ProjectCard({ project, index, className }) {
             <div className="absolute top-4 left-4 font-mono text-[0.625rem] tracking-[0.25em] text-cyanic bg-obsidian/80 border border-cyanic/30 px-3 py-1.5">
               {project.category}
             </div>
-            <div className="absolute top-4 right-4 font-mono text-[0.625rem] tracking-widest text-slate-400 bg-obsidian/80 px-2.5 py-1.5">
-              {project.period}
-            </div>
+            {project.period && (
+              <div className="absolute top-4 right-4 font-mono text-[0.625rem] tracking-widest text-slate-400 bg-obsidian/80 px-2.5 py-1.5">
+                {project.period}
+              </div>
+            )}
           </div>
         ) : (
           <div className="relative aspect-[16/9] blueprint-grid-fine bg-panel/80 flex flex-col items-center justify-center border-b border-line/60">
             <span className="font-mono text-[0.625rem] tracking-[0.25em] text-cyanic bg-obsidian/80 border border-cyanic/30 px-3 py-1.5 absolute top-4 left-4">
               {project.category}
             </span>
-            <span className="font-mono text-[0.625rem] tracking-widest text-slate-400 bg-obsidian/80 px-2.5 py-1.5 absolute top-4 right-4">
-              {project.period}
-            </span>
+            {project.period && (
+              <span className="font-mono text-[0.625rem] tracking-widest text-slate-400 bg-obsidian/80 px-2.5 py-1.5 absolute top-4 right-4">
+                {project.period}
+              </span>
+            )}
             <span className="font-syne text-4xl text-cyanic/20 font-bold">Ø</span>
             <span className="mt-3 px-6 text-center font-mono text-[0.625rem] tracking-[0.2em] text-slate-500">
               {project.schematic}

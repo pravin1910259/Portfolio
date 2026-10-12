@@ -72,9 +72,11 @@ export default function DetailPage({ type }) {
               {item.title}
             </h1>
             <div className="mt-5 flex flex-wrap items-center gap-3">
-              <span className="font-mono text-xs tracking-[0.2em] text-slate-300 border border-line px-3 py-1.5">
-                {item.period}
-              </span>
+              {item.period && (
+                <span className="font-mono text-xs tracking-[0.2em] text-slate-300 border border-line px-3 py-1.5">
+                  {item.period}
+                </span>
+              )}
               {item.location && (
                 <span className="flex items-center gap-1.5 font-mono text-xs text-slate-500">
                   <MapPin size={12} />
