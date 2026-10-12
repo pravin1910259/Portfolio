@@ -102,7 +102,7 @@ export const PROJECTS = [
     slug: "subsonic-wind-tunnel",
     title: "Subsonic Wind Tunnel - Design, CFD & Fabrication",
     category: "THERMAL-FLUIDS / CFD",
-    period: "JAN 2024 - APR 2024",
+    period: "",
     metrics: ["9.4 m/s test-section velocity", "0.42% turbulence intensity", "Contraction ratio 8.29"],
     description:
       "Designed and fabricated an open-circuit, suction-type wind tunnel from first principles - 8.29-ratio contraction cone, hexagonal honeycomb settling chamber, 250×250×400 mm transparent acrylic test section, and diffuser - in SolidWorks, welded steel, and acrylic. Validated in ANSYS Fluent (k-ω, ~836K-node mesh), achieving 9.4 m/s test-section velocity at turbulence intensity as low as 0.42%, confirmed via smoke visualization and anemometer testing on 3D-printed airfoil and vehicle models.",
@@ -168,7 +168,7 @@ export const PROJECTS = [
     slug: "rotating-machinery-fault-diagnosis",
     title: "Fault Diagnosis of Unbalance Mass in Rotating Machinery",
     category: "PUBLISHED RESEARCH - SAGE",
-    period: "SEP 2023 - DEC 2023",
+    period: "",
     metrics: ["Noise & Vibration Worldwide 57(4–5), 2026", "FE within ~5% on upper modes", "500–1500 RPM, single & multi-plane"],
     description:
       "Co-authored peer-reviewed study (Desai, Salla, et al.) on unbalance fault diagnosis using a Machinery Fault Simulator - FFT-based vibration analysis quantifying the effects of unbalance mass magnitude (1.4–4.96 g), angular position, and rotational speed in single- and multi-plane configurations. SolidWorks rotor models and ANSYS modal analysis validated natural frequencies against experiment with deviations generally below 10%.",
@@ -248,7 +248,7 @@ export const PROJECTS = [
     slug: "hahn-grinder-friction",
     title: "Hahn Grinder Friction Characterization & Data Analysis",
     category: "EXPERIMENTAL / TRIBOLOGY",
-    period: "JAN 2025 - JUN 2025",
+    period: "",
     metrics: ["8 piston-speed levels", "Lubricated vs dry", "NI DAQ pipeline"],
     description:
       "Characterized friction on a cylindrical grinder's linear axis using a reciprocating sled setup at MASTER Lab, UC Davis - integrating load cell and potentiometer signals via NI DAQ. Built MATLAB scripts converting raw voltage to physical units, segmenting strokes, and analyzing friction-velocity trends and cycle-to-cycle repeatability for servo sizing and tribological studies.",
@@ -328,7 +328,7 @@ export const PROJECTS = [
     slug: "vehicle-aerodynamics-cfd",
     title: "Effect of Accessories on Vehicle Aerodynamics - CFD Study",
     category: "AUTOMOTIVE / CFD",
-    period: "B.TECH MINI PROJECT",
+    period: "",
     metrics: ["Cd 0.3441 → 0.2872 (−16.5%)", "1.1M-element mesh", "150 km/h inlet"],
     description:
       "Modelled a Koenigsegg Jesko Absolut in SolidWorks and ran ANSYS Fluent CFD (k-ε, 1,098,393 elements) across spoiler, wing, diffuser, and fin configurations at 150 km/h. The spoiler + diffuser combination cut drag coefficient 16.53% below baseline while diffusers reduced drag in every tested case; wings traded +27.8% drag for significant downforce (Cl −0.115 with diffuser). Findings drawn from pressure contours and velocity streamline analysis.",
