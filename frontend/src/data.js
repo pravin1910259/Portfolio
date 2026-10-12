@@ -405,7 +405,6 @@ export const PROJECTS = [
     ],
     tags: ["SolidWorks", "ANSYS Fluent", "k-ε Turbulence", "Aero Optimization"],
     links: [],
-    span: "wide",
   },
   {
     id: "project-card-femur-plate",
@@ -416,20 +415,8 @@ export const PROJECTS = [
     metrics: ["3.64 mm max deformation", "149.5 MPa peak stress", "~6.2× safety factor"],
     description:
       "Nonlinear static FEA of a midshaft femoral fracture fixed with a Ti-6Al-4V straight plate and six cortical screws. I imported a ten-body assembly into ANSYS Workbench 2026 R1, bonded every interface, and ramped torsion from 0 to 45 N·m about the shaft. The plate stayed elastic - peak stress 149.5 MPa against a 930 MPa yield - while the 5.6× stiffness gap between titanium and cortical bone showed up as stress shielding at the fracture.",
-    image: "/projects/femur-plate/01_assembly.jpg",
-    gallery: [
-      { src: "/projects/femur-plate/01_assembly.jpg", caption: "Imported assembly - fractured femur, straight titanium plate, and six cortical screws" },
-      { src: "/projects/femur-plate/02_cortical_bone.jpg", caption: "Outer +Z cortical bone, assigned Cortical Bone" },
-      { src: "/projects/femur-plate/03_trabecular_bone.jpg", caption: "Inner +Z trabecular core isolated in ANSYS Mechanical" },
-      { src: "/projects/femur-plate/04_titanium_plate.jpg", caption: "Straight fixation plate, assigned Titanium Alloy" },
-      { src: "/projects/femur-plate/05_material_cortical.jpg", caption: "Cortical bone - E = 17,000 MPa, ν = 0.45, ρ = 1,800 kg/m³" },
-      { src: "/projects/femur-plate/06_material_titanium.jpg", caption: "Ti-6Al-4V - E = 96,000 MPa, ν = 0.36, ρ = 4,620 kg/m³, yield 930 MPa" },
-      { src: "/projects/femur-plate/07_material_trabecular.jpg", caption: "Trabecular bone - E = 1,000 MPa, ν = 0.49, ρ = 250 kg/m³" },
-      { src: "/projects/femur-plate/08_fixed_support.jpg", caption: "Fixed support on 27 faces of the proximal femoral head" },
-      { src: "/projects/femur-plate/09_moment_initial.jpg", caption: "Torsional moment on 49 distal condyle faces, starting at 0 N·m" },
-      { src: "/projects/femur-plate/10_moment_ramp.jpg", caption: "Z-moment ramped 0 → 15 → 30 → 45 N·m over three load steps" },
-      { src: "/projects/femur-plate/11_force_convergence.jpg", caption: "Force convergence - 18 Newton-Raphson iterations across three load steps" },
-    ],
+    image: "/projects/femur-plate/cover.png",
+    gallery: [],
     tags: ["ANSYS Mechanical", "Nonlinear FEA", "Ti-6Al-4V", "Bonded Contact", "Biomechanics"],
     writeup: [
       {
@@ -443,6 +430,9 @@ export const PROJECTS = [
         heading: "Geometry",
         paragraphs: [
           "The CAD came from GrabCAD (FEMUR_broach_screws1_v3) and went into Workbench as a SAT solid. Ten bodies, three groups: two cortical halves as the dense outer shell, two trabecular halves as the softer core, one straight plate (the ASTM F382 straight-plate type, chosen because it follows the shaft and is the usual diaphyseal fixation), and six cortical screws. The fracture is a transverse gap at midshaft. The plate bridges it, three screws proximal and three distal.",
+        ],
+        figures: [
+          { src: "/projects/femur-plate/cover.png", caption: "Imported assembly - fractured femur, straight titanium plate, and six cortical screws." },
         ],
       },
       {
@@ -467,6 +457,10 @@ export const PROJECTS = [
           { lead: "Boundary conditions.", text: "A fixed support on 27 faces of the femoral head stands in for the hip joint. A moment on 49 faces of the distal condyles twists the shaft about Z, ramped 0 to 15 to 30 to 45 N·m over three load steps. 45 N·m is in the range of diaphyseal torsion during gait and stair descent; Bergmann et al. measured hip contact forces from about 2.5× body weight in walking to about 2.8× on stairs." },
           { lead: "Solver.", text: "Large deflection on, so stiffness updates as the bone winds. Newton-Raphson with a direct sparse solver, results written at the end of each load step." },
         ],
+        figures: [
+          { src: "/projects/femur-plate/12_mesh.jpg", caption: "Tetrahedral mesh on the plated femur - 33,047 nodes, higher-order SOLID187 elements." },
+          { src: "/projects/femur-plate/10_moment_ramp.jpg", caption: "Torsion about the shaft, ramped from 0 to 45 N·m on the distal condyles. The femoral head is fixed." },
+        ],
       },
       {
         heading: "Results",
@@ -486,6 +480,11 @@ export const PROJECTS = [
           "Deformation is a clean torsion field: zero at the fixed head, 3.64 mm at the condyles, with a step across the fracture gap. The plate carries the torque across that gap. Stress peaks at the screw holes nearest the fracture, which is the expected stress-riser pattern, then falls off quickly into the cortex. Trabecular bone stays lightly stressed because it is so much softer. At 149.5 MPa against a 930 MPa yield, the titanium is not close to yielding.",
           "The bone is the tighter constraint. Peak elastic strain in the cortex at the fracture margins is 0.00924, under a rough yield strain of about 0.015, so the bone is still elastic but working harder than the plate. Screw strain is an order of magnitude below the yield strain of Ti-6Al-4V. The screws are transferring shear, not approaching failure.",
         ],
+        figures: [
+          { src: "/projects/femur-plate/14_total_deformation.jpg", caption: "Total deformation at 45 N·m. Zero at the fixed head, 3.64 mm at the distal end." },
+          { src: "/projects/femur-plate/15_equivalent_stress.jpg", caption: "Equivalent von Mises stress. The peak is 149.5 MPa, against a 930 MPa yield for Ti-6Al-4V." },
+          { src: "/projects/femur-plate/17_elastic_strain.jpg", caption: "Equivalent elastic strain. The peak, 0.00924, sits in the cortical bone at the fracture." },
+        ],
       },
       {
         heading: "Lessons",
@@ -497,7 +496,6 @@ export const PROJECTS = [
       },
     ],
     links: [],
-    span: "wide",
   },
 ];
 

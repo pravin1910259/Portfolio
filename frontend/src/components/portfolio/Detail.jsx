@@ -23,6 +23,8 @@ export default function DetailPage({ type }) {
   const item = items.find((i) => i.slug === slug);
   const [lightbox, setLightbox] = useState(null);
   const gallery = item?.gallery || [];
+  const inlineFigures = (item?.writeup || []).flatMap((sec) => sec.figures || []);
+  const slides = gallery.length > 0 ? gallery : inlineFigures;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -164,6 +166,20 @@ export default function DetailPage({ type }) {
                           ))}
                         </ul>
                       )}
+                      {sec.figures?.map((fig) => (
+                        <figure key={fig.src} className="border border-line overflow-hidden">
+                          <button
+                            type="button"
+                            onClick={() => setLightbox(slides.findIndex((s) => s.src === fig.src))}
+                            className="block w-full bg-[#1a1d24]"
+                          >
+                            <img src={fig.src} alt={fig.caption} className="w-full h-auto" />
+                          </button>
+                          <figcaption className="px-4 py-3 border-t border-line font-mono text-[0.625rem] tracking-wide text-slate-500 leading-relaxed">
+                            {fig.caption}
+                          </figcaption>
+                        </figure>
+                      ))}
                     </div>
                   </section>
                 ))
@@ -265,14 +281,14 @@ export default function DetailPage({ type }) {
         </footer>
       </div>
 
-      {lightbox !== null && (
+      {lightbox !== null && slides.length > 0 && (
         <Lightbox
-          items={gallery}
+          items={slides}
           index={lightbox}
           testid="detail"
           onClose={() => setLightbox(null)}
-          onPrev={() => setLightbox((lightbox + gallery.length - 1) % gallery.length)}
-          onNext={() => setLightbox((lightbox + 1) % gallery.length)}
+          onPrev={() => setLightbox((lightbox + slides.length - 1) % slides.length)}
+          onNext={() => setLightbox((lightbox + 1) % slides.length)}
         />
       )}
     </div>
