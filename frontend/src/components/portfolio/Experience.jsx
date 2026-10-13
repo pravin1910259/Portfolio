@@ -9,7 +9,6 @@ export default function Experience() {
         <SectionHeading
           index="03 //"
           title="Experience"
-          blurb="Applied research with Caltrans, manufacturing instruction at UC Davis, and product design in industry."
           testid="experience-heading"
         />
         <div className="relative border-l border-line/70 ml-2 lg:ml-6 space-y-12">
