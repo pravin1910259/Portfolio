@@ -116,7 +116,6 @@ export const PROJECTS = [
       { src: "/projects/windtunnel/fluent-pathlines.jpg", caption: "ANSYS Fluent - pathlines colored by velocity magnitude" },
       { src: "/projects/windtunnel/fluent-streamlines.jpg", caption: "CFD streamlines through honeycomb settling chamber & contraction" },
       { src: "/projects/windtunnel/fluent-residuals.jpg", caption: "Solver convergence - scaled residuals (k-ω)" },
-      { src: "/projects/windtunnel/team-tunnel.jpg", caption: "Team with faculty mentor and the completed tunnel" },
     ],
     tags: ["SolidWorks", "ANSYS Fluent", "Welding & Fabrication", "Smoke Visualization"],
     writeup: [
