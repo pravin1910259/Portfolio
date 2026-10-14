@@ -88,7 +88,7 @@ function ProjectCard({ project, index, className }) {
                 href={link.url}
                 target={link.url.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="font-mono text-[0.625rem] tracking-[0.2em] text-cyanic border border-cyanic/40 px-3.5 py-2 hover:bg-cyanic hover:text-obsidian transition-colors"
+                className="font-mono text-[0.625rem] tracking-[0.2em] text-cyanic border border-cyanic/40 px-3.5 py-2 hover:bg-cyanic hover:text-black transition-colors"
               >
                 {link.label} ↗
               </a>

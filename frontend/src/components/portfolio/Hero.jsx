@@ -183,7 +183,7 @@ export default function Hero({ onNavigate }) {
             <button
               data-testid="hero-btn-explore-projects"
               onClick={() => onNavigate("#projects")}
-              className="group flex items-center gap-3 bg-cyanic text-obsidian font-mono text-xs tracking-[0.2em] px-7 py-4 font-semibold hover:bg-slate-50 transition-colors"
+              className="group flex items-center gap-3 bg-cyanic text-black font-mono text-xs tracking-[0.2em] px-7 py-4 font-semibold hover:bg-slate-50 transition-colors"
             >
               EXPLORE PROJECTS
               <ArrowDown size={15} className="group-hover:translate-y-0.5 transition-transform" />

@@ -74,7 +74,7 @@ export default function App() {
         <Route path="/samples" element={<Samples />} />
         <Route path="/brand" element={<BrandSamples />} />
       </Routes>
-      <Toaster theme="light" position="bottom-right" />
+      <Toaster theme="dark" position="bottom-right" />
     </BrowserRouter>
   );
 }

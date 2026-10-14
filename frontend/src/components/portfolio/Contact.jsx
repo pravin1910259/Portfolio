@@ -196,7 +196,7 @@ export default function Contact() {
                 data-testid="contact-form-submit-button"
                 type="submit"
                 disabled={sending}
-                className="group flex items-center justify-center gap-3 w-full bg-cyanic text-obsidian font-mono text-xs tracking-[0.25em] font-semibold py-4 hover:bg-slate-50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                className="group flex items-center justify-center gap-3 w-full bg-cyanic text-black font-mono text-xs tracking-[0.25em] font-semibold py-4 hover:bg-slate-50 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {sending ? (
                   <>

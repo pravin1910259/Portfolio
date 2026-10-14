@@ -29,7 +29,7 @@ export default function Navbar({ onNavigate }) {
           onClick={() => go("#home")}
           className="group"
         >
-          <span className="font-syne font-black text-sm tracking-tight px-3 py-2 bg-slate-50 text-white group-hover:bg-cyanic transition-colors">
+          <span className="font-syne font-black text-sm tracking-tight px-3 py-2 bg-slate-50 text-black group-hover:bg-cyanic transition-colors">
             PS
           </span>
         </button>
@@ -53,7 +53,7 @@ export default function Navbar({ onNavigate }) {
             data-testid="nav-cta-resume"
             href={PROFILE.resumeUrl}
             download="Pravin_Salla_Resume.pdf"
-            className="flex items-center gap-2 bg-slate-50 text-white font-mono text-xs tracking-widest px-4 py-2.5 hover:bg-cyanic transition-colors"
+            className="flex items-center gap-2 bg-slate-50 text-black font-mono text-xs tracking-widest px-4 py-2.5 hover:bg-cyanic transition-colors"
           >
             <FileDown size={14} />
             RESUME
