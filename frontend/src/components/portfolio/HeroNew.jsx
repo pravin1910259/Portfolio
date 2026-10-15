@@ -43,7 +43,7 @@ export default function Hero({ onNavigate }) {
               <button
                 data-testid="hero-btn-explore-projects"
                 onClick={() => onNavigate("#projects")}
-                className="group flex items-center gap-3 bg-slate-50 text-black font-mono text-xs tracking-[0.2em] px-7 py-4 font-semibold hover:bg-cyanic transition-colors"
+                className="group flex items-center gap-3 bg-slate-50 text-white font-mono text-xs tracking-[0.2em] px-7 py-4 font-semibold hover:bg-cyanic transition-colors"
               >
                 EXPLORE PROJECTS
                 <ArrowDown size={15} className="group-hover:translate-y-0.5 transition-transform" />
@@ -52,7 +52,7 @@ export default function Hero({ onNavigate }) {
                 data-testid="hero-btn-download-resume"
                 href={PROFILE.resumeUrl}
                 download="Pravin_Salla_Resume.pdf"
-                className="flex items-center gap-3 border border-line text-slate-50 font-mono text-xs tracking-[0.2em] px-7 py-4 hover:bg-slate-50 hover:text-black transition-colors"
+                className="flex items-center gap-3 border border-line text-slate-50 font-mono text-xs tracking-[0.2em] px-7 py-4 hover:bg-slate-50 hover:text-white transition-colors"
               >
                 <FileDown size={15} />
                 DOWNLOAD RESUME

@@ -34,7 +34,7 @@ export default function DetailPage({ type }) {
     return (
       <div className="min-h-screen bg-obsidian text-slate-200 font-dmsans flex flex-col items-center justify-center gap-6 px-6">
         <p className="font-mono text-xs tracking-[0.3em] text-slate-500">PAGE NOT FOUND</p>
-        <Link to="/" data-testid="detail-back-notfound" className="font-mono text-xs tracking-[0.2em] text-cyanic border border-cyanic/40 px-5 py-3 hover:bg-cyanic hover:text-black transition-colors">
+        <Link to="/" data-testid="detail-back-notfound" className="font-mono text-xs tracking-[0.2em] text-cyanic border border-cyanic/40 px-5 py-3 hover:bg-cyanic hover:text-obsidian transition-colors">
           ← BACK TO PORTFOLIO
         </Link>
       </div>
@@ -49,7 +49,7 @@ export default function DetailPage({ type }) {
         <header className="border-b border-line/70 bg-obsidian/80 backdrop-blur-xl sticky top-0 z-40">
           <div className="mx-auto max-w-5xl px-4 sm:px-8 h-16 flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3">
-              <span className="font-syne font-black text-xs tracking-tight px-2.5 py-1.5 bg-slate-50 text-black">PS</span>
+              <span className="font-syne font-black text-xs tracking-tight px-2.5 py-1.5 bg-slate-50 text-white">PS</span>
               <span className="font-syne font-bold text-slate-50">Pravin Salla</span>
             </Link>
             <Link
@@ -239,7 +239,7 @@ export default function DetailPage({ type }) {
                         href={link.url}
                         target={link.url.startsWith("http") ? "_blank" : undefined}
                         rel="noopener noreferrer"
-                        className="font-mono text-[0.6875rem] tracking-[0.2em] text-cyanic border border-cyanic/40 px-4 py-3 hover:bg-cyanic hover:text-black transition-colors text-center"
+                        className="font-mono text-[0.6875rem] tracking-[0.2em] text-cyanic border border-cyanic/40 px-4 py-3 hover:bg-cyanic hover:text-obsidian transition-colors text-center"
                       >
                         {link.label} ↗
                       </a>
