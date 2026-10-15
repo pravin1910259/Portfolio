@@ -252,7 +252,7 @@ export const PROJECTS = [
     metrics: ["8 piston-speed levels", "Lubricated vs dry", "NI DAQ pipeline"],
     description:
       "Characterized friction on a cylindrical grinder's linear axis using a reciprocating sled setup at MASTER Lab, UC Davis - integrating load cell and potentiometer signals via NI DAQ. Built MATLAB scripts converting raw voltage to physical units, segmenting strokes, and analyzing friction-velocity trends and cycle-to-cycle repeatability for servo sizing and tribological studies.",
-    image: "/projects/friction/cover.png",
+    image: "/projects/friction/cover-cropped.png",
     gallery: [
       { src: "/projects/friction/p02_arduino_calibration.jpg", caption: "First load cell calibration - Arduino and HX711 with a hanging weight set" },
       { src: "/projects/friction/p03_daq_calibration.jpg", caption: "Dead-weight calibration through the IAA100 amplifier and NI USB DAQ" },
