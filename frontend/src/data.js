@@ -99,6 +99,108 @@ export const EXPERIENCE = [
 
 export const PROJECTS = [
   {
+    id: "project-card-swing-arm",
+    slug: "swing-arm-topology",
+    title: "Motorcycle Swing Arm: Topology Optimization and Redesign",
+    category: "TOPOLOGY OPTIMIZATION / FEA",
+    period: "",
+    metrics: ["8.34 kg to 4.42 kg", "47% lighter", "Factor of safety ~43"],
+    description:
+      "I cut the mass of a 150 cc motorcycle swing arm by 47%, from 8.34 kg to 4.42 kg, using topology optimization in Ansys and then a manufacturable redesign. The final part still has a factor of safety of about 43 under the rear damper load.",
+    image: "/projects/swing-arm/cover.png",
+    gallery: [],
+    tags: ["Ansys", "Topology Optimization", "A206", "Static Structural"],
+    writeup: [
+      {
+        heading: "Overview",
+        paragraphs: [
+          "I cut the mass of a 150 cc motorcycle swing arm by 47%, from 8.34 kg to 4.42 kg, using topology optimization in Ansys and then a manufacturable redesign. The final part still has a factor of safety of about 43 under the rear damper load.",
+        ],
+      },
+      {
+        heading: "Setup",
+        paragraphs: [
+          "Material: A206 cast aluminium alloy.",
+        ],
+        table: {
+          headers: ["Property", "Value"],
+          rows: [
+            ["Density", "2800 kg/m³"],
+            ["Young's modulus", "70 GPa"],
+            ["Poisson's ratio", "0.3"],
+            ["Tensile yield strength", "350 MPa"],
+            ["Ultimate tensile strength", "436 MPa"],
+          ],
+        },
+      },
+      {
+        heading: "Load case (rear damper, bike plus two riders)",
+        bullets: [
+          "1668 N acting at 53° on the shock mount: 1335 N vertical and 1004 N horizontal.",
+          "Pivot bores fixed, and axle slot flats fixed.",
+          "Linear tetrahedral mesh at 10 mm.",
+        ],
+        figures: [
+          { src: "/projects/swing-arm/mesh.jpg", caption: "Linear tetrahedral mesh at 10 mm." },
+          { src: "/projects/swing-arm/loads.jpg", caption: "Pivot bores fixed, axle slot flats fixed, and 1668 N on the shock mount." },
+        ],
+      },
+      {
+        heading: "Process",
+        items: [
+          { lead: "1. Baseline design.", text: "I modelled a solid Y-shaped swing arm as the design space (8.34 kg) and ran a static analysis: 27,378 elements, max deformation 0.0192 mm, max stress 4.83 MPa." },
+          { lead: "2. Topology optimization.", text: "The objective was minimum compliance, keeping 52% of the mass, with a 20 mm minimum member size. Pivots, axle slots and shock mount were excluded from the design region. It converged in 25 iterations and kept about 55% of the volume." },
+          { lead: "3. Validation of the raw result.", text: "I smoothed the optimized shape and re-analysed it: 4.11 kg, 0.0340 mm, 10.98 MPa. It was light, but the faceted surface was not manufacturable." },
+          { lead: "4. Redesign.", text: "I rebuilt the shape as clean CAD along the same load paths (4.42 kg), then re-analysed it with the same mesh settings as the baseline: 14,677 elements." },
+        ],
+        figures: [
+          { src: "/projects/swing-arm/baseline-deformation.jpg", caption: "Baseline static analysis. Max deformation 0.0192 mm." },
+          { src: "/projects/swing-arm/baseline-stress.jpg", caption: "Baseline static analysis. Max stress 4.83 MPa." },
+          { src: "/projects/swing-arm/topology-raw.jpg", caption: "Raw topology result. Light, but the faceted surface was not manufacturable." },
+          { src: "/projects/swing-arm/raw-deformation.jpg", caption: "Smoothed optimized shape. Max deformation 0.0340 mm, mass 4.11 kg." },
+          { src: "/projects/swing-arm/raw-stress.jpg", caption: "Smoothed optimized shape. Max stress 10.98 MPa." },
+        ],
+      },
+      {
+        heading: "Redesign decisions",
+        items: [
+          { lead: "Follow the load path.", text: "The arms trace the two curved members the optimizer kept, from the pivots through the shock mount to the axle. The central web it removed stays removed." },
+          { lead: "Constant 50 mm depth with arc-based bends.", text: "The front bend uses about R120 and the rear bend about R80. This keeps the part simple to machine or cast while staying close to the optimized shape." },
+          { lead: "Fillets where stress concentrates.", text: "R5 at the shock lug roots, where the peak stress sat in every run, plus R25 at the arm junctions and R15 on the cross-beam corners." },
+          { lead: "Symmetric left and right.", text: "The raw result was slightly lopsided, but the real load is shared equally." },
+          { lead: "Interfaces unchanged.", text: "Pivot tubes, axle slots and the shock mount match the original, so the boundary conditions and the comparison stay identical." },
+          { lead: "Tyre clearance kept.", text: "The inner edges of the rear arms hold the 188 mm tyre gap." },
+        ],
+        figures: [
+          { src: "/projects/swing-arm/redesign.jpg", caption: "Redesign rebuilt as clean CAD along the same load paths, 4.42 kg." },
+        ],
+      },
+      {
+        heading: "Results",
+        paragraphs: [
+          "The redesign is 47% lighter than the original and carries 26% less peak stress than the raw optimized shape.",
+          "The trade-off is stiffness. The redesign deflects about twice as much as the original, but 0.04 mm is still negligible for this load.",
+        ],
+        table: {
+          headers: ["", "Original", "Raw optimized", "Final redesign"],
+          rows: [
+            ["Mass (kg)", "8.34", "4.11", "4.42"],
+            ["Mass reduction", "–", "51%", "47%"],
+            ["Max deformation (mm)", "0.0192", "0.0340", "0.0401"],
+            ["Max von Mises stress (MPa)", "4.83", "10.98", "8.11"],
+            ["Factor of safety (vs 350 MPa yield)", "~72", "~32", "~43"],
+            ["Mesh (elements)", "27,378", "80,507", "14,677"],
+          ],
+        },
+        figures: [
+          { src: "/projects/swing-arm/final-deformation.jpg", caption: "Final redesign. Max deformation 0.0401 mm." },
+          { src: "/projects/swing-arm/final-stress.jpg", caption: "Final redesign. Max von Mises stress 8.11 MPa." },
+        ],
+      },
+    ],
+    links: [],
+  },
+  {
     id: "project-card-wind-tunnel",
     slug: "subsonic-wind-tunnel",
     title: "Subsonic Wind Tunnel - Design, CFD & Fabrication",
