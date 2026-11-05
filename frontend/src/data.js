@@ -99,108 +99,6 @@ export const EXPERIENCE = [
 
 export const PROJECTS = [
   {
-    id: "project-card-swing-arm",
-    slug: "swing-arm-topology",
-    title: "Motorcycle Swing Arm: Topology Optimization and Redesign",
-    category: "TOPOLOGY OPTIMIZATION / FEA",
-    period: "",
-    metrics: ["8.34 kg to 4.42 kg", "47% lighter", "Factor of safety ~43"],
-    description:
-      "I cut the mass of a 150 cc motorcycle swing arm by 47%, from 8.34 kg to 4.42 kg, using topology optimization in Ansys and then a manufacturable redesign. The final part still has a factor of safety of about 43 under the rear damper load.",
-    image: "/projects/swing-arm/cover.png",
-    gallery: [],
-    tags: ["Ansys", "Topology Optimization", "A206", "Static Structural"],
-    writeup: [
-      {
-        heading: "Overview",
-        paragraphs: [
-          "I cut the mass of a 150 cc motorcycle swing arm by 47%, from 8.34 kg to 4.42 kg, using topology optimization in Ansys and then a manufacturable redesign. The final part still has a factor of safety of about 43 under the rear damper load.",
-        ],
-      },
-      {
-        heading: "Setup",
-        paragraphs: [
-          "Material: A206 cast aluminium alloy.",
-        ],
-        table: {
-          headers: ["Property", "Value"],
-          rows: [
-            ["Density", "2800 kg/m³"],
-            ["Young's modulus", "70 GPa"],
-            ["Poisson's ratio", "0.3"],
-            ["Tensile yield strength", "350 MPa"],
-            ["Ultimate tensile strength", "436 MPa"],
-          ],
-        },
-      },
-      {
-        heading: "Load case (rear damper, bike plus two riders)",
-        bullets: [
-          "1668 N acting at 53° on the shock mount: 1335 N vertical and 1004 N horizontal.",
-          "Pivot bores fixed, and axle slot flats fixed.",
-          "Linear tetrahedral mesh at 10 mm.",
-        ],
-        figures: [
-          { src: "/projects/swing-arm/mesh.jpg", caption: "Linear tetrahedral mesh at 10 mm." },
-          { src: "/projects/swing-arm/loads.jpg", caption: "Pivot bores fixed, axle slot flats fixed, and 1668 N on the shock mount." },
-        ],
-      },
-      {
-        heading: "Process",
-        items: [
-          { lead: "1. Baseline design.", text: "I modelled a solid Y-shaped swing arm as the design space (8.34 kg) and ran a static analysis: 27,378 elements, max deformation 0.0192 mm, max stress 4.83 MPa." },
-          { lead: "2. Topology optimization.", text: "The objective was minimum compliance, keeping 52% of the mass, with a 20 mm minimum member size. Pivots, axle slots and shock mount were excluded from the design region. It converged in 25 iterations and kept about 55% of the volume." },
-          { lead: "3. Validation of the raw result.", text: "I smoothed the optimized shape and re-analysed it: 4.11 kg, 0.0340 mm, 10.98 MPa. It was light, but the faceted surface was not manufacturable." },
-          { lead: "4. Redesign.", text: "I rebuilt the shape as clean CAD along the same load paths (4.42 kg), then re-analysed it with the same mesh settings as the baseline: 14,677 elements." },
-        ],
-        figures: [
-          { src: "/projects/swing-arm/baseline-deformation.jpg", caption: "Baseline static analysis. Max deformation 0.0192 mm." },
-          { src: "/projects/swing-arm/baseline-stress.jpg", caption: "Baseline static analysis. Max stress 4.83 MPa." },
-          { src: "/projects/swing-arm/topology-raw.jpg", caption: "Raw topology result. Light, but the faceted surface was not manufacturable." },
-          { src: "/projects/swing-arm/raw-deformation.jpg", caption: "Smoothed optimized shape. Max deformation 0.0340 mm, mass 4.11 kg." },
-          { src: "/projects/swing-arm/raw-stress.jpg", caption: "Smoothed optimized shape. Max stress 10.98 MPa." },
-        ],
-      },
-      {
-        heading: "Redesign decisions",
-        items: [
-          { lead: "Follow the load path.", text: "The arms trace the two curved members the optimizer kept, from the pivots through the shock mount to the axle. The central web it removed stays removed." },
-          { lead: "Constant 50 mm depth with arc-based bends.", text: "The front bend uses about R120 and the rear bend about R80. This keeps the part simple to machine or cast while staying close to the optimized shape." },
-          { lead: "Fillets where stress concentrates.", text: "R5 at the shock lug roots, where the peak stress sat in every run, plus R25 at the arm junctions and R15 on the cross-beam corners." },
-          { lead: "Symmetric left and right.", text: "The raw result was slightly lopsided, but the real load is shared equally." },
-          { lead: "Interfaces unchanged.", text: "Pivot tubes, axle slots and the shock mount match the original, so the boundary conditions and the comparison stay identical." },
-          { lead: "Tyre clearance kept.", text: "The inner edges of the rear arms hold the 188 mm tyre gap." },
-        ],
-        figures: [
-          { src: "/projects/swing-arm/redesign.jpg", caption: "Redesign rebuilt as clean CAD along the same load paths, 4.42 kg." },
-        ],
-      },
-      {
-        heading: "Results",
-        paragraphs: [
-          "The redesign is 47% lighter than the original and carries 26% less peak stress than the raw optimized shape.",
-          "The trade-off is stiffness. The redesign deflects about twice as much as the original, but 0.04 mm is still negligible for this load.",
-        ],
-        table: {
-          headers: ["", "Original", "Raw optimized", "Final redesign"],
-          rows: [
-            ["Mass (kg)", "8.34", "4.11", "4.42"],
-            ["Mass reduction", "–", "51%", "47%"],
-            ["Max deformation (mm)", "0.0192", "0.0340", "0.0401"],
-            ["Max von Mises stress (MPa)", "4.83", "10.98", "8.11"],
-            ["Factor of safety (vs 350 MPa yield)", "~72", "~32", "~43"],
-            ["Mesh (elements)", "27,378", "80,507", "14,677"],
-          ],
-        },
-        figures: [
-          { src: "/projects/swing-arm/final-deformation.jpg", caption: "Final redesign. Max deformation 0.0401 mm." },
-          { src: "/projects/swing-arm/final-stress.jpg", caption: "Final redesign. Max von Mises stress 8.11 MPa." },
-        ],
-      },
-    ],
-    links: [],
-  },
-  {
     id: "project-card-wind-tunnel",
     slug: "subsonic-wind-tunnel",
     title: "Subsonic Wind Tunnel - Design, CFD & Fabrication",
@@ -425,86 +323,105 @@ export const PROJECTS = [
     span: "tall",
   },
   {
-    id: "project-card-vehicle-aero",
-    slug: "vehicle-aerodynamics-cfd",
-    title: "Effect of Accessories on Vehicle Aerodynamics - CFD Study",
-    category: "AUTOMOTIVE / CFD",
+    id: "project-card-swing-arm",
+    slug: "swing-arm-topology",
+    title: "Motorcycle Swing Arm: Topology Optimization and Redesign",
+    category: "TOPOLOGY OPTIMIZATION / FEA",
     period: "",
-    metrics: ["Cd 0.3441 → 0.2872 (−16.5%)", "1.1M-element mesh", "150 km/h inlet"],
+    metrics: ["8.34 kg to 4.42 kg", "47% lighter", "Factor of safety ~43"],
     description:
-      "Modelled a Koenigsegg Jesko Absolut in SolidWorks and ran ANSYS Fluent CFD (k-ε, 1,098,393 elements) across spoiler, wing, diffuser, and fin configurations at 150 km/h. The spoiler + diffuser combination cut drag coefficient 16.53% below baseline while diffusers reduced drag in every tested case; wings traded +27.8% drag for significant downforce (Cl −0.115 with diffuser). Findings drawn from pressure contours and velocity streamline analysis.",
-    image: "/projects/vehicle-aero/13_cfd_mesh.jpg",
-    gallery: [
-      { src: "/projects/vehicle-aero/01_blueprint_dimensions.jpg", caption: "Body modelled from blueprints - 4320 × 1990 × 1090 mm" },
-      { src: "/projects/vehicle-aero/02_baseline_cad_iso_side.jpg", caption: "Baseline body - SolidWorks model" },
-      { src: "/projects/vehicle-aero/03_cad_spoiler.jpg", caption: "Lip spoiler geometry" },
-      { src: "/projects/vehicle-aero/04_cad_rear_wing.jpg", caption: "Rear wing - 1700 mm span, 33.9° angle of attack" },
-      { src: "/projects/vehicle-aero/05_cad_diffuser_part_dims.jpg", caption: "Diffuser part - 1000 mm long, 17°, 7.5 mm blades" },
-      { src: "/projects/vehicle-aero/06_cad_diffuser_part_side.jpg", caption: "Diffuser profile" },
-      { src: "/projects/vehicle-aero/07_cad_diffuser_on_car.jpg", caption: "Diffuser mounted on the body" },
-      { src: "/projects/vehicle-aero/08_cad_fins.jpg", caption: "Mid-rear fins, 25 mm thick" },
-      { src: "/projects/vehicle-aero/09_cad_spoiler_plus_diffuser.jpg", caption: "Spoiler + diffuser combination" },
-      { src: "/projects/vehicle-aero/10_cad_wing_plus_diffuser.jpg", caption: "Wing + diffuser combination" },
-      { src: "/projects/vehicle-aero/11_cad_fins_plus_diffuser.jpg", caption: "Fins + diffuser combination" },
-      { src: "/projects/vehicle-aero/12_cfd_control_volume.jpg", caption: "Virtual wind tunnel - 12 × 4 × 8 m, 150 km/h inlet, moving ground" },
-      { src: "/projects/vehicle-aero/13_cfd_mesh.jpg", caption: "Mesh - ~1.1M elements, refined at the surface" },
-      { src: "/projects/vehicle-aero/14_streamlines_cases_a-d.jpg", caption: "Streamlines - baseline, spoiler, wing, diffuser" },
-      { src: "/projects/vehicle-aero/15_streamlines_cases_e-h.jpg", caption: "Streamlines - fins and combinations" },
-      { src: "/projects/vehicle-aero/16_velocity_contours_a-d.jpg", caption: "Velocity contours - baseline, spoiler, wing, diffuser" },
-      { src: "/projects/vehicle-aero/17_velocity_contour_e_fins.jpg", caption: "Velocity contour - fins" },
-      { src: "/projects/vehicle-aero/18_velocity_contours_f-h.jpg", caption: "Velocity contours - spoiler/wing/fins + diffuser" },
-      { src: "/projects/vehicle-aero/19_chart_drag_coefficient.jpg", caption: "Drag coefficient by configuration" },
-      { src: "/projects/vehicle-aero/20_chart_lift_coefficient.jpg", caption: "Lift coefficient by configuration" },
-      { src: "/projects/vehicle-aero/21_chart_drag_force.jpg", caption: "Drag force by configuration" },
-      { src: "/projects/vehicle-aero/22_chart_lift_force.jpg", caption: "Lift force by configuration" },
-    ],
+      "I cut the mass of a 150 cc motorcycle swing arm by 47%, from 8.34 kg to 4.42 kg, using topology optimization in Ansys and then a manufacturable redesign. The final part still has a factor of safety of about 43 under the rear damper load.",
+    image: "/projects/swing-arm/cover.png",
+    gallery: [],
+    tags: ["Ansys", "Topology Optimization", "A206", "Static Structural"],
     writeup: [
       {
-        heading: "Approach",
+        heading: "Overview",
         paragraphs: [
-          "The question was simple: which aero add-ons actually reduce drag on a high-performance car, and what do the others cost you? I modeled the body of a Koenigsegg Jesko Absolut in SolidWorks from its blueprints (4320 × 1990 × 1090 mm, 90 mm ground clearance). Then I built eight versions of it: the stock body, each of four add-ons on its own (lip spoiler, rear wing, rear diffuser, fins), and three combinations with the diffuser. All eight ran through ANSYS Fluent under the same conditions, so the only thing changing between runs was the geometry.",
+          "I cut the mass of a 150 cc motorcycle swing arm by 47%, from 8.34 kg to 4.42 kg, using topology optimization in Ansys and then a manufacturable redesign. The final part still has a factor of safety of about 43 under the rear damper load.",
         ],
       },
       {
-        heading: "Key Design Decisions",
+        heading: "Setup",
+        paragraphs: [
+          "Material: A206 cast aluminium alloy.",
+        ],
+        table: {
+          headers: ["Property", "Value"],
+          rows: [
+            ["Density", "2800 kg/m³"],
+            ["Young's modulus", "70 GPa"],
+            ["Poisson's ratio", "0.3"],
+            ["Tensile yield strength", "350 MPa"],
+            ["Ultimate tensile strength", "436 MPa"],
+          ],
+        },
+      },
+      {
+        heading: "Load case (rear damper, bike plus two riders)",
+        bullets: [
+          "1668 N acting at 53° on the shock mount: 1335 N vertical and 1004 N horizontal.",
+          "Pivot bores fixed, and axle slot flats fixed.",
+          "Linear tetrahedral mesh at 10 mm.",
+        ],
+        figures: [
+          { src: "/projects/swing-arm/mesh.jpg", caption: "Linear tetrahedral mesh at 10 mm." },
+          { src: "/projects/swing-arm/loads.jpg", caption: "Pivot bores fixed, axle slot flats fixed, and 1668 N on the shock mount." },
+        ],
+      },
+      {
+        heading: "Process",
         items: [
-          { lead: "Every case ran under the same conditions.", text: "The car sat in a virtual wind tunnel 12 × 4 × 8 m. Air entered at 150 km/h - the speed where the add-ons start to matter - and the ground moved at the same speed to mimic a real road instead of a stationary floor. The outlet was open to ambient pressure. The car's frontal area of 1.98 m² blocks about 6% of the tunnel's cross-section, so the walls don't distort the flow much." },
-          { lead: "Rear wing.", text: "1700 mm span at a 33.9° angle of attack, to test the classic trade of downforce for drag." },
-          { lead: "Diffuser.", text: "1000 mm long, angled at 17°, with 7.5 mm blades. A steeper angle risks the flow separating and adding drag; a shallower one does very little." },
-          { lead: "Fins.", text: "25 mm thick, placed at the mid-rear like the real Jesko Absolut's." },
-          { lead: "Mesh and turbulence model.", text: "The mesh had about 1.1 million elements, finer close to the car's surface. I used the standard k-ε turbulence model with wall functions because it converges reliably and is cheap to run on a student setup. Solutions were run to a residual of 1e-4." },
+          { lead: "1. Baseline design.", text: "I modelled a solid Y-shaped swing arm as the design space (8.34 kg) and ran a static analysis: 27,378 elements, max deformation 0.0192 mm, max stress 4.83 MPa." },
+          { lead: "2. Topology optimization.", text: "The objective was minimum compliance, keeping 52% of the mass, with a 20 mm minimum member size. Pivots, axle slots and shock mount were excluded from the design region. It converged in 25 iterations and kept about 55% of the volume." },
+          { lead: "3. Validation of the raw result.", text: "I smoothed the optimized shape and re-analysed it: 4.11 kg, 0.0340 mm, 10.98 MPa. It was light, but the faceted surface was not manufacturable." },
+          { lead: "4. Redesign.", text: "I rebuilt the shape as clean CAD along the same load paths (4.42 kg), then re-analysed it with the same mesh settings as the baseline: 14,677 elements." },
+        ],
+        figures: [
+          { src: "/projects/swing-arm/baseline-deformation.jpg", caption: "Baseline static analysis. Max deformation 0.0192 mm." },
+          { src: "/projects/swing-arm/baseline-stress.jpg", caption: "Baseline static analysis. Max stress 4.83 MPa." },
+          { src: "/projects/swing-arm/topology-raw.jpg", caption: "Raw topology result. Light, but the faceted surface was not manufacturable." },
+          { src: "/projects/swing-arm/raw-deformation.jpg", caption: "Smoothed optimized shape. Max deformation 0.0340 mm, mass 4.11 kg." },
+          { src: "/projects/swing-arm/raw-stress.jpg", caption: "Smoothed optimized shape. Max stress 10.98 MPa." },
+        ],
+      },
+      {
+        heading: "Redesign decisions",
+        items: [
+          { lead: "Follow the load path.", text: "The arms trace the two curved members the optimizer kept, from the pivots through the shock mount to the axle. The central web it removed stays removed." },
+          { lead: "Constant 50 mm depth with arc-based bends.", text: "The front bend uses about R120 and the rear bend about R80. This keeps the part simple to machine or cast while staying close to the optimized shape." },
+          { lead: "Fillets where stress concentrates.", text: "R5 at the shock lug roots, where the peak stress sat in every run, plus R25 at the arm junctions and R15 on the cross-beam corners." },
+          { lead: "Symmetric left and right.", text: "The raw result was slightly lopsided, but the real load is shared equally." },
+          { lead: "Interfaces unchanged.", text: "Pivot tubes, axle slots and the shock mount match the original, so the boundary conditions and the comparison stay identical." },
+          { lead: "Tyre clearance kept.", text: "The inner edges of the rear arms hold the 188 mm tyre gap." },
+        ],
+        figures: [
+          { src: "/projects/swing-arm/redesign.jpg", caption: "Redesign rebuilt as clean CAD along the same load paths, 4.42 kg." },
         ],
       },
       {
         heading: "Results",
+        paragraphs: [
+          "The redesign is 47% lighter than the original and carries 26% less peak stress than the raw optimized shape.",
+          "The trade-off is stiffness. The redesign deflects about twice as much as the original, but 0.04 mm is still negligible for this load.",
+        ],
         table: {
-          headers: ["Configuration", "Cd", "Change in drag", "Cl"],
+          headers: ["", "Original", "Raw optimized", "Final redesign"],
           rows: [
-            ["Baseline", "0.344", "-", "0.718"],
-            ["Spoiler + diffuser", "0.287", "−16.5%", "0.317"],
-            ["Spoiler", "0.292", "−15.2%", "0.318"],
-            ["Diffuser", "0.334", "−2.8%", "0.688"],
-            ["Fins", "0.339", "−1.6%", "0.617"],
-            ["Rear wing", "0.477", "+38.5%", "−0.050"],
-            ["Wing + diffuser", "0.472", "+37.0%", "−0.115"],
+            ["Mass (kg)", "8.34", "4.11", "4.42"],
+            ["Mass reduction", "–", "51%", "47%"],
+            ["Max deformation (mm)", "0.0192", "0.0340", "0.0401"],
+            ["Max von Mises stress (MPa)", "4.83", "10.98", "8.11"],
+            ["Factor of safety (vs 350 MPa yield)", "~72", "~32", "~43"],
+            ["Mesh (elements)", "27,378", "80,507", "14,677"],
           ],
         },
-        paragraphs: [
-          "The spoiler did most of the work. On its own it cut drag by 15% and lift by 56%, because it shrinks the low-pressure wake behind the car, as the velocity contours show. Adding the diffuser to it gave the best result overall: 16.5% less drag, which works out to about 121 N less at 150 km/h.",
-          "The rear wing was the only add-on that produced real downforce. The price was 38% more drag and the largest recirculation zone of any case. The diffuser lowered drag in every combination it was added to.",
-        ],
-      },
-      {
-        heading: "Lessons",
-        items: [
-          { lead: "An add-on's job is not always lower drag.", text: "The fins cut drag by less than 2%, yet Koenigsegg puts them on its lowest-drag car. Their purpose is stability at high speed, which a drag-and-lift study can't measure. What a part is for decides how you should judge it." },
-          { lead: "Drag and downforce pull against each other.", text: "The wing made the car worse for top speed and better for cornering. The right choice depends on what the car is being designed to do, not on one number." },
-          { lead: "Look at the flow, not just the coefficients.", text: "The streamlines and velocity contours explained every number in the table. The less the flow separated at the rear, the lower the drag." },
-          { lead: "What I'd do differently.", text: "I simulated only at 150 km/h and scaled the forces to 70 and 300 km/h, which assumes Cd stays constant with speed. I'd run each speed separately. I'd also run a mesh-independence study, lengthen the domain so the wake has room to develop, and try k-ω SST, which predicts flow separation better. That matters here because separation is exactly what the add-ons change." },
+        figures: [
+          { src: "/projects/swing-arm/final-deformation.jpg", caption: "Final redesign. Max deformation 0.0401 mm." },
+          { src: "/projects/swing-arm/final-stress.jpg", caption: "Final redesign. Max von Mises stress 8.11 MPa." },
         ],
       },
     ],
-    tags: ["SolidWorks", "ANSYS Fluent", "k-ε Turbulence", "Aero Optimization"],
     links: [],
   },
   {
@@ -516,7 +433,7 @@ export const PROJECTS = [
     metrics: ["3.64 mm max deformation", "149.5 MPa peak stress", "~6.2× safety factor"],
     description:
       "Nonlinear static FEA of a midshaft femoral fracture fixed with a Ti-6Al-4V straight plate and six cortical screws. I modeled the construct in Ansys, bonded every interface, and ramped torsion from 0 to 45 N·m about the shaft. The plate stayed elastic - peak stress 149.5 MPa against a 930 MPa yield - while the 5.6× stiffness gap between titanium and cortical bone showed up as stress shielding at the fracture.",
-    image: "/projects/femur-plate/cover.png",
+    image: "/projects/femur-plate/cover-mesh.png",
     gallery: [],
     tags: ["Ansys", "Nonlinear FEA", "Ti-6Al-4V", "Bonded Contact", "Biomechanics"],
     writeup: [
@@ -600,6 +517,88 @@ export const PROJECTS = [
         ],
       },
     ],
+    links: [],
+  },  {
+    id: "project-card-vehicle-aero",
+    slug: "vehicle-aerodynamics-cfd",
+    title: "Effect of Accessories on Vehicle Aerodynamics - CFD Study",
+    category: "AUTOMOTIVE / CFD",
+    period: "",
+    metrics: ["Cd 0.3441 → 0.2872 (−16.5%)", "1.1M-element mesh", "150 km/h inlet"],
+    description:
+      "Modelled a Koenigsegg Jesko Absolut in SolidWorks and ran ANSYS Fluent CFD (k-ε, 1,098,393 elements) across spoiler, wing, diffuser, and fin configurations at 150 km/h. The spoiler + diffuser combination cut drag coefficient 16.53% below baseline while diffusers reduced drag in every tested case; wings traded +27.8% drag for significant downforce (Cl −0.115 with diffuser). Findings drawn from pressure contours and velocity streamline analysis.",
+    image: "/projects/vehicle-aero/13_cfd_mesh.jpg",
+    gallery: [
+      { src: "/projects/vehicle-aero/01_blueprint_dimensions.jpg", caption: "Body modelled from blueprints - 4320 × 1990 × 1090 mm" },
+      { src: "/projects/vehicle-aero/02_baseline_cad_iso_side.jpg", caption: "Baseline body - SolidWorks model" },
+      { src: "/projects/vehicle-aero/03_cad_spoiler.jpg", caption: "Lip spoiler geometry" },
+      { src: "/projects/vehicle-aero/04_cad_rear_wing.jpg", caption: "Rear wing - 1700 mm span, 33.9° angle of attack" },
+      { src: "/projects/vehicle-aero/05_cad_diffuser_part_dims.jpg", caption: "Diffuser part - 1000 mm long, 17°, 7.5 mm blades" },
+      { src: "/projects/vehicle-aero/06_cad_diffuser_part_side.jpg", caption: "Diffuser profile" },
+      { src: "/projects/vehicle-aero/07_cad_diffuser_on_car.jpg", caption: "Diffuser mounted on the body" },
+      { src: "/projects/vehicle-aero/08_cad_fins.jpg", caption: "Mid-rear fins, 25 mm thick" },
+      { src: "/projects/vehicle-aero/09_cad_spoiler_plus_diffuser.jpg", caption: "Spoiler + diffuser combination" },
+      { src: "/projects/vehicle-aero/10_cad_wing_plus_diffuser.jpg", caption: "Wing + diffuser combination" },
+      { src: "/projects/vehicle-aero/11_cad_fins_plus_diffuser.jpg", caption: "Fins + diffuser combination" },
+      { src: "/projects/vehicle-aero/12_cfd_control_volume.jpg", caption: "Virtual wind tunnel - 12 × 4 × 8 m, 150 km/h inlet, moving ground" },
+      { src: "/projects/vehicle-aero/13_cfd_mesh.jpg", caption: "Mesh - ~1.1M elements, refined at the surface" },
+      { src: "/projects/vehicle-aero/14_streamlines_cases_a-d.jpg", caption: "Streamlines - baseline, spoiler, wing, diffuser" },
+      { src: "/projects/vehicle-aero/15_streamlines_cases_e-h.jpg", caption: "Streamlines - fins and combinations" },
+      { src: "/projects/vehicle-aero/16_velocity_contours_a-d.jpg", caption: "Velocity contours - baseline, spoiler, wing, diffuser" },
+      { src: "/projects/vehicle-aero/17_velocity_contour_e_fins.jpg", caption: "Velocity contour - fins" },
+      { src: "/projects/vehicle-aero/18_velocity_contours_f-h.jpg", caption: "Velocity contours - spoiler/wing/fins + diffuser" },
+      { src: "/projects/vehicle-aero/19_chart_drag_coefficient.jpg", caption: "Drag coefficient by configuration" },
+      { src: "/projects/vehicle-aero/20_chart_lift_coefficient.jpg", caption: "Lift coefficient by configuration" },
+      { src: "/projects/vehicle-aero/21_chart_drag_force.jpg", caption: "Drag force by configuration" },
+      { src: "/projects/vehicle-aero/22_chart_lift_force.jpg", caption: "Lift force by configuration" },
+    ],
+    writeup: [
+      {
+        heading: "Approach",
+        paragraphs: [
+          "The question was simple: which aero add-ons actually reduce drag on a high-performance car, and what do the others cost you? I modeled the body of a Koenigsegg Jesko Absolut in SolidWorks from its blueprints (4320 × 1990 × 1090 mm, 90 mm ground clearance). Then I built eight versions of it: the stock body, each of four add-ons on its own (lip spoiler, rear wing, rear diffuser, fins), and three combinations with the diffuser. All eight ran through ANSYS Fluent under the same conditions, so the only thing changing between runs was the geometry.",
+        ],
+      },
+      {
+        heading: "Key Design Decisions",
+        items: [
+          { lead: "Every case ran under the same conditions.", text: "The car sat in a virtual wind tunnel 12 × 4 × 8 m. Air entered at 150 km/h - the speed where the add-ons start to matter - and the ground moved at the same speed to mimic a real road instead of a stationary floor. The outlet was open to ambient pressure. The car's frontal area of 1.98 m² blocks about 6% of the tunnel's cross-section, so the walls don't distort the flow much." },
+          { lead: "Rear wing.", text: "1700 mm span at a 33.9° angle of attack, to test the classic trade of downforce for drag." },
+          { lead: "Diffuser.", text: "1000 mm long, angled at 17°, with 7.5 mm blades. A steeper angle risks the flow separating and adding drag; a shallower one does very little." },
+          { lead: "Fins.", text: "25 mm thick, placed at the mid-rear like the real Jesko Absolut's." },
+          { lead: "Mesh and turbulence model.", text: "The mesh had about 1.1 million elements, finer close to the car's surface. I used the standard k-ε turbulence model with wall functions because it converges reliably and is cheap to run on a student setup. Solutions were run to a residual of 1e-4." },
+        ],
+      },
+      {
+        heading: "Results",
+        table: {
+          headers: ["Configuration", "Cd", "Change in drag", "Cl"],
+          rows: [
+            ["Baseline", "0.344", "-", "0.718"],
+            ["Spoiler + diffuser", "0.287", "−16.5%", "0.317"],
+            ["Spoiler", "0.292", "−15.2%", "0.318"],
+            ["Diffuser", "0.334", "−2.8%", "0.688"],
+            ["Fins", "0.339", "−1.6%", "0.617"],
+            ["Rear wing", "0.477", "+38.5%", "−0.050"],
+            ["Wing + diffuser", "0.472", "+37.0%", "−0.115"],
+          ],
+        },
+        paragraphs: [
+          "The spoiler did most of the work. On its own it cut drag by 15% and lift by 56%, because it shrinks the low-pressure wake behind the car, as the velocity contours show. Adding the diffuser to it gave the best result overall: 16.5% less drag, which works out to about 121 N less at 150 km/h.",
+          "The rear wing was the only add-on that produced real downforce. The price was 38% more drag and the largest recirculation zone of any case. The diffuser lowered drag in every combination it was added to.",
+        ],
+      },
+      {
+        heading: "Lessons",
+        items: [
+          { lead: "An add-on's job is not always lower drag.", text: "The fins cut drag by less than 2%, yet Koenigsegg puts them on its lowest-drag car. Their purpose is stability at high speed, which a drag-and-lift study can't measure. What a part is for decides how you should judge it." },
+          { lead: "Drag and downforce pull against each other.", text: "The wing made the car worse for top speed and better for cornering. The right choice depends on what the car is being designed to do, not on one number." },
+          { lead: "Look at the flow, not just the coefficients.", text: "The streamlines and velocity contours explained every number in the table. The less the flow separated at the rear, the lower the drag." },
+          { lead: "What I'd do differently.", text: "I simulated only at 150 km/h and scaled the forces to 70 and 300 km/h, which assumes Cd stays constant with speed. I'd run each speed separately. I'd also run a mesh-independence study, lengthen the domain so the wake has room to develop, and try k-ω SST, which predicts flow separation better. That matters here because separation is exactly what the add-ons change." },
+        ],
+      },
+    ],
+    tags: ["SolidWorks", "ANSYS Fluent", "k-ε Turbulence", "Aero Optimization"],
     links: [],
   },
 ];

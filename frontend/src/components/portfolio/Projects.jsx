@@ -1,13 +1,9 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Images, ArrowRight } from "lucide-react";
-import { Reveal, SectionHeading, Lightbox } from "./shared";
+import { ArrowRight } from "lucide-react";
+import { Reveal, SectionHeading } from "./shared";
 import { PROJECTS } from "@/data";
 
 function ProjectCard({ project, index, className }) {
-  const [lightbox, setLightbox] = useState(null);
-  const gallery = project.gallery || [];
-
   return (
     <Reveal delay={index * 0.1} className={className}>
       <article
@@ -94,42 +90,7 @@ function ProjectCard({ project, index, className }) {
               </a>
             ))}
           </div>
-          {gallery.length > 0 && (
-            <div className="mt-5 pt-5 border-t border-line/60">
-              <div className="flex items-center gap-2 font-mono text-[0.625rem] tracking-[0.25em] text-slate-500 mb-3">
-                <Images size={13} className="text-cyanic" />
-                PROJECT GALLERY - {gallery.length} PHOTOS
-              </div>
-              <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
-                {gallery.map((g, gi) => (
-                  <button
-                    key={g.src}
-                    data-testid={`${project.id}-gallery-thumb-${gi}`}
-                    onClick={() => setLightbox(gi)}
-                    className="relative aspect-square overflow-hidden border border-line hover:border-cyanic transition-colors group/thumb"
-                  >
-                    <img
-                      src={g.src}
-                      alt={g.caption}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-500"
-                    />
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
-        {lightbox !== null && (
-          <Lightbox
-            items={gallery}
-            index={lightbox}
-            testid={project.id}
-            onClose={() => setLightbox(null)}
-            onPrev={() => setLightbox((lightbox + gallery.length - 1) % gallery.length)}
-            onNext={() => setLightbox((lightbox + 1) % gallery.length)}
-          />
-        )}
       </article>
     </Reveal>
   );
